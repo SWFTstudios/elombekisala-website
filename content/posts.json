@@ -1,0 +1,50 @@
+[
+  {
+    "title": "How much does a Webflow website cost?",
+    "slug": "webflow-cost",
+    "date": "2025-01-15",
+    "summary": "A practical breakdown of Webflow website costs: design, development, and ongoing hosting.",
+    "category": "Webflow",
+    "url": "/blog/webflow-cost/"
+  },
+  {
+    "title": "Shopify vs Webflow for your storefront",
+    "slug": "shopify-vs-webflow",
+    "date": "2025-02-01",
+    "summary": "When to use Shopify, Webflow, or both: e-commerce and marketing site options.",
+    "category": "E-commerce",
+    "url": "/blog/shopify-vs-webflow/"
+  },
+  {
+    "title": "Automation for leads: capture, CRM, follow-up",
+    "slug": "automation-for-leads",
+    "date": "2025-02-10",
+    "summary": "How to automate lead capture from your site into your CRM and email sequences using Make or Zapier.",
+    "category": "Automation",
+    "url": "/blog/automation-for-leads/"
+  },
+  {
+    "title": "SEO basics for Webflow sites",
+    "slug": "seo-basics-webflow",
+    "date": "2025-02-18",
+    "summary": "Meta tags, headings, performance, and structure: SEO fundamentals for Webflow.",
+    "category": "SEO",
+    "url": "/blog/seo-basics-webflow/"
+  },
+  {
+    "title": "How to choose a CMS for your site",
+    "slug": "how-to-choose-cms",
+    "date": "2025-02-22",
+    "summary": "When to use Webflow CMS, Shopify, or a headless CMS. Practical guide for small teams.",
+    "category": "Strategy",
+    "url": "/blog/how-to-choose-cms/"
+  },
+  {
+    "title": "Make vs Zapier for marketing automation",
+    "slug": "make-vs-zapier",
+    "date": "2025-02-25",
+    "summary": "When to use Make.com vs Zapier: pricing, complexity, and use cases for small teams.",
+    "category": "Automation",
+    "url": "/blog/make-vs-zapier/"
+  }
+]

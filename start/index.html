@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Start a project — Elombe Kisala | Designer &amp; Developer</title>
+  <meta name="description" content="Submit your project brief. Tell me what you need (Webflow, Shopify, automation) and I'll get back to you within 24 hours.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="https://elombekisala.com/start/">
+  <meta property="og:title" content="Start a project — Elombe Kisala">
+  <meta property="og:description" content="Submit your project brief. Tell me what you need (Webflow, Shopify, automation) and I'll get back to you within 24 hours.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://elombekisala.com/start/">
+  <meta property="og:image" content="https://elombekisala.com/images/webclip.jpg">
+  <link href="/css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="/css/components.css" rel="stylesheet" type="text/css">
+  <link href="/css/elombekisala.css" rel="stylesheet" type="text/css">
+  <link href="/src/system/tokens.css" rel="stylesheet" type="text/css">
+  <link href="/src/system/util.css" rel="stylesheet" type="text/css">
+  <link href="/src/system/components.css" rel="stylesheet" type="text/css">
+</head>
+<body class="body">
+  <div class="main-body">
+    <div data-include="header"></div>
+    <main>
+      <section class="ek-section">
+        <div class="ek-container">
+          <h1>Start a project</h1>
+          <p class="ek-prose">Share your project details below. I'll review and get back to you within 24 hours.</p>
+          <div class="ek-form" style="max-width: 560px; margin-top: 2rem;">
+            <form id="start-form" action="#" method="post" class="ek-stack-md">
+              <div class="ek-field">
+                <label class="ek-label" for="start-name">Name</label>
+                <input type="text" id="start-name" name="name" class="ek-input" required placeholder="Your name">
+              </div>
+              <div class="ek-field">
+                <label class="ek-label" for="start-email">Email</label>
+                <input type="email" id="start-email" name="email" class="ek-input" required placeholder="your@email.com">
+              </div>
+              <div class="ek-field">
+                <label class="ek-label" for="start-company">Company</label>
+                <input type="text" id="start-company" name="company" class="ek-input" placeholder="Company name">
+              </div>
+              <div class="ek-field">
+                <label class="ek-label" for="start-website">Website</label>
+                <input type="url" id="start-website" name="website" class="ek-input" placeholder="https://">
+              </div>
+              <div class="ek-field">
+                <label class="ek-label" for="start-need">What do you need?</label>
+                <select id="start-need" name="need" class="ek-input">
+                  <option value="">Select...</option>
+                  <option value="webflow">Webflow website</option>
+                  <option value="shopify">Shopify / e‑commerce</option>
+                  <option value="shopify-webflow">Shopify + Webflow</option>
+                  <option value="automation">Automation (Make/Zapier/AI)</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="ek-field">
+                <label class="ek-label" for="start-budget">Budget range</label>
+                <select id="start-budget" name="budget" class="ek-input">
+                  <option value="">Select...</option>
+                  <option value="under-2k">Under $2,000</option>
+                  <option value="2k-5k">$2,000 – $5,000</option>
+                  <option value="5k-10k">$5,000 – $10,000</option>
+                  <option value="10k-plus">$10,000+</option>
+                </select>
+              </div>
+              <div class="ek-field">
+                <label class="ek-label" for="start-timeline">Timeline</label>
+                <input type="text" id="start-timeline" name="timeline" class="ek-input" placeholder="e.g. Launch in 6 weeks">
+              </div>
+              <div class="ek-field">
+                <label class="ek-label" for="start-notes">Notes</label>
+                <textarea id="start-notes" name="notes" class="ek-textarea" placeholder="Project goals, key pages, brand notes..."></textarea>
+              </div>
+              <div id="start-status" class="ek-success" style="display: none;"></div>
+              <div id="start-error" class="ek-error" style="display: none;"></div>
+              <button type="submit" class="ek-btn">Submit brief</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div data-include="footer"></div>
+  </div>
+  <script src="/src/scripts/injectPartials.js"></script>
+  <script src="/start/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Styleguide — Elombe Kisala</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <!-- 1) Webflow CSS (same as index.html) -->
+  <link href="/css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="/css/components.css" rel="stylesheet" type="text/css">
+  <link href="/css/elombekisala.css" rel="stylesheet" type="text/css">
+  <!-- 2–4) System layer (new pages only) -->
+  <link href="/src/system/tokens.css" rel="stylesheet" type="text/css">
+  <link href="/src/system/util.css" rel="stylesheet" type="text/css">
+  <link href="/src/system/components.css" rel="stylesheet" type="text/css">
+</head>
+<body class="body">
+  <div class="main-body">
+    <div data-include="header"></div>
+
+    <main>
+      <section class="page-section">
+        <div class="container">
+          <h1 class="xl-header">Styleguide</h1>
+          <p class="paragraph">Visual QA for design tokens and components. Use this page to confirm new pages match the homepage vibe.</p>
+        </div>
+      </section>
+
+      <!-- 1) Colors -->
+      <section class="ek-section">
+        <div class="ek-container">
+          <h2 class="medium-header">Colors</h2>
+          <div class="ek-stack-md">
+            <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center;">
+              <div><div style="width: 80px; height: 50px; background: var(--ek-color-bg); border: 1px solid #333;"></div><span class="ek-prose" style="display: block; font-size: 12px;">ek-color-bg</span></div>
+              <div><div style="width: 80px; height: 50px; background: var(--ek-color-text); border: 1px solid #333;"></div><span class="ek-prose" style="display: block; font-size: 12px;">ek-color-text</span></div>
+              <div><div style="width: 80px; height: 50px; background: var(--ek-color-muted);"></div><span class="ek-prose" style="display: block; font-size: 12px;">ek-color-muted</span></div>
+              <div><div style="width: 80px; height: 50px; background: var(--ek-color-accent);"></div><span class="ek-prose" style="display: block; font-size: 12px;">ek-color-accent</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2) Typography -->
+      <section class="ek-section">
+        <div class="ek-container">
+          <h2 class="medium-header">Typography</h2>
+          <div class="ek-stack-lg">
+            <h1>Heading 1</h1>
+            <h2>Heading 2</h2>
+            <h3>Heading 3</h3>
+            <h4>Heading 4</h4>
+            <h5>Heading 5</h5>
+            <h6>Heading 6</h6>
+            <p class="ek-prose">Body text: Satoshi variable, 20px. Use for paragraphs and long copy.</p>
+            <p style="font-size: 14px; color: var(--ek-color-muted);">Small / caption</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3) Buttons -->
+      <section class="ek-section">
+        <div class="ek-container">
+          <h2 class="medium-header">Buttons</h2>
+          <div class="ek-stack-md" style="display: flex; flex-wrap: wrap; gap: 1rem;">
+            <a href="#" class="ek-btn">Primary</a>
+            <a href="#" class="ek-btn ek-btn-secondary">Secondary</a>
+            <a href="#" class="ek-btn ek-btn-ghost">Ghost</a>
+            <button type="button" class="ek-btn" disabled>Disabled</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4) Cards -->
+      <section class="ek-section">
+        <div class="ek-container">
+          <h2 class="medium-header">Cards</h2>
+          <div class="ek-grid ek-grid-3">
+            <div class="ek-card">
+              <h4 style="margin-top: 0;">Project card</h4>
+              <p class="ek-prose" style="font-size: 14px;">Dark panel style.</p>
+            </div>
+            <div class="ek-card-service">
+              <h4 style="margin-top: 0;">Service card</h4>
+              <p class="ek-prose" style="font-size: 14px;">Service detail block.</p>
+            </div>
+            <div class="ek-card-blog">
+              <h4 style="margin-top: 0; color: #333;">Blog card</h4>
+              <p style="font-size: 14px; color: #333;">Light card for posts.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5) Form states -->
+      <section class="ek-section">
+        <div class="ek-container">
+          <h2 class="medium-header">Form elements</h2>
+          <div class="ek-form" style="max-width: 400px;">
+            <div class="ek-field">
+              <label class="ek-label">Label</label>
+              <input type="text" class="ek-input" placeholder="Placeholder">
+            </div>
+            <div class="ek-field">
+              <label class="ek-label">Textarea</label>
+              <textarea class="ek-textarea" placeholder="Message"></textarea>
+            </div>
+            <div class="ek-success">Success message</div>
+            <div class="ek-error">Error message</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6) Spacing -->
+      <section class="ek-section">
+        <div class="ek-container">
+          <h2 class="medium-header">Spacing (ek-stack)</h2>
+          <div class="ek-stack-md">
+            <div style="background: var(--ek-color-accent); height: 20px; width: 100%;"></div>
+            <div style="background: var(--ek-color-accent); height: 20px; width: 100%;"></div>
+            <div style="background: var(--ek-color-accent); height: 20px; width: 100%;"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7) Grid -->
+      <section class="ek-section">
+        <div class="ek-container">
+          <h2 class="medium-header">Grid (ek-grid-3)</h2>
+          <div class="ek-grid ek-grid-3">
+            <div class="ek-badge">Item 1</div>
+            <div class="ek-badge">Item 2</div>
+            <div class="ek-badge">Item 3</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8) CTA block -->
+      <section class="ek-section">
+        <div class="ek-container">
+          <h2 class="medium-header">CTA block</h2>
+          <div data-include="cta"></div>
+        </div>
+      </section>
+
+      <!-- 9) FAQ accordion -->
+      <section class="ek-section">
+        <div class="ek-container">
+          <h2 class="medium-header">FAQ accordion (details/summary)</h2>
+          <div class="ek-stack-sm">
+            <details class="ek-card">
+              <summary style="cursor: pointer; font-weight: 700;">Question one?</summary>
+              <p class="ek-prose" style="margin-top: 0.5rem;">Answer one.</p>
+            </details>
+            <details class="ek-card">
+              <summary style="cursor: pointer; font-weight: 700;">Question two?</summary>
+              <p class="ek-prose" style="margin-top: 0.5rem;">Answer two.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div data-include="footer"></div>
+  </div>
+  <script src="/src/scripts/injectPartials.js"></script>
+</body>
+</html>

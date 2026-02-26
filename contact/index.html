@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Contact — Elombe Kisala | Designer &amp; Developer</title>
+  <meta name="description" content="Get in touch for web design, development, or automation projects. Elombe responds within 24 hours.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="https://elombekisala.com/contact/">
+  <meta property="og:title" content="Contact — Elombe Kisala">
+  <meta property="og:description" content="Get in touch for web design, development, or automation projects. Elombe responds within 24 hours.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://elombekisala.com/contact/">
+  <meta property="og:image" content="https://elombekisala.com/images/webclip.jpg">
+  <link href="/css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="/css/components.css" rel="stylesheet" type="text/css">
+  <link href="/css/elombekisala.css" rel="stylesheet" type="text/css">
+  <link href="/src/system/tokens.css" rel="stylesheet" type="text/css">
+  <link href="/src/system/util.css" rel="stylesheet" type="text/css">
+  <link href="/src/system/components.css" rel="stylesheet" type="text/css">
+</head>
+<body class="body">
+  <div class="main-body">
+    <div data-include="header"></div>
+    <main>
+      <section class="ek-section">
+        <div class="ek-container">
+          <h1>Contact</h1>
+          <p class="ek-prose">Fill out the form below and I'll get back to you within 24 hours. You can also email <a href="mailto:elombekisala@gmail.com">elombekisala@gmail.com</a> or connect on <a href="https://www.linkedin.com/in/nsonsa-kisala/" target="_blank" rel="noopener noreferrer">LinkedIn</a>.</p>
+          <div class="ek-form" style="max-width: 500px; margin-top: 2rem;">
+            <form id="contact-form" action="#" method="post" class="ek-stack-md">
+              <div class="ek-field">
+                <label class="ek-label" for="contact-name">Name</label>
+                <input type="text" id="contact-name" name="name" class="ek-input" required placeholder="Your name">
+              </div>
+              <div class="ek-field">
+                <label class="ek-label" for="contact-email">Email</label>
+                <input type="email" id="contact-email" name="email" class="ek-input" required placeholder="your@email.com">
+              </div>
+              <div class="ek-field">
+                <label class="ek-label" for="contact-message">Message</label>
+                <textarea id="contact-message" name="message" class="ek-textarea" required placeholder="How can I help?"></textarea>
+              </div>
+              <div id="contact-status" class="ek-success" style="display: none;"></div>
+              <div id="contact-error" class="ek-error" style="display: none;"></div>
+              <button type="submit" class="ek-btn">Send message</button>
+            </form>
+          </div>
+          <div class="ek-stack-lg" style="margin-top: 2rem;">
+            <h2>What happens next</h2>
+            <p class="ek-prose">I'll reply within 24 hours. We can set up a short call to discuss your project, timeline, and next steps.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div data-include="footer"></div>
+  </div>
+  <script src="/src/scripts/injectPartials.js"></script>
+  <script src="/contact/index.js"></script>
+</body>
+</html>

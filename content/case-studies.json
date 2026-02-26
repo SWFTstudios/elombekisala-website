@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Core Home",
+    "slug": "core-home",
+    "excerpt": "Custom Webflow site for a home and lifestyle brand. Clean layout, strong imagery, and easy content updates.",
+    "image": "/images/corehome_thumbnail-p-1080.webp",
+    "tags": ["Webflow"],
+    "url": "/work/core-home/"
+  },
+  {
+    "title": "Blurred Lines",
+    "slug": "blurred-lines",
+    "excerpt": "Bold, editorial-style Webflow site for a creative brand. Strong typography and imagery-led layout.",
+    "image": "/images/blurredlinesentertainment_thumbnail-p-800.webp",
+    "tags": ["Webflow"],
+    "url": "/work/blurred-lines/"
+  },
+  {
+    "title": "Built By Me EZ",
+    "slug": "built-by-me-ez",
+    "excerpt": "Webflow marketing site plus automation: lead capture, CRM sync, and follow-up so the team could focus on sales.",
+    "image": "/images/built_by_me_ez_thumbnail-p-800.webp",
+    "tags": ["Webflow", "Automation"],
+    "url": "/work/built-by-me-ez/"
+  }
+]

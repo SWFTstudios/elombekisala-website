@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Disallow: /styleguide/
+
+Sitemap: https://elombekisala.com/sitemap.xml

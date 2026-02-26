@@ -1,0 +1,156 @@
+/**
+ * Component styles for new pages only.
+ * All classes prefixed with ek-. No global selectors.
+ */
+
+/* Buttons */
+.ek-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--ek-font-family);
+  font-size: 20px;
+  font-weight: var(--ek-font-weight-bold);
+  padding: 14px 28px;
+  border-radius: var(--ek-radius-pill);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.77, 0, 0.175, 1);
+  border: 3px solid var(--ek-color-border);
+  background-color: var(--ek-color-accent-bg);
+  background-image: linear-gradient(144deg, transparent 17%, rgba(0, 0, 0, 0.06));
+  color: var(--ek-color-text);
+}
+
+.ek-btn:hover {
+  border-color: var(--ek-color-text);
+  background-color: var(--ek-color-text);
+  background-image: linear-gradient(145deg, #c4c4c4, #fff 55%), linear-gradient(144deg, var(--ek-color-accent) 17%, var(--ek-color-accent-hover));
+  color: var(--ek-color-black);
+}
+
+.ek-btn-secondary {
+  background-color: transparent;
+  background-image: none;
+  border-color: var(--ek-color-accent);
+  color: var(--ek-color-accent);
+}
+
+.ek-btn-secondary:hover {
+  background-color: var(--ek-color-accent);
+  color: var(--ek-color-text);
+}
+
+.ek-btn-ghost {
+  background-color: transparent;
+  background-image: none;
+  border-color: transparent;
+  color: var(--ek-color-text);
+}
+
+.ek-btn-ghost:hover {
+  border-color: var(--ek-color-accent);
+  color: var(--ek-color-accent);
+}
+
+.ek-btn:disabled,
+.ek-btn.ek-btn-disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Cards */
+.ek-card {
+  background-color: rgba(42, 43, 49, 1);
+  border-radius: var(--ek-radius-panel);
+  overflow: hidden;
+  padding: var(--ek-space-xl) var(--ek-space-lg);
+}
+
+.ek-card-project {
+  border-radius: var(--ek-radius-card);
+  overflow: hidden;
+  background-color: #fff;
+  border: 1px solid #f7f7f7;
+}
+
+.ek-card-service {
+  border-radius: var(--ek-radius-card);
+  padding: var(--ek-space-lg);
+  background-color: rgba(42, 43, 49, 1);
+}
+
+.ek-card-blog {
+  border-radius: var(--ek-radius-card);
+  overflow: hidden;
+  background-color: #fff;
+  border: 1px solid #f7f7f7;
+}
+
+/* Badge / Tag */
+.ek-badge {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: var(--ek-radius-pill);
+  font-size: var(--ek-font-size-sm);
+  font-weight: var(--ek-font-weight-normal);
+  background-color: rgba(0, 202, 37, 0.15);
+  color: var(--ek-color-accent);
+}
+
+/* Form elements (scoped to ek-form) */
+.ek-form .ek-input,
+.ek-form .ek-textarea,
+.ek-form .ek-select {
+  width: 100%;
+  padding: 12px 16px;
+  font-family: var(--ek-font-family);
+  font-size: var(--ek-font-size-body);
+  color: var(--ek-color-text);
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--ek-color-border);
+  border-radius: var(--ek-radius-input);
+}
+
+.ek-form .ek-input::placeholder,
+.ek-form .ek-textarea::placeholder {
+  color: var(--ek-color-muted);
+}
+
+.ek-form .ek-input:focus,
+.ek-form .ek-textarea:focus,
+.ek-form .ek-select:focus {
+  outline: none;
+  border-color: var(--ek-color-accent);
+}
+
+.ek-form .ek-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.ek-form .ek-label {
+  display: block;
+  margin-bottom: var(--ek-space-xs);
+  font-size: var(--ek-font-size-sm);
+  color: var(--ek-color-muted);
+}
+
+.ek-form .ek-field {
+  margin-bottom: var(--ek-space-md);
+}
+
+.ek-form .ek-error {
+  margin-top: var(--ek-space-xs);
+  font-size: var(--ek-font-size-sm);
+  color: var(--ek-color-accent);
+}
+
+.ek-form .ek-success {
+  margin-top: var(--ek-space-md);
+  padding: var(--ek-space-sm);
+  background-color: rgba(0, 202, 37, 0.15);
+  border-radius: var(--ek-radius-input);
+  color: var(--ek-color-accent);
+}

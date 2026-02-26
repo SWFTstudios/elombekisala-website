@@ -1,0 +1,88 @@
+/**
+ * Design tokens — extracted from homepage (elombekisala.css).
+ * For use on NEW pages only. Do not load on index.html.
+ * Values mirror existing design; no new theme.
+ */
+
+:root {
+  /* Colors (from existing :root and key classes) */
+  --ek-color-bg: #000;
+  --ek-color-bg-mid: #1f1f1f;
+  --ek-color-bg-dark: #131713;
+  --ek-color-text: #f0f0f0;
+  --ek-color-text-alt: #f2f2f2;
+  --ek-color-muted: #9c9c9c;
+  --ek-color-border: rgba(212, 212, 212, 0.25);
+  --ek-color-accent: #00ca25;
+  --ek-color-accent-hover: #008b1a;
+  --ek-color-accent-bg: rgba(0, 202, 37, 0.6);
+  --ek-color-black: #000;
+
+  /* Typography */
+  --ek-font-family: "Satoshi variable", sans-serif;
+  --ek-font-size-base: 14px;
+  --ek-font-size-body: 20px;
+  --ek-font-size-sm: 16px;
+  --ek-font-size-xs: 18px;
+  --ek-font-weight-normal: 500;
+  --ek-font-weight-bold: 700;
+  --ek-line-height-tight: 1.125;
+  --ek-line-height-body: 1.5;
+  --ek-letter-spacing-tight: -2.5px;
+
+  /* Heading sizes (desktop) */
+  --ek-h1-size: 64px;
+  --ek-h2-size: 52px;
+  --ek-h3-size: 48px;
+  --ek-h4-size: 24px;
+  --ek-h5-size: 20px;
+  --ek-h6-size: 18px;
+
+  /* Spacing */
+  --ek-space-xs: 8px;
+  --ek-space-sm: 16px;
+  --ek-space-md: 24px;
+  --ek-space-lg: 32px;
+  --ek-space-xl: 40px;
+  --ek-space-2xl: 80px;
+  --ek-section-padding: 260px;
+  --ek-section-padding-sm: 160px;
+  --ek-container-padding: 120px;
+  --ek-container-padding-md: 40px;
+  --ek-container-padding-sm: 20px;
+
+  /* Layout */
+  --ek-container-width: 1440px;
+
+  /* Radius */
+  --ek-radius-pill: 999px;
+  --ek-radius-dot: 99px;
+  --ek-radius-card: 20px;
+  --ek-radius-panel: 16px;
+  --ek-radius-input: 10px;
+
+  /* Shadows (from button/card styles) */
+  --ek-shadow-button: 0 0 0 3px var(--ek-color-border);
+}
+
+@media screen and (max-width: 991px) {
+  :root {
+    --ek-container-padding: 40px;
+    --ek-h1-size: 40px;
+    --ek-h2-size: 32px;
+    --ek-h3-size: 28px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  :root {
+    --ek-container-padding: 20px;
+    --ek-section-padding: 160px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  :root {
+    --ek-h1-size: 56px;
+  }
+}

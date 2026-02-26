@@ -1,0 +1,58 @@
+/**
+ * Layout utilities for new pages only.
+ * All classes prefixed with ek-. Do not override Webflow classes.
+ */
+
+.ek-container {
+  max-width: var(--ek-container-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--ek-container-padding);
+  padding-right: var(--ek-container-padding);
+}
+
+.ek-section {
+  padding-top: var(--ek-section-padding);
+  padding-bottom: var(--ek-section-padding);
+}
+
+.ek-stack-xs > * + * { margin-top: var(--ek-space-xs); }
+.ek-stack-sm > * + * { margin-top: var(--ek-space-sm); }
+.ek-stack-md > * + * { margin-top: var(--ek-space-md); }
+.ek-stack-lg > * + * { margin-top: var(--ek-space-lg); }
+.ek-stack-xl > * + * { margin-top: var(--ek-space-xl); }
+.ek-stack-2xl > * + * { margin-top: var(--ek-space-2xl); }
+
+.ek-grid {
+  display: grid;
+  gap: var(--ek-space-sm);
+}
+
+.ek-grid-2 { grid-template-columns: repeat(2, 1fr); }
+.ek-grid-3 { grid-template-columns: repeat(3, 1fr); }
+.ek-grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+@media screen and (max-width: 991px) {
+  .ek-grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .ek-grid-4 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media screen and (max-width: 767px) {
+  .ek-grid-2,
+  .ek-grid-3,
+  .ek-grid-4 { grid-template-columns: 1fr; }
+}
+
+.ek-prose {
+  font-size: var(--ek-font-size-body);
+  line-height: var(--ek-line-height-body);
+}
+
+.ek-prose .ek-prose p {
+  margin-bottom: 10px;
+}
+
+.ek-prose .ek-prose a {
+  color: var(--ek-color-accent);
+  text-decoration: underline;
+}
