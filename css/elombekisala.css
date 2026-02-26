@@ -873,15 +873,26 @@ figure {
   background-color: #242324;
 }
 
+.footer-marquee-wrap {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  min-height: 48px;
+  margin-top: 24px;
+}
+
 .scrolling-text {
   opacity: .5;
   color: #fff;
   white-space: nowrap;
-  margin-top: 24px;
+  margin-top: 0;
   font-size: 30px;
   font-weight: 700;
   position: absolute;
-  inset: 0% 0% auto;
+  left: 0;
+  top: 0;
+  right: auto;
+  width: max-content;
 }
 
 .white-text {
@@ -2041,6 +2052,7 @@ figure {
 .marquee-wrapper {
   width: 100%;
   position: relative;
+  overflow: hidden;
 }
 
 .button-2 {
@@ -2088,6 +2100,18 @@ figure {
   justify-content: flex-start;
   align-items: center;
   display: flex;
+  width: max-content;
+  animation: marquee-track-scroll 60s linear infinite;
+  will-change: transform;
+}
+
+@keyframes marquee-track-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 .marquee-item {
@@ -2154,7 +2178,7 @@ figure {
     position: relative;
   }
 
-  .marquee-wrapper, .projects-wrapper {
+  .projects-wrapper {
     overflow: visible;
   }
 }
