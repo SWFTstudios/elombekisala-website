@@ -2101,11 +2101,17 @@ figure {
   align-items: center;
   display: flex;
   width: max-content;
+  min-width: max-content;
+  flex-shrink: 0;
   animation: marquee-track-scroll 60s linear infinite;
   -webkit-animation: marquee-track-scroll 60s linear infinite;
+  animation-play-state: running;
+  -webkit-animation-play-state: running;
   will-change: transform;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
 }
 
 @keyframes marquee-track-scroll {
@@ -2549,6 +2555,12 @@ figure {
 
   .marquee-wrapper {
     top: 20px;
+    overflow: hidden;
+  }
+
+  .marquee-track {
+    animation-play-state: running;
+    -webkit-animation-play-state: running;
   }
 }
 
@@ -2792,6 +2804,14 @@ figure {
 
   .marquee-wrapper {
     font-size: .7em;
+    overflow: hidden;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+
+  .marquee-track {
+    animation-play-state: running;
+    -webkit-animation-play-state: running;
   }
 
   .button-2.is-course {
