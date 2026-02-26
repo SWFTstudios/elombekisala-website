@@ -81,11 +81,43 @@
   background-color: rgba(42, 43, 49, 1);
 }
 
+/* Blog cards: dark theme, white text, green highlight on hover */
 .ek-card-blog {
   border-radius: var(--ek-radius-card);
   overflow: hidden;
-  background-color: #fff;
-  border: 1px solid #f7f7f7;
+  background-color: var(--ek-color-bg-mid);
+  border: 2px solid var(--ek-color-border);
+  color: var(--ek-color-text);
+  text-decoration: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+  display: block;
+}
+
+.ek-card-blog:hover {
+  border-color: var(--ek-color-accent);
+  box-shadow: 0 0 0 1px var(--ek-color-accent);
+  transform: translateY(-2px);
+}
+
+.ek-card-blog .ek-card-blog-inner {
+  padding: var(--ek-space-lg);
+}
+
+.ek-card-blog h3 {
+  color: var(--ek-color-text);
+  margin: 0.5rem 0;
+}
+
+.ek-card-blog .ek-prose {
+  color: var(--ek-color-text);
+  font-size: 0.95em;
+  line-height: 1.5;
+}
+
+.ek-card-blog .ek-blog-card-meta {
+  font-size: var(--ek-font-size-sm);
+  color: var(--ek-color-muted);
+  margin: 0.5rem 0;
 }
 
 /* Badge / Tag */
@@ -153,4 +185,52 @@
   background-color: rgba(0, 202, 37, 0.15);
   border-radius: var(--ek-radius-input);
   color: var(--ek-color-accent);
+}
+
+/* Blog article: bite-sized, digestible reading */
+.ek-article-prose {
+  max-width: 65ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ek-article-prose .ek-prose p,
+.ek-article-prose p {
+  margin-bottom: var(--ek-space-md);
+  line-height: 1.6;
+}
+
+.ek-article-prose h2 {
+  margin-top: var(--ek-space-xl);
+  margin-bottom: var(--ek-space-sm);
+  font-size: var(--ek-h4-size);
+  color: var(--ek-color-text);
+}
+
+.ek-article-prose h3 {
+  margin-top: var(--ek-space-lg);
+  margin-bottom: var(--ek-space-xs);
+  font-size: var(--ek-h5-size);
+  color: var(--ek-color-text);
+}
+
+.ek-article-prose ul,
+.ek-article-prose ol {
+  margin-bottom: var(--ek-space-md);
+  padding-left: 1.5em;
+}
+
+.ek-article-prose li {
+  margin-bottom: 0.5em;
+}
+
+.ek-article-prose a {
+  color: var(--ek-color-accent);
+  text-decoration: underline;
+}
+
+.ek-article-prose .ek-blog-meta {
+  color: var(--ek-color-muted);
+  font-size: var(--ek-font-size-sm);
+  margin-bottom: var(--ek-space-md);
 }
