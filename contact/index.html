@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Contact — Elombe Kisala | Designer &amp; Developer</title>
-  <meta name="description" content="Get in touch for web design, development, or automation projects. Elombe responds within 24 hours.">
+  <title>Contact — Elombe Kisala</title>
+  <meta name="description" content="Contact Elombe Kisala for collaborations, partnerships, or media. Service projects go through SWFT Studios.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="canonical" href="https://elombekisala.com/contact/">
   <meta property="og:title" content="Contact — Elombe Kisala">
-  <meta property="og:description" content="Get in touch for web design, development, or automation projects. Elombe responds within 24 hours.">
+  <meta property="og:description" content="Contact Elombe Kisala for collaborations, partnerships, or media. Service projects go through SWFT Studios.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://elombekisala.com/contact/">
   <meta property="og:image" content="https://elombekisala.com/images/webclip.jpg">
@@ -25,35 +25,63 @@
       <section class="ek-section">
         <div class="ek-container">
           <h1>Contact</h1>
-          <p class="ek-prose">Fill out the form below and I'll get back to you within 24 hours. You can also email <a href="mailto:elombekisala@gmail.com">elombekisala@gmail.com</a> or connect on <a href="https://www.linkedin.com/in/nsonsa-kisala/" target="_blank" rel="noopener noreferrer">LinkedIn</a>.</p>
-          <div class="ek-form" style="max-width: 500px; margin-top: 2rem;">
-            <form id="contact-form" action="#" method="post" class="ek-stack-md">
-              <div class="ek-field">
-                <label class="ek-label" for="contact-name">Name</label>
-                <input type="text" id="contact-name" name="name" class="ek-input" required placeholder="Your name">
-              </div>
-              <div class="ek-field">
-                <label class="ek-label" for="contact-email">Email</label>
-                <input type="email" id="contact-email" name="email" class="ek-input" required placeholder="your@email.com">
-              </div>
-              <div class="ek-field">
-                <label class="ek-label" for="contact-message">Message</label>
-                <textarea id="contact-message" name="message" class="ek-textarea" required placeholder="How can I help?"></textarea>
-              </div>
-              <div id="contact-status" class="ek-success" style="display: none;"></div>
-              <div id="contact-error" class="ek-error" style="display: none;"></div>
-              <button type="submit" class="ek-btn">Send message</button>
-            </form>
-          </div>
-          <div class="ek-stack-lg" style="margin-top: 2rem;">
-            <h2>What happens next</h2>
-            <p class="ek-prose">I'll reply within 24 hours. We can set up a short call to discuss your project, timeline, and next steps.</p>
-          </div>
+          <p class="ek-prose">Choose the path that fits why you’re reaching out.</p>
+        </div>
+      </section>
+      <section class="ek-section">
+        <div class="ek-container">
+          <h2>Service inquiries</h2>
+          <p class="ek-prose">For websites, photography, video, or digital systems, submit your project through SWFT Studios so I can understand the scope properly.</p>
+          <a href="https://swftstudios.com/?utm_source=elombekisala&amp;utm_medium=personal_site&amp;utm_campaign=swft_referral" target="_blank" rel="noopener noreferrer" class="ek-btn" data-analytics="swft_click" data-analytics-destination="swft_home">Start With SWFT</a>
+          <a href="https://swftstudios.com/?utm_source=elombekisala&amp;utm_medium=personal_site&amp;utm_campaign=growth_audit" target="_blank" rel="noopener noreferrer" class="ek-btn ek-btn-secondary" style="margin-left:0.5rem;" data-analytics="growth_audit_click">Get a Free Growth Audit</a>
+        </div>
+      </section>
+      <section class="ek-section">
+        <div class="ek-container" style="max-width: 36rem;">
+          <h2>Collaborations, speaking, partnerships, or general</h2>
+          <p class="ek-prose">Use the form below for collaborations, media, partnerships, or other non-service messages.</p>
+          <form id="contact-form" class="ek-form ek-stack-md" action="https://formsubmit.co/elombekisala@gmail.com" method="POST" style="margin-top: 1.5rem;" novalidate>
+            <input type="hidden" name="_subject" value="ElombeKisala.com contact">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://elombekisala.com/contact/?sent=1">
+            <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;height:0;width:0;opacity:0;">
+            <div class="ek-field">
+              <label class="ek-label" for="contact-name">Name</label>
+              <input type="text" id="contact-name" name="name" class="ek-input" required autocomplete="name">
+            </div>
+            <div class="ek-field">
+              <label class="ek-label" for="contact-email">Email</label>
+              <input type="email" id="contact-email" name="email" class="ek-input" required autocomplete="email">
+            </div>
+            <div class="ek-field">
+              <label class="ek-label" for="contact-reason">Reason for contacting</label>
+              <select id="contact-reason" name="reason" class="ek-input" required>
+                <option value="">Select a reason</option>
+                <option value="Collaboration">Collaboration</option>
+                <option value="Speaking, partnerships, or media">Speaking, partnerships, or media</option>
+                <option value="General message">General message</option>
+                <option value="Service inquiry (prefer SWFT)">Service inquiry (I’ll still point you to SWFT)</option>
+              </select>
+            </div>
+            <div class="ek-field">
+              <label class="ek-label" for="contact-message">Message</label>
+              <textarea id="contact-message" name="message" class="ek-textarea" required rows="5"></textarea>
+            </div>
+            <div class="ek-field">
+              <label class="ek-label" for="contact-link">Relevant link (optional)</label>
+              <input type="url" id="contact-link" name="link" class="ek-input" placeholder="https://">
+            </div>
+            <div id="contact-status" class="ek-success" style="display: none;" role="status"></div>
+            <div id="contact-error" class="ek-error" style="display: none;" role="alert"></div>
+            <button type="submit" id="contact-submit" class="ek-btn">Send Message</button>
+          </form>
         </div>
       </section>
     </main>
     <div data-include="footer"></div>
   </div>
+  <script src="/src/scripts/analytics.js"></script>
   <script src="/src/scripts/injectPartials.js"></script>
   <script src="/contact/index.js"></script>
 </body>

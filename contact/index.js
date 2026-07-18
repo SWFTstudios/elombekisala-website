@@ -1,59 +1,43 @@
 (function () {
   var form = document.getElementById('contact-form');
+  if (!form) return;
   var statusEl = document.getElementById('contact-status');
   var errorEl = document.getElementById('contact-error');
-  if (!form) return;
+  var submitBtn = document.getElementById('contact-submit');
 
-  // Replace with your Formspree form ID (e.g. from https://formspree.io/ → Get form endpoint)
-  var endpoint = 'https://formspree.io/f/xjvnqxyz';
+  if (typeof location !== 'undefined' && location.search.indexOf('sent=1') !== -1 && statusEl) {
+    statusEl.style.display = 'block';
+    statusEl.textContent = 'Thanks — your message was sent. I’ll reply as soon as I can.';
+  }
 
-  function showStatus(msg, isError) {
-    if (statusEl) {
-      statusEl.style.display = isError ? 'none' : 'block';
-      statusEl.textContent = isError ? '' : msg;
-    }
-    if (errorEl) {
-      errorEl.style.display = isError ? 'block' : 'none';
-      errorEl.textContent = isError ? msg : '';
-    }
+  function showError(msg) {
+    if (!errorEl) return;
+    errorEl.textContent = msg;
+    errorEl.style.display = 'block';
   }
 
   form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    showStatus('', false);
-
-    var body = new FormData(form);
-    var submitBtn = form.querySelector('button[type="submit"]');
+    if (errorEl) errorEl.style.display = 'none';
+    var honey = form.querySelector('[name="_honey"]');
+    if (honey && honey.value) {
+      e.preventDefault();
+      return;
+    }
+    var name = form.querySelector('[name="name"]');
+    var email = form.querySelector('[name="email"]');
+    var reason = form.querySelector('[name="reason"]');
+    var message = form.querySelector('[name="message"]');
+    if (!name.value.trim() || !email.value.trim() || !reason.value || !message.value.trim()) {
+      e.preventDefault();
+      showError('Please complete all required fields.');
+      return;
+    }
+    if (window.ekTrack) {
+      window.ekTrack('contact_form_submit', { form_name: 'contact', destination: reason.value });
+    }
     if (submitBtn) {
       submitBtn.disabled = true;
       submitBtn.textContent = 'Sending…';
     }
-
-    fetch(endpoint, {
-      method: 'POST',
-      body: body,
-      headers: { Accept: 'application/json' }
-    })
-      .then(function (r) {
-        if (r.ok) {
-          showStatus('Thanks! I\'ll get back to you within 24 hours.', false);
-          form.reset();
-        } else {
-          return r.json().then(function (data) {
-            showStatus(data.error || 'Something went wrong. Please try again or email elombekisala@gmail.com.', true);
-          }, function () {
-            showStatus('Something went wrong. Please try again or email elombekisala@gmail.com.', true);
-          });
-        }
-      })
-      .catch(function () {
-        showStatus('Network error. Please try again or email elombekisala@gmail.com.', true);
-      })
-      .finally(function () {
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.textContent = 'Send message';
-        }
-      });
   });
 })();
