@@ -9,7 +9,8 @@
   var PARTIALS = {
     header: '/src/partials/header.html',
     footer: '/src/partials/footer.html',
-    cta: '/src/partials/cta.html'
+    cta: '/src/partials/cta.html',
+    'join-the-build': '/src/partials/join-the-build.html'
   };
 
   function inject(name) {
@@ -80,6 +81,7 @@
     inject('header');
     inject('footer');
     inject('cta');
+    inject('join-the-build');
   }
 
   if (document.readyState === 'loading') {
