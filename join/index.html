@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Join the Build — Elombe Kisala</title>
+  <meta name="description" content="Get behind-the-scenes updates on the businesses, websites, products, and creative projects Elombe Kisala is building.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="https://elombekisala.com/join/">
+  <meta property="og:title" content="Join the Build — Elombe Kisala">
+  <meta property="og:description" content="Get behind-the-scenes updates on the businesses, websites, products, and creative projects Elombe Kisala is building.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://elombekisala.com/join/">
+  <meta property="og:image" content="https://elombekisala.com/images/webclip.jpg">
+  <link href="/css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="/css/components.css" rel="stylesheet" type="text/css">
+  <link href="/css/elombekisala.css" rel="stylesheet" type="text/css">
+  <link href="/src/system/tokens.css" rel="stylesheet" type="text/css">
+  <link href="/src/system/util.css" rel="stylesheet" type="text/css">
+  <link href="/src/system/components.css" rel="stylesheet" type="text/css">
+</head>
+<body class="body">
+  <div class="main-body">
+    <div data-include="header"></div>
+    <main>
+      <section class="ek-section" data-analytics-view="join_the_build_view">
+        <div class="ek-container" style="max-width: 36rem;">
+          <h1>Join the Build</h1>
+          <p class="ek-prose">Get behind-the-scenes updates on the businesses, websites, products, and creative projects I’m building—along with the lessons that come from figuring them out.</p>
+          <ul class="ek-prose">
+            <li>Project updates and build logs</li>
+            <li>Lessons from building businesses</li>
+            <li>Website and content insights</li>
+            <li>Product experiments and creative process</li>
+            <li>Failures, lessons, and new videos</li>
+          </ul>
+          <form id="join-build-page-form" class="ek-form ek-stack-md" action="https://formsubmit.co/elombekisala@gmail.com" method="POST" style="margin-top: 1.5rem;" novalidate>
+            <input type="hidden" name="_subject" value="Join the Build — new subscriber">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://elombekisala.com/join/thank-you/">
+            <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;height:0;width:0;opacity:0;">
+            <div class="ek-field">
+              <label class="ek-label" for="join-first-name">First name</label>
+              <input type="text" id="join-first-name" name="first_name" class="ek-input" required autocomplete="given-name" aria-required="true">
+            </div>
+            <div class="ek-field">
+              <label class="ek-label" for="join-email">Email</label>
+              <input type="email" id="join-email" name="email" class="ek-input" required autocomplete="email" aria-required="true">
+            </div>
+            <div class="ek-field">
+              <label class="ek-label" for="join-interest">What are you most interested in? (optional)</label>
+              <select id="join-interest" name="interest" class="ek-input">
+                <option value="">Select an interest</option>
+                <option value="Building a business">Building a business</option>
+                <option value="Websites and design">Websites and design</option>
+                <option value="Content creation and filmmaking">Content creation and filmmaking</option>
+                <option value="Artificial intelligence and automation">Artificial intelligence and automation</option>
+                <option value="Motorcycle and vinyl-wrap projects">Motorcycle and vinyl-wrap projects</option>
+                <option value="Everything">Everything</option>
+              </select>
+            </div>
+            <label class="ek-prose" style="display:flex;gap:0.5rem;align-items:flex-start;">
+              <input type="checkbox" id="join-consent" name="consent" value="yes" required aria-required="true" style="margin-top:0.25rem;">
+              <span>I agree to receive email updates from Elombe Kisala. Read the <a href="/privacy/">privacy policy</a>.</span>
+            </label>
+            <div id="join-error" class="ek-error" style="display:none;" role="alert"></div>
+            <button type="submit" id="join-submit" class="ek-btn" data-analytics="join_the_build_submit">Join the Build</button>
+            <p class="ek-prose" style="font-size:0.9em;opacity:0.8;">No spam. Just useful updates, new projects, and honest lessons from the process.</p>
+          </form>
+        </div>
+      </section>
+    </main>
+    <div data-include="footer"></div>
+  </div>
+  <script src="/src/scripts/analytics.js"></script>
+  <script src="/src/scripts/injectPartials.js"></script>
+  <script src="/join/index.js"></script>
+</body>
+</html>
