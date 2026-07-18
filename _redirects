@@ -1,0 +1,23 @@
+# Cloudflare Pages redirects — personal brand IA
+/work /projects 301
+/work/ /projects/ 301
+/work/core-home /projects/core-home/ 301
+/work/core-home/ /projects/core-home/ 301
+/work/blurred-lines /projects/blurred-lines/ 301
+/work/blurred-lines/ /projects/blurred-lines/ 301
+/work/built-by-me-ez /projects/built-by-me-ez/ 301
+/work/built-by-me-ez/ /projects/built-by-me-ez/ 301
+/blog /journal 301
+/blog/ /journal/ 301
+/blog/webflow-cost /journal/webflow-cost/ 301
+/blog/webflow-cost/ /journal/webflow-cost/ 301
+/blog/shopify-vs-webflow /journal/shopify-vs-webflow/ 301
+/blog/shopify-vs-webflow/ /journal/shopify-vs-webflow/ 301
+/blog/automation-for-leads /journal/automation-for-leads/ 301
+/blog/automation-for-leads/ /journal/automation-for-leads/ 301
+/blog/seo-basics-webflow /journal/seo-basics-webflow/ 301
+/blog/seo-basics-webflow/ /journal/seo-basics-webflow/ 301
+/blog/how-to-choose-cms /journal/how-to-choose-cms/ 301
+/blog/how-to-choose-cms/ /journal/how-to-choose-cms/ 301
+/blog/make-vs-zapier /journal/make-vs-zapier/ 301
+/blog/make-vs-zapier/ /journal/make-vs-zapier/ 301
