@@ -84,6 +84,11 @@
   from { transform: translateX(-70%); }
   to { transform: translateX(0%); }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .loop-marquee_item-top,
+  .loop-marquee_item-bottom { animation: none !important; transform: none !important; }
+}
 </style>
 </head>
 <body class="body">
