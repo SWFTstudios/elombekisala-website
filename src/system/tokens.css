@@ -57,9 +57,9 @@
   /* Radius */
   --ek-radius-pill: 999px;
   --ek-radius-dot: 99px;
-  --ek-radius-card: 20px;
+  --ek-radius-card: 32px;
   --ek-radius-panel: 16px;
-  --ek-radius-input: 10px;
+  --ek-radius-input: 999px;
 
   /* Shadows (from button/card styles) */
   --ek-shadow-button: 0 0 0 3px var(--ek-color-border);

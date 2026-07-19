@@ -54,5 +54,9 @@
 
 .ek-prose .ek-prose a {
   color: var(--ek-color-accent);
+  text-decoration: none;
+}
+
+.ek-prose .ek-prose a:hover {
   text-decoration: underline;
 }
