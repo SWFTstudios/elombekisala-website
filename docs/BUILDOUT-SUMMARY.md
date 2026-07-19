@@ -113,12 +113,13 @@ This document describes the static site buildout: where files live, how to add c
 
 ---
 
-## Design tokens
+## Design tokens & typography
 
-- **Location:** `/src/system/tokens.css`
+- **Location:** `/src/system/tokens.css` (variables), `/src/system/base.css` (applies type/color to elements)
 - **Naming:** All variables use the `--ek-*` prefix (e.g. `--ek-color-accent`, `--ek-section-padding`, `--ek-font-family`).
-- **Usage:** New pages load, in order: Webflow CSS → `tokens.css` → `util.css` → `components.css`. Only **new** pages use the system layer; **index.html does not** load system CSS.
-- **To change the look of new pages:** Edit the variable values in `tokens.css`. Responsive overrides use the same breakpoints as the site (e.g. 991px, 767px, 479px).
+- **Usage:** New pages load, in order: Webflow CSS → `tokens.css` → `base.css` → `util.css` → `components.css`. **index.html** does not load the system layer, but shares the same fluid type scale via `css/elombekisala.css`.
+- **Style guide (internal):** `/styleguide/` — `noindex` + disallowed in `robots.txt`. Use it as the reference for colors, type, buttons, cards, forms, spacing, and layout when building new pages.
+- **To change the look of new pages:** Edit tokens in `tokens.css`. Body/heading colors and sizes are applied in `base.css`. Keep body copy on `.ek-prose` (≥18px); use `.ek-prose-sm` only inside cards.
 
 ---
 
@@ -159,4 +160,5 @@ This document describes the static site buildout: where files live, how to add c
 
 - **Internal links:** All nav links (header/footer) point to `/work/`, `/services/`, `/about/`, `/blog/`, `/contact/`, `/start/`. Case study and blog post pages link back to index and related items.
 - **Mobile:** All new pages use the same viewport meta and responsive tokens; verify on small viewports.
-- **Homepage:** `index.html` is unchanged; it does **not** load `/src/system/*.css` or the partial-injection script.
+- **Homepage:** `index.html` does **not** load `/src/system/*.css` or the partial-injection script; typography/color updates live in `css/elombekisala.css` so the homepage stays aligned with inner pages.
+- **Style guide:** Confirm `/styleguide/` is excluded from sitemap and blocked in `robots.txt` (with `/admin/`).

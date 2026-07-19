@@ -2,105 +2,239 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Styleguide — Elombe Kisala</title>
+  <title>Style Guide — Elombe Kisala (internal)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Internal design system reference. Not for public indexing.">
   <!-- 1) Webflow CSS (same as index.html) -->
   <link href="/css/normalize.css" rel="stylesheet" type="text/css">
   <link href="/css/components.css" rel="stylesheet" type="text/css">
   <link href="/css/elombekisala.css" rel="stylesheet" type="text/css">
-  <!-- 2–4) System layer (new pages only) -->
+  <!-- 2–5) System layer (new pages only) -->
   <link href="/src/system/tokens.css" rel="stylesheet" type="text/css">
+  <link href="/src/system/base.css" rel="stylesheet" type="text/css">
   <link href="/src/system/util.css" rel="stylesheet" type="text/css">
   <link href="/src/system/components.css" rel="stylesheet" type="text/css">
+  <style>
+    .sg-swatch {
+      width: 96px;
+      min-height: 72px;
+      border-radius: 8px;
+      border: 1px solid var(--ek-color-border);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 8px;
+    }
+    .sg-swatch span {
+      font-size: var(--ek-font-size-xs);
+      line-height: 1.3;
+      color: var(--ek-color-text);
+      word-break: break-word;
+    }
+    .sg-swatch.on-light span { color: #111; }
+    .sg-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+    .sg-type-row {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 1rem;
+      align-items: baseline;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--ek-color-border);
+    }
+    .sg-type-label {
+      font-size: var(--ek-font-size-xs);
+      color: var(--ek-color-muted);
+      font-family: ui-monospace, monospace;
+    }
+    .sg-space-demo {
+      background: var(--ek-color-accent);
+      width: 100%;
+      border-radius: 4px;
+    }
+    .sg-nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(0, 0, 0, 0.92);
+      border-bottom: 1px solid var(--ek-color-border);
+      padding: 12px var(--ek-container-padding);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.25rem;
+    }
+    .sg-nav a {
+      font-size: var(--ek-font-size-sm);
+      color: var(--ek-color-muted);
+      text-decoration: none;
+    }
+    .sg-nav a:hover { color: var(--ek-color-accent); }
+    .sg-note {
+      font-size: var(--ek-font-size-sm);
+      color: var(--ek-color-muted);
+      max-width: 65ch;
+    }
+    code {
+      font-family: ui-monospace, monospace;
+      font-size: 0.9em;
+      color: var(--ek-color-accent);
+    }
+  </style>
 </head>
 <body class="body">
   <div class="main-body">
     <div data-include="header"></div>
 
+    <nav class="sg-nav" aria-label="Style guide sections">
+      <a href="#overview">Overview</a>
+      <a href="#colors">Colors</a>
+      <a href="#typography">Typography</a>
+      <a href="#buttons">Buttons</a>
+      <a href="#cards">Cards</a>
+      <a href="#forms">Forms</a>
+      <a href="#spacing">Spacing</a>
+      <a href="#layout">Layout</a>
+      <a href="#patterns">Patterns</a>
+    </nav>
+
     <main>
-      <section class="page-section">
-        <div class="container">
-          <h1 class="xl-header">Styleguide</h1>
-          <p class="paragraph">Visual QA for design tokens and components. Use this page to confirm new pages match the homepage vibe.</p>
+      <section id="overview" class="ek-section">
+        <div class="ek-container">
+          <h1>Style Guide</h1>
+          <p class="ek-prose">Internal reference for typography, color, spacing, and components. Hidden from search (<code>noindex</code> + <code>robots.txt</code>). Use these tokens and classes on every new page so type and color stay uniform.</p>
+          <p class="sg-note ek-mt-md">Load order for new pages: <code>normalize.css</code> → <code>components.css</code> → <code>elombekisala.css</code> → <code>tokens.css</code> → <code>base.css</code> → <code>util.css</code> → <code>components.css</code> (system).</p>
         </div>
       </section>
 
-      <!-- 1) Colors -->
-      <section class="ek-section">
+      <!-- Colors -->
+      <section id="colors" class="ek-section">
         <div class="ek-container">
           <h2 class="medium-header">Colors</h2>
-          <div class="ek-stack-md">
-            <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center;">
-              <div><div style="width: 80px; height: 50px; background: var(--ek-color-bg); border: 1px solid #333;"></div><span class="ek-prose" style="display: block; font-size: 12px;">ek-color-bg</span></div>
-              <div><div style="width: 80px; height: 50px; background: var(--ek-color-text); border: 1px solid #333;"></div><span class="ek-prose" style="display: block; font-size: 12px;">ek-color-text</span></div>
-              <div><div style="width: 80px; height: 50px; background: var(--ek-color-muted);"></div><span class="ek-prose" style="display: block; font-size: 12px;">ek-color-muted</span></div>
-              <div><div style="width: 80px; height: 50px; background: var(--ek-color-accent);"></div><span class="ek-prose" style="display: block; font-size: 12px;">ek-color-accent</span></div>
+          <p class="sg-note">Primary text is light on black. Accent green is for links, CTAs, and highlights. Never set ad-hoc hex colors in page HTML when a token exists.</p>
+          <div class="sg-row ek-mt-lg">
+            <div class="sg-swatch" style="background: var(--ek-color-bg);"><span>--ek-color-bg<br>#000</span></div>
+            <div class="sg-swatch" style="background: var(--ek-color-bg-mid);"><span>--ek-color-bg-mid<br>#1f1f1f</span></div>
+            <div class="sg-swatch" style="background: var(--ek-color-bg-dark);"><span>--ek-color-bg-dark<br>#131713</span></div>
+            <div class="sg-swatch" style="background: var(--ek-color-surface);"><span>--ek-color-surface<br>#2a2b31</span></div>
+            <div class="sg-swatch on-light" style="background: var(--ek-color-text);"><span>--ek-color-text<br>#f0f0f0</span></div>
+            <div class="sg-swatch" style="background: var(--ek-color-muted);"><span>--ek-color-muted<br>#9c9c9c</span></div>
+            <div class="sg-swatch on-light" style="background: var(--ek-color-accent);"><span>--ek-color-accent<br>#00ca25</span></div>
+            <div class="sg-swatch" style="background: var(--ek-color-accent-hover);"><span>--ek-color-accent-hover<br>#008b1a</span></div>
+          </div>
+          <div class="ek-stack-sm ek-mt-lg">
+            <p class="ek-prose">Body text uses <code>--ek-color-text</code>.</p>
+            <p class="ek-prose ek-text-muted">Muted / secondary text uses <code>.ek-text-muted</code> or <code>--ek-color-muted</code>.</p>
+            <p class="ek-caption">Captions use <code>.ek-caption</code> (14px, muted).</p>
+            <p class="ek-prose"><a href="#typography">Accent link example</a> — links inherit surrounding font size.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Typography -->
+      <section id="typography" class="ek-section">
+        <div class="ek-container">
+          <h2 class="medium-header">Typography</h2>
+          <p class="sg-note">Font: Satoshi variable. Body stays ≥18px. Headings use fluid <code>clamp()</code> so they scale smoothly from phone to desktop. Prefer semantic headings; use size classes only when needed.</p>
+
+          <div class="ek-stack-md ek-mt-lg">
+            <div class="sg-type-row">
+              <div class="sg-type-label">h1 / large</div>
+              <h1>Heading one</h1>
+            </div>
+            <div class="sg-type-row">
+              <div class="sg-type-label">h2 / medium</div>
+              <h2>Heading two</h2>
+            </div>
+            <div class="sg-type-row">
+              <div class="sg-type-label">h3 / small</div>
+              <h3>Heading three</h3>
+            </div>
+            <div class="sg-type-row">
+              <div class="sg-type-label">h4</div>
+              <h4>Heading four — section labels &amp; card titles</h4>
+            </div>
+            <div class="sg-type-row">
+              <div class="sg-type-label">h5</div>
+              <h5>Heading five</h5>
+            </div>
+            <div class="sg-type-row">
+              <div class="sg-type-label">h6</div>
+              <h6>Heading six</h6>
+            </div>
+            <div class="sg-type-row">
+              <div class="sg-type-label">xl-header</div>
+              <div class="xl-header">XL display</div>
+            </div>
+            <div class="sg-type-row">
+              <div class="sg-type-label">.ek-prose</div>
+              <p class="ek-prose ek-mb-0">Body: 18–20px fluid. Use for paragraphs and long copy on every page.</p>
+            </div>
+            <div class="sg-type-row">
+              <div class="sg-type-label">.ek-prose-sm</div>
+              <p class="ek-prose-sm ek-mb-0">Small body: 16px. Use inside cards and dense UI — not for main page copy.</p>
+            </div>
+            <div class="sg-type-row">
+              <div class="sg-type-label">.ek-caption</div>
+              <p class="ek-caption ek-mb-0">Caption / meta: 14px muted.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- 2) Typography -->
-      <section class="ek-section">
-        <div class="ek-container">
-          <h2 class="medium-header">Typography</h2>
-          <div class="ek-stack-lg">
-            <h1>Heading 1</h1>
-            <h2>Heading 2</h2>
-            <h3>Heading 3</h3>
-            <h4>Heading 4</h4>
-            <h5>Heading 5</h5>
-            <h6>Heading 6</h6>
-            <p class="ek-prose">Body text: Satoshi variable, 20px. Use for paragraphs and long copy.</p>
-            <p style="font-size: 14px; color: var(--ek-color-muted);">Small / caption</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- 3) Buttons -->
-      <section class="ek-section">
+      <!-- Buttons -->
+      <section id="buttons" class="ek-section">
         <div class="ek-container">
           <h2 class="medium-header">Buttons</h2>
-          <div class="ek-stack-md" style="display: flex; flex-wrap: wrap; gap: 1rem;">
+          <p class="sg-note">System buttons: <code>.ek-btn</code>. Homepage also uses Webflow <code>.button</code> — both share accent green, pill shape, and body-sized type.</p>
+          <div class="sg-row ek-mt-lg">
             <a href="#" class="ek-btn">Primary</a>
             <a href="#" class="ek-btn ek-btn-secondary">Secondary</a>
             <a href="#" class="ek-btn ek-btn-ghost">Ghost</a>
             <button type="button" class="ek-btn" disabled>Disabled</button>
+            <a href="#" class="button w-button">Webflow .button</a>
+            <a href="#" class="button secondary w-button">Webflow secondary</a>
           </div>
         </div>
       </section>
 
-      <!-- 4) Cards -->
-      <section class="ek-section">
+      <!-- Cards -->
+      <section id="cards" class="ek-section">
         <div class="ek-container">
           <h2 class="medium-header">Cards</h2>
-          <div class="ek-grid ek-grid-3">
+          <p class="sg-note">Card titles render at h4 size even when marked up as <code>h3</code>, so grids stay readable. Card body copy uses <code>.ek-prose-sm</code>.</p>
+          <div class="ek-grid ek-grid-3 ek-mt-lg">
             <div class="ek-card">
-              <h4 style="margin-top: 0;">Project card</h4>
-              <p class="ek-prose" style="font-size: 14px;">Dark panel style.</p>
+              <h3>Panel card</h3>
+              <p class="ek-prose-sm">Dark panel (<code>.ek-card</code>) for quotes, FAQ, and content blocks.</p>
             </div>
             <div class="ek-card-service">
-              <h4 style="margin-top: 0;">Service card</h4>
-              <p class="ek-prose" style="font-size: 14px;">Service detail block.</p>
+              <h3>Service card</h3>
+              <p class="ek-prose-sm">Service detail block (<code>.ek-card-service</code>).</p>
+              <a href="#" class="ek-btn ek-btn-secondary ek-mt-md">Learn more</a>
             </div>
-            <div class="ek-card-blog">
+            <a href="#" class="ek-card-blog">
               <div class="ek-card-blog-inner">
                 <span class="ek-badge">Content</span>
                 <h3>Blog card</h3>
                 <p class="ek-blog-card-meta">Sample date</p>
-                <p class="ek-prose">Dark card for posts with light text.</p>
+                <p class="ek-prose-sm">Dark card for posts with light text and green hover.</p>
               </div>
-            </div>
+            </a>
           </div>
         </div>
       </section>
 
-      <!-- 5) Form states -->
-      <section class="ek-section">
+      <!-- Forms -->
+      <section id="forms" class="ek-section">
         <div class="ek-container">
-          <h2 class="medium-header">Form elements</h2>
-          <div class="ek-form" style="max-width: 400px;">
+          <h2 class="medium-header">Forms</h2>
+          <p class="sg-note">Wrap fields in <code>.ek-form</code>. Inputs use body text size and muted placeholders.</p>
+          <div class="ek-form ek-mt-lg" style="max-width: 400px;">
             <div class="ek-field">
               <label class="ek-label">Label</label>
               <input type="text" class="ek-input" placeholder="Placeholder">
@@ -111,55 +245,72 @@
             </div>
             <div class="ek-success">Success message</div>
             <div class="ek-error">Error message</div>
+            <button type="button" class="ek-btn ek-mt-md">Submit</button>
           </div>
         </div>
       </section>
 
-      <!-- 6) Spacing -->
-      <section class="ek-section">
+      <!-- Spacing -->
+      <section id="spacing" class="ek-section">
         <div class="ek-container">
-          <h2 class="medium-header">Spacing (ek-stack)</h2>
-          <div class="ek-stack-md">
-            <div style="background: var(--ek-color-accent); height: 20px; width: 100%;"></div>
-            <div style="background: var(--ek-color-accent); height: 20px; width: 100%;"></div>
-            <div style="background: var(--ek-color-accent); height: 20px; width: 100%;"></div>
+          <h2 class="medium-header">Spacing</h2>
+          <p class="sg-note">Stack utilities: <code>.ek-stack-xs</code> (8) → <code>sm</code> (16) → <code>md</code> (24) → <code>lg</code> (32) → <code>xl</code> (40) → <code>2xl</code> (80). Section padding uses fluid <code>--ek-section-padding</code>.</p>
+          <div class="ek-stack-md ek-mt-lg" style="max-width: 320px;">
+            <div class="sg-space-demo" style="height: 8px;" title="xs"></div>
+            <div class="sg-space-demo" style="height: 16px;" title="sm"></div>
+            <div class="sg-space-demo" style="height: 24px;" title="md"></div>
+            <div class="sg-space-demo" style="height: 32px;" title="lg"></div>
+            <div class="sg-space-demo" style="height: 40px;" title="xl"></div>
           </div>
         </div>
       </section>
 
-      <!-- 7) Grid -->
-      <section class="ek-section">
+      <!-- Layout -->
+      <section id="layout" class="ek-section">
         <div class="ek-container">
-          <h2 class="medium-header">Grid (ek-grid-3)</h2>
-          <div class="ek-grid ek-grid-3">
-            <div class="ek-badge">Item 1</div>
-            <div class="ek-badge">Item 2</div>
-            <div class="ek-badge">Item 3</div>
+          <h2 class="medium-header">Layout</h2>
+          <p class="sg-note"><code>.ek-container</code> max-width 1440px with fluid side padding. Grids: <code>.ek-grid</code> + <code>.ek-grid-2|3|4</code> (collapse on tablet/mobile).</p>
+          <div class="ek-grid ek-grid-3 ek-mt-lg">
+            <div class="ek-badge">Grid item 1</div>
+            <div class="ek-badge">Grid item 2</div>
+            <div class="ek-badge">Grid item 3</div>
           </div>
         </div>
       </section>
 
-      <!-- 8) CTA block -->
-      <section class="ek-section">
+      <!-- Patterns -->
+      <section id="patterns" class="ek-section">
         <div class="ek-container">
-          <h2 class="medium-header">CTA block</h2>
+          <h2 class="medium-header">Patterns</h2>
+
+          <h3 class="ek-mt-lg">CTA block</h3>
           <div data-include="cta"></div>
-        </div>
-      </section>
 
-      <!-- 9) FAQ accordion -->
-      <section class="ek-section">
-        <div class="ek-container">
-          <h2 class="medium-header">FAQ accordion (details/summary)</h2>
-          <div class="ek-stack-sm">
-            <details class="ek-card">
-              <summary style="cursor: pointer; font-weight: 700;">Question one?</summary>
-              <p class="ek-prose" style="margin-top: 0.5rem;">Answer one.</p>
+          <h3 class="ek-mt-2xl" style="margin-top: var(--ek-space-2xl);">Quote</h3>
+          <blockquote class="ek-card ek-quote ek-mt-md">
+            <p class="ek-prose ek-mb-0">&ldquo;Sample client quote using the shared quote pattern.&rdquo;</p>
+            <cite>Client name, Company</cite>
+          </blockquote>
+
+          <h3 class="ek-mt-2xl" style="margin-top: var(--ek-space-2xl);">FAQ accordion</h3>
+          <div class="ek-stack-sm ek-mt-md">
+            <details class="ek-card ek-faq">
+              <summary>Question one?</summary>
+              <p class="ek-prose">Answer one — body size, accent links if needed.</p>
             </details>
-            <details class="ek-card">
-              <summary style="cursor: pointer; font-weight: 700;">Question two?</summary>
-              <p class="ek-prose" style="margin-top: 0.5rem;">Answer two.</p>
+            <details class="ek-card ek-faq">
+              <summary>Question two?</summary>
+              <p class="ek-prose">Answer two.</p>
             </details>
+          </div>
+
+          <h3 class="ek-mt-2xl" style="margin-top: var(--ek-space-2xl);">Article prose</h3>
+          <div class="ek-article-prose ek-prose ek-mt-md">
+            <h1>Article title</h1>
+            <p class="ek-blog-meta">Meta line · 5 min read</p>
+            <p>Long-form blog copy uses <code>.ek-article-prose</code>. In-article h2/h3 are stepped down for comfortable reading.</p>
+            <h2>Section heading</h2>
+            <p>Paragraph follows with body size and 65ch measure.</p>
           </div>
         </div>
       </section>
