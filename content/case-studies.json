@@ -22,5 +22,13 @@
     "image": "/images/built_by_me_ez_thumbnail-p-800.webp",
     "tags": ["Webflow", "Automation"],
     "url": "/work/built-by-me-ez/"
+  },
+  {
+    "title": "Alpha Ministries International",
+    "slug": "alpha-ministries-international",
+    "excerpt": "Webflow marketing site for a Christ-centered ministry: ministries, events, leadership, and donation pathways.",
+    "image": "/images/alpha_ministries_international_thumbnail.png",
+    "tags": ["Webflow"],
+    "url": "/work/alpha-ministries-international/"
   }
 ]
