@@ -69,10 +69,24 @@
 }
 
 .ek-card-project {
+  display: block;
   border-radius: var(--ek-radius-card);
   overflow: hidden;
   background-color: #fff;
   border: 1px solid #f7f7f7;
+  color: #111;
+  text-decoration: none;
+}
+
+.ek-card-project h3,
+.ek-card-project .ek-prose {
+  color: inherit;
+  text-decoration: none;
+}
+
+.ek-card-project .ek-badge {
+  background-color: #eef1ee;
+  color: #1a1a1a;
 }
 
 .ek-card-service {
@@ -106,12 +120,14 @@
 .ek-card-blog h3 {
   color: var(--ek-color-text);
   margin: 0.5rem 0;
+  text-decoration: none;
 }
 
 .ek-card-blog .ek-prose {
   color: var(--ek-color-text);
   font-size: 0.95em;
   line-height: 1.5;
+  text-decoration: none;
 }
 
 .ek-card-blog .ek-blog-card-meta {
@@ -133,7 +149,6 @@
 
 /* Form elements (scoped to ek-form) */
 .ek-form .ek-input,
-.ek-form .ek-textarea,
 .ek-form .ek-select {
   width: 100%;
   padding: 12px 16px;
@@ -143,6 +158,19 @@
   background-color: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--ek-color-border);
   border-radius: var(--ek-radius-input);
+}
+
+.ek-form .ek-textarea {
+  width: 100%;
+  padding: 12px 16px;
+  font-family: var(--ek-font-family);
+  font-size: var(--ek-font-size-body);
+  color: var(--ek-color-text);
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--ek-color-border);
+  border-radius: 24px;
+  min-height: 120px;
+  resize: vertical;
 }
 
 .ek-form .ek-input::placeholder,
@@ -155,11 +183,6 @@
 .ek-form .ek-select:focus {
   outline: none;
   border-color: var(--ek-color-accent);
-}
-
-.ek-form .ek-textarea {
-  min-height: 120px;
-  resize: vertical;
 }
 
 .ek-form .ek-label {
@@ -226,6 +249,10 @@
 
 .ek-article-prose a {
   color: var(--ek-color-accent);
+  text-decoration: none;
+}
+
+.ek-article-prose a:hover {
   text-decoration: underline;
 }
 
