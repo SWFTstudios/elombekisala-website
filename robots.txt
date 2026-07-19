@@ -2,5 +2,6 @@ User-agent: *
 Allow: /
 
 Disallow: /styleguide/
+Disallow: /admin/
 
 Sitemap: https://elombekisala.com/sitemap.xml

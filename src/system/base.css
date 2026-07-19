@@ -1,0 +1,182 @@
+/**
+ * Base typography & color — applied on all system pages.
+ * Loads after elombekisala.css so tokens win for text/color consistency.
+ * Does not restyle Webflow-specific chrome (nav logo, buttons use their classes).
+ */
+
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body,
+.body {
+  color: var(--ek-color-text);
+  background-color: var(--ek-color-bg);
+  font-family: var(--ek-font-family);
+  font-size: var(--ek-font-size-base);
+  font-weight: var(--ek-font-weight-normal);
+  line-height: var(--ek-line-height-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--ek-color-text);
+  font-family: var(--ek-font-family);
+  font-weight: var(--ek-font-weight-bold);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+h1 {
+  font-size: var(--ek-h1-size);
+  letter-spacing: var(--ek-letter-spacing-tight);
+  line-height: var(--ek-line-height-tight);
+}
+
+h2 {
+  font-size: var(--ek-h2-size);
+  letter-spacing: -0.03em;
+  line-height: var(--ek-line-height-tight);
+}
+
+h3 {
+  font-size: var(--ek-h3-size);
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+h4 {
+  font-size: var(--ek-h4-size);
+  font-weight: var(--ek-font-weight-normal);
+  line-height: 1.4;
+}
+
+h5 {
+  font-size: var(--ek-h5-size);
+  font-weight: var(--ek-font-weight-normal);
+  line-height: 1.5;
+}
+
+h6 {
+  font-size: var(--ek-h6-size);
+  font-weight: var(--ek-font-weight-bold);
+  line-height: 1.5;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 0.75em;
+  font-size: var(--ek-font-size-body);
+  line-height: var(--ek-line-height-body);
+  color: var(--ek-color-text);
+}
+
+/* Links inherit size from surrounding text so body copy stays uniform */
+a {
+  color: var(--ek-color-accent);
+  font-size: inherit;
+  line-height: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+a:hover {
+  color: var(--ek-color-accent-hover);
+}
+
+/* Chrome / interactive components: no underline, keep their own colors */
+a.navigation-link,
+a.brand,
+a.ek-btn,
+a.button,
+a.ek-card,
+a.ek-card-project,
+a.ek-card-service,
+a.ek-card-blog,
+a.footer-text,
+a.social-media-icon-container,
+a.w-nav-brand {
+  text-decoration: none;
+}
+
+a.navigation-link,
+a.footer-text {
+  color: inherit;
+}
+
+a.navigation-link:hover,
+a.navigation-link.w--current {
+  color: var(--ek-color-accent);
+}
+
+ul, ol {
+  font-size: var(--ek-font-size-body);
+  line-height: var(--ek-line-height-body);
+  color: var(--ek-color-text);
+}
+
+li {
+  margin-bottom: 0.35em;
+}
+
+blockquote {
+  font-size: var(--ek-font-size-body);
+  line-height: var(--ek-line-height-body);
+  color: var(--ek-color-text);
+}
+
+/* Utility text roles */
+.ek-text-muted {
+  color: var(--ek-color-muted);
+}
+
+.ek-caption {
+  font-size: var(--ek-font-size-xs);
+  line-height: 1.4;
+  color: var(--ek-color-muted);
+}
+
+/* Preserve nav / footer chrome sizes from elombekisala.css */
+.logo---navbar {
+  font-size: clamp(1.375rem, 1.2rem + 0.8vw, 1.875rem);
+  color: var(--ek-color-text);
+}
+
+.navigation-link {
+  font-size: var(--ek-font-size-sm);
+}
+
+.footer-text {
+  font-size: var(--ek-font-size-sm);
+}
+
+.xl-header {
+  font-size: var(--ek-xl-header-size);
+  color: var(--ek-color-text);
+}
+
+.large-header {
+  font-size: var(--ek-h1-size);
+  color: var(--ek-color-text);
+}
+
+.medium-header {
+  font-size: var(--ek-h2-size);
+  color: var(--ek-color-text);
+}
+
+.small-header {
+  font-size: var(--ek-h3-size);
+  color: var(--ek-color-text);
+}
+
+/* Light-surface exception: dark body text when intentionally on light cards */
+.ek-card-project,
+.ek-card-project p,
+.ek-card-project h3,
+.ek-card-project .ek-prose {
+  color: #111;
+}

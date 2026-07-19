@@ -6,7 +6,18 @@
 |------|------|
 | `css/normalize.css` | Resets / normalizes default browser styles. |
 | `css/components.css` | Webflow layout and UI primitives: `w-*` classes (w-container, w-layout-grid, w-button, w-nav, w-form, w-input, webflow-icons, etc.). Generic body/font (Arial) and form/button base styles. |
-| `css/elombekisala.css` | **Site-specific design**: Satoshi font, `:root` variables, typography (h1–h6, p, a), section/container/button/card/navbar styles. This file controls the look and feel of the homepage. |
+| `css/elombekisala.css` | **Site-specific design**: Satoshi font, `:root` variables, fluid typography (h1–h6, p, a), section/container/button/card/navbar styles. Controls homepage look and feel; base type scale is shared with inner pages. |
+
+### System layer (inner pages only)
+
+| File | Role |
+|------|------|
+| `src/system/tokens.css` | Design tokens (`--ek-*`): colors, fluid type, spacing, radius. |
+| `src/system/base.css` | Applies tokens to `body`, headings, `p`, links for uniform type/color. |
+| `src/system/util.css` | Layout helpers (`.ek-container`, `.ek-section`, `.ek-prose`, grids). |
+| `src/system/components.css` | Components (`.ek-btn`, cards, forms, article prose). |
+
+**Internal style guide:** `/styleguide/` (noindex, robots Disallow). Legacy Webflow template guide: `/admin/style-guide.html` (also Disallow).
 
 There is **no** separate `webflow.css` or `webflow.js` in the export; Webflow patterns live in `components.css` and site design in `elombekisala.css`.
 

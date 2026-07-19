@@ -46,17 +46,35 @@
 .ek-prose {
   font-size: var(--ek-font-size-body);
   line-height: var(--ek-line-height-body);
+  color: var(--ek-color-text);
 }
 
-.ek-prose .ek-prose p {
-  margin-bottom: 10px;
+.ek-prose-sm {
+  font-size: var(--ek-font-size-sm);
+  line-height: var(--ek-line-height-body);
+  color: var(--ek-color-text);
 }
 
-.ek-prose .ek-prose a {
+.ek-prose p {
+  margin-bottom: 0.75em;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+.ek-prose a {
   color: var(--ek-color-accent);
-  text-decoration: none;
+  font-size: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
 }
 
-.ek-prose .ek-prose a:hover {
-  text-decoration: underline;
+.ek-prose a:hover {
+  color: var(--ek-color-accent-hover);
 }
+
+.ek-mt-0 { margin-top: 0; }
+.ek-mt-sm { margin-top: var(--ek-space-sm); }
+.ek-mt-md { margin-top: var(--ek-space-md); }
+.ek-mt-lg { margin-top: var(--ek-space-lg); }
+.ek-mb-0 { margin-bottom: 0; }

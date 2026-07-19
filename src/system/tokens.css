@@ -1,14 +1,15 @@
 /**
- * Design tokens — extracted from homepage (elombekisala.css).
- * For use on NEW pages only. Do not load on index.html.
- * Values mirror existing design; no new theme.
+ * Design tokens — single source of truth for new pages (and base.css).
+ * Mirrors the homepage look (elombekisala.css) with fluid type that scales
+ * cleanly from phone → desktop. Do not load on index.html.
  */
 
 :root {
-  /* Colors (from existing :root and key classes) */
+  /* Colors */
   --ek-color-bg: #000;
   --ek-color-bg-mid: #1f1f1f;
   --ek-color-bg-dark: #131713;
+  --ek-color-surface: #2a2b31;
   --ek-color-text: #f0f0f0;
   --ek-color-text-alt: #f2f2f2;
   --ek-color-muted: #9c9c9c;
@@ -17,26 +18,35 @@
   --ek-color-accent-hover: #008b1a;
   --ek-color-accent-bg: rgba(0, 202, 37, 0.6);
   --ek-color-black: #000;
+  --ek-color-white: #fff;
 
-  /* Typography */
+  /* Typography — family & weights */
   --ek-font-family: "Satoshi variable", sans-serif;
-  --ek-font-size-base: 14px;
-  --ek-font-size-body: 20px;
-  --ek-font-size-sm: 16px;
-  --ek-font-size-xs: 18px;
   --ek-font-weight-normal: 500;
   --ek-font-weight-bold: 700;
-  --ek-line-height-tight: 1.125;
-  --ek-line-height-body: 1.5;
-  --ek-letter-spacing-tight: -2.5px;
+  --ek-line-height-tight: 1.15;
+  --ek-line-height-body: 1.55;
+  --ek-letter-spacing-tight: -0.04em;
 
-  /* Heading sizes (desktop) */
-  --ek-h1-size: 64px;
-  --ek-h2-size: 52px;
-  --ek-h3-size: 48px;
-  --ek-h4-size: 24px;
-  --ek-h5-size: 20px;
-  --ek-h6-size: 18px;
+  /*
+   * Type scale (fluid). Min ≈ phone, max ≈ desktop.
+   * Keeps readable body copy (≥18px) and proportional headings.
+   */
+  --ek-font-size-base: 16px;
+  --ek-font-size-xs: 0.875rem;   /* 14px — captions only */
+  --ek-font-size-sm: 1rem;       /* 16px — labels, meta, nav */
+  --ek-font-size-body: clamp(1.125rem, 1.05rem + 0.35vw, 1.25rem); /* 18–20px */
+  --ek-font-size-md: clamp(1.125rem, 1.05rem + 0.4vw, 1.375rem);   /* 18–22px */
+  --ek-font-size-lg: clamp(1.25rem, 1.1rem + 0.7vw, 1.5rem);       /* 20–24px */
+
+  --ek-h1-size: clamp(2.25rem, 1.4rem + 3.6vw, 4rem);       /* 36–64px */
+  --ek-h2-size: clamp(1.875rem, 1.25rem + 2.8vw, 3.25rem);  /* 30–52px */
+  --ek-h3-size: clamp(1.625rem, 1.15rem + 2.2vw, 3rem);     /* 26–48px */
+  --ek-h4-size: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);    /* 20–24px */
+  --ek-h5-size: clamp(1.125rem, 1.05rem + 0.35vw, 1.25rem); /* 18–20px */
+  --ek-h6-size: 1.125rem;                                    /* 18px */
+
+  --ek-xl-header-size: clamp(2.75rem, 1.2rem + 7vw, 7.5rem); /* 44–120px */
 
   /* Spacing */
   --ek-space-xs: 8px;
@@ -45,14 +55,13 @@
   --ek-space-lg: 32px;
   --ek-space-xl: 40px;
   --ek-space-2xl: 80px;
-  --ek-section-padding: 260px;
-  --ek-section-padding-sm: 160px;
-  --ek-container-padding: 120px;
-  --ek-container-padding-md: 40px;
-  --ek-container-padding-sm: 20px;
+  --ek-section-padding: clamp(5rem, 2rem + 12vw, 16.25rem); /* ~80–260px */
+  --ek-section-padding-sm: clamp(4rem, 3rem + 4vw, 10rem);
+  --ek-container-padding: clamp(1.25rem, 0.25rem + 6vw, 7.5rem); /* 20–120px */
 
   /* Layout */
   --ek-container-width: 1440px;
+  --ek-prose-width: 65ch;
 
   /* Radius */
   --ek-radius-pill: 999px;
@@ -61,28 +70,18 @@
   --ek-radius-panel: 16px;
   --ek-radius-input: 999px;
 
-  /* Shadows (from button/card styles) */
+  /* Shadows */
   --ek-shadow-button: 0 0 0 3px var(--ek-color-border);
 }
 
 @media screen and (max-width: 991px) {
   :root {
-    --ek-container-padding: 40px;
-    --ek-h1-size: 40px;
-    --ek-h2-size: 32px;
-    --ek-h3-size: 28px;
+    --ek-section-padding: clamp(5rem, 4rem + 6vw, 10rem);
   }
 }
 
 @media screen and (max-width: 767px) {
   :root {
-    --ek-container-padding: 20px;
-    --ek-section-padding: 160px;
-  }
-}
-
-@media screen and (max-width: 479px) {
-  :root {
-    --ek-h1-size: 56px;
+    --ek-section-padding: 5rem;
   }
 }

@@ -60,10 +60,10 @@
       }).join(' ');
       a.innerHTML =
         (item.image ? '<img src="' + escapeHtml(item.image) + '" alt="" style="width:100%;height:200px;object-fit:cover;">' : '') +
-        '<div style="padding: 1rem;">' +
-        (tagsHtml ? '<div class="ek-stack-sm" style="display:flex;flex-wrap:wrap;gap:0.25rem;margin-bottom:0.5rem;">' + tagsHtml + '</div>' : '') +
-        '<h3 style="margin:0 0 0.5rem;">' + escapeHtml(item.title) + '</h3>' +
-        '<p class="ek-prose" style="margin:0;font-size:0.9em;">' + escapeHtml(item.excerpt || '') + '</p>' +
+        '<div class="ek-card-body">' +
+        (tagsHtml ? '<div class="ek-stack-sm ek-card-tags">' + tagsHtml + '</div>' : '') +
+        '<h3>' + escapeHtml(item.title) + '</h3>' +
+        '<p class="ek-prose-sm ek-mb-0">' + escapeHtml(item.excerpt || '') + '</p>' +
         '</div>';
       gridEl.appendChild(a);
     });

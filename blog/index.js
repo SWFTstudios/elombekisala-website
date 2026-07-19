@@ -30,7 +30,7 @@
         (item.category ? '<span class="ek-badge">' + escapeHtml(item.category) + '</span>' : '') +
         '<h3>' + escapeHtml(item.title) + '</h3>' +
         (item.date ? '<p class="ek-blog-card-meta">' + formatDate(item.date) + '</p>' : '') +
-        '<p class="ek-prose">' + escapeHtml(item.summary || '') + '</p>' +
+        '<p class="ek-prose-sm">' + escapeHtml(item.summary || '') + '</p>' +
         '</div>';
       gridEl.appendChild(a);
     });
