@@ -176,12 +176,15 @@
 
   /* ---------- page transitions ---------- */
   var curtain = $('[data-curtain]');
+  function hideCurtain() { html.classList.remove('is-arriving'); if (curtain) { curtain.style.visibility = 'hidden'; curtain.style.transform = ''; } }
   if (motion && curtain) {
-    if (sessionStorage.getItem('ek-transition')) {
-      sessionStorage.removeItem('ek-transition');
-      gsap.set(curtain, { yPercent: 0 });
-      gsap.to(curtain, { yPercent: -100, duration: .9, ease: 'expo.inOut', delay: .05 });
-    }
+    var arriving = false;
+    try { arriving = !!sessionStorage.getItem('ek-transition'); sessionStorage.removeItem('ek-transition'); } catch (err) {}
+    if (arriving) {
+      // The curtain already covers the page (html.is-arriving), so lift it away.
+      gsap.fromTo(curtain, { yPercent: 0, y: 0, visibility: 'visible' }, { yPercent: -100, duration: .9, ease: 'expo.inOut', delay: .05, onComplete: hideCurtain });
+      setTimeout(hideCurtain, 2000); // safety net
+    } else hideCurtain();
     document.addEventListener('click', function (e) {
       var a = e.target.closest('a');
       if (!a || e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
@@ -191,10 +194,11 @@
       if (url.origin !== location.origin || (url.pathname === location.pathname && url.hash)) return;
       e.preventDefault();
       try { sessionStorage.setItem('ek-transition', '1'); } catch (err) {}
-      gsap.fromTo(curtain, { yPercent: 100 }, { yPercent: 0, duration: .7, ease: 'expo.inOut', onComplete: function () { location.href = url.href; } });
+      gsap.fromTo(curtain, { yPercent: 100, y: 0, visibility: 'visible' }, { yPercent: 0, duration: .6, ease: 'expo.inOut', onComplete: function () { location.href = url.href; } });
     });
-    window.addEventListener('pageshow', function (e) { if (e.persisted) gsap.set(curtain, { yPercent: 100 }); });
-  }
+    // Back/forward cache: never restore a page with the curtain down.
+    window.addEventListener('pageshow', function (e) { if (e.persisted) { gsap.killTweensOf(curtain); hideCurtain(); try { sessionStorage.removeItem('ek-transition'); } catch (err) {} } });
+  } else hideCurtain();
 
   if (!motion) { $$('[data-count]').forEach(function () {}); return; }
 
@@ -261,9 +265,10 @@
   if (cards.length && window.matchMedia('(min-width: 981px)').matches) {
     cards.forEach(function (card, i) {
       if (i === cards.length - 1) return;
-      gsap.to(card.querySelector('.stack-inner'), {
-        scale: .92, filter: 'brightness(.35)', ease: 'none',
-        scrollTrigger: { trigger: cards[i + 1], start: 'top bottom', end: 'top ' + (72 + 18) + 'px', scrub: true }
+      gsap.fromTo(card.querySelector('.stack-inner'), { scale: 1, filter: 'brightness(1)' }, {
+        scale: .95, filter: 'brightness(.6)', ease: 'none',
+        // Only recede once the next card is well on screen, finishing as it docks.
+        scrollTrigger: { trigger: cards[i + 1], start: 'top 55%', end: 'top ' + (72 + 18) + 'px', scrub: .4 }
       });
     });
   }

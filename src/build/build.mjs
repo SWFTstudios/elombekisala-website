@@ -81,8 +81,8 @@ function head({ title, description, path, image = '/assets/og.jpg', jsonld = [],
   <script>
     (function(d){var h=d.documentElement;h.classList.add('js');
     if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches)h.classList.add('motion');
-    try{if(!sessionStorage.getItem('ek-visited'))h.classList.add('first-visit')}catch(e){}
-    setTimeout(function(){if(!h.classList.contains('ready'))h.classList.remove('motion')},3500);})(document);
+    try{if(!sessionStorage.getItem('ek-visited'))h.classList.add('first-visit');if(sessionStorage.getItem('ek-transition'))h.classList.add('is-arriving')}catch(e){}
+    setTimeout(function(){if(!h.classList.contains('ready'))h.classList.remove('motion','is-arriving')},3500);})(document);
   </script>
   ${ld}
 </head>`;

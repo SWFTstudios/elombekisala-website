@@ -163,7 +163,8 @@ a:hover .roll > span, button:hover .roll > span, a:focus-visible .roll > span { 
 .preloader-count { font-size: clamp(2rem, 6vw, 5rem); letter-spacing: -0.04em; font-weight: 300; color: var(--accent); text-transform: none; }
 .preloader-bar { height: 1px; background: var(--line); margin-top: 24px; overflow: hidden; }
 .preloader-bar span { display: block; height: 100%; width: 100%; background: var(--accent); transform-origin: left; transform: scaleX(0); }
-.curtain { display: none; position: fixed; inset: 0; z-index: 140; background: var(--bg-3); pointer-events: none; transform: translateY(100%); }
+.curtain { display: none; position: fixed; inset: 0; z-index: 140; background: var(--bg-3); pointer-events: none; visibility: hidden; }
+.motion.is-arriving .curtain { visibility: visible; }
 .curtain::after { content: "EK"; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); font-weight: 800; font-size: 1.3rem; color: var(--accent); }
 
 /* ---------- reveal states (only when motion is on) ---------- */
