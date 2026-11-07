@@ -48,10 +48,18 @@ export const capabilities = [
   { n: '04', title: 'Grow', text: 'SEO, analytics and content that bring people back and show what is working.', items: ['SEO + GEO', 'GA4 / GTM', 'Content', 'CRO'] }
 ];
 
+// From LinkedIn (linkedin.com/in/nsonsa-kisala), most recent first.
 export const experience = [
-  { role: 'Web Developer', org: 'Core Home', when: '2025 – Present', text: 'Lead web development across Core Home’s brand portfolio: Shopify storefronts (Brooklyn Steel Co., Manna, TAL, Thyme & Table), new brand sites on Cloudflare (Winslow Pantry, Alder Meadow, People of Spice, FIZZ), corehome.com and its compliance CMS, and internal tools like the Finish Library and Project Reports.' },
-  { role: 'Founder & Creative Director', org: 'SWFT Studios', when: '2025 – Present', text: 'Design, content and technology studio in Jersey City. Run discovery, design direction and delivery for local businesses, and built the studio’s own payments, client portal and outreach platform.' },
-  { role: 'Designer & Developer', org: 'Independent', when: '2019 – Present', text: 'Websites, automation, video and VR tours for small businesses, ministries and creators. Products of my own: Snooze Lane (iOS) and Learn Lingala.' }
+  { role: 'Web Developer', org: 'Core Home', when: 'Aug 2023 – Present', where: 'Full-time · New York, NY · Hybrid', text: 'Lead web development across Core Home’s brand portfolio: Shopify storefronts (Brooklyn Steel Co., Manna, TAL, Thyme & Table), new brand sites on Cloudflare (Winslow Pantry, Alder Meadow, People of Spice, FIZZ), corehome.com and its compliance CMS, and internal tools like the Finish Library and Project Reports.' },
+  { role: 'Founder & Creative Director', org: 'SWFT Studios', when: 'Present', where: 'Jersey City, NJ', text: 'Design, content and technology studio for local businesses in NYC and North Jersey. Run discovery, design direction and delivery, and built the studio’s own payments, client portal and outreach platform. Also where I ship my own products: Snooze Lane (iOS) and Learn Lingala.' },
+  { role: 'Video Technician', org: 'Elegant Music Group (EMG)', when: 'Mar 2021 – Feb 2024', where: 'Part-time · Montclair, NJ · On-site', text: 'Set up and operated audio and video equipment for live-streamed events, delivering high-quality production and seamless streams. Video editing and live video streaming.' },
+  { role: 'Freelance Web Developer', org: 'EK Web Development', when: 'Sep 2019 – Oct 2023', where: 'New Jersey', text: 'Gave local businesses bespoke websites, virtual tours and video content to present themselves professionally online. Webflow, OpenAI API integrations and VR tours (Matterport, 3DVista).' },
+  { role: 'Intern', org: 'Hekemian & Co., Inc.', when: 'Feb 2019 – Sep 2019', where: 'Internship · Hackensack, NJ · On-site', text: 'Gathered and analyzed information on economic, financial and market trends to support business development initiatives.' },
+  { role: 'Literature Research Assistant', org: 'Global Management Research Center', when: 'Jul 2013 – Aug 2015', where: 'Waterbury, CT', text: 'Conducted literature research and reviewed books specific to current research topics.' }
+];
+
+export const education = [
+  { school: 'Full Sail University', degree: 'Bachelor’s degree, Mobile Development', when: '2017 – 2020', note: 'Grade: A' }
 ];
 
 export const testimonials = [

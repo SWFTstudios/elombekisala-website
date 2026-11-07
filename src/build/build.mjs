@@ -6,7 +6,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
 import { projects, archive } from './data/projects.mjs';
-import { site, nav, toolkit, capabilities, experience, testimonials, process as steps } from './data/site.mjs';
+import { site, nav, toolkit, capabilities, experience, education, testimonials, process as steps } from './data/site.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const commits = JSON.parse(readFileSync(join(ROOT, 'src/build/data/commits.json'), 'utf8'));
@@ -544,7 +544,7 @@ function about() {
       <p class="eyebrow" data-hero-in><span class="dot"></span> About · Résumé</p>
       <h1 class="display" data-split-hero>Hi, I’m <em class="serif">Elombe.</em></h1>
       <div class="prose-lg about-intro" data-hero-in>
-        <p>I’m a designer and developer in Jersey City. I started building websites in 2019 for family and friends, and I haven’t stopped since.</p>
+        <p>I’m a designer and developer in Jersey City with a bachelor’s in Mobile Development from Full Sail University. I started building websites in 2019 for family and friends, and I haven’t stopped since.</p>
         <p>Today I lead web development for <a class="ulink" href="/work/core-home/">Core Home</a>, where I run Shopify storefronts, launch brand sites and build internal tools for a portfolio of consumer brands. I also founded <a class="ulink" href="/work/swft-studios/">SWFT Studios</a>, and ship products of my own, like the iOS app <a class="ulink" href="/work/snooze-lane/">Snooze Lane</a> and <a class="ulink" href="/work/learn-lingala/">Learn Lingala</a>.</p>
         <p>What sets my work apart is range: I can direct the look, write the code, wire up payments and automation, and shoot the video. One person, one vision, no hand-offs.</p>
       </div>
@@ -573,19 +573,25 @@ function about() {
     <section class="cs-block">
       <div class="cs-label"><span class="mono">01</span><h2>Experience</h2></div>
       <ol class="timeline">
-        ${experience.map(e => `<li data-reveal><div class="tl-head"><h3>${e.role}, <span class="muted">${e.org}</span></h3><span class="mono">${e.when}</span></div><p>${e.text}</p></li>`).join('')}
+        ${experience.map(e => `<li data-reveal><div class="tl-head"><h3>${e.role}, <span class="muted">${e.org}</span></h3><span class="mono">${e.when}</span></div>${e.where ? `<p class="mono tl-where">${e.where}</p>` : ''}<p>${e.text}</p></li>`).join('')}
       </ol>
     </section>
     <section class="cs-block">
-      <div class="cs-label"><span class="mono">02</span><h2>Skills</h2></div>
+      <div class="cs-label"><span class="mono">02</span><h2>Education</h2></div>
+      <ol class="timeline">
+        ${education.map(e => `<li data-reveal><div class="tl-head"><h3>${e.school}</h3><span class="mono">${e.when}</span></div><p>${e.degree}${e.note ? ` · ${e.note}` : ''}</p></li>`).join('')}
+      </ol>
+    </section>
+    <section class="cs-block">
+      <div class="cs-label"><span class="mono">03</span><h2>Skills</h2></div>
       <dl class="skills">${skills.map(([k, v]) => `<div data-reveal><dt class="mono">${k}</dt><dd>${v}</dd></div>`).join('')}</dl>
     </section>
     <section class="cs-block">
-      <div class="cs-label"><span class="mono">03</span><h2>Roles I’m a fit for</h2></div>
+      <div class="cs-label"><span class="mono">04</span><h2>Roles I’m a fit for</h2></div>
       <div class="cs-body prose-lg"><p data-reveal>Front-end or full-stack web developer, Shopify developer, design engineer, creative technologist, and product-minded developer roles on web or iOS teams. Freelance and contract projects welcome.</p></div>
     </section>
     <section class="cs-block">
-      <div class="cs-label"><span class="mono">04</span><h2>Selected projects</h2></div>
+      <div class="cs-label"><span class="mono">05</span><h2>Selected projects</h2></div>
       <ul class="mini-list">${ordered.slice(0, 10).map(p => `<li data-reveal><a href="/work/${p.slug}/"><strong>${esc(p.title)}</strong><span>${esc(p.summary)}</span></a></li>`).join('')}</ul>
     </section>
   </div>
@@ -594,7 +600,7 @@ ${toolkitSection()}`;
   return page({
     title: 'About & résumé · Elombe Kisala', description: 'Elombe Kisala: designer and developer in Jersey City. Experience at Core Home and SWFT Studios, skills, tools and selected projects.',
     path: '/about/', body, bodyClass: 'is-about',
-    jsonld: [{ '@context': 'https://schema.org', '@type': 'ProfilePage', mainEntity: { '@type': 'Person', name: site.name, url: site.url, email: site.email, sameAs: [site.linkedin, site.github], jobTitle: 'Designer & Developer' } }]
+    jsonld: [{ '@context': 'https://schema.org', '@type': 'ProfilePage', mainEntity: { '@type': 'Person', name: site.name, url: site.url, email: site.email, sameAs: [site.linkedin, site.github], jobTitle: 'Web Developer', worksFor: { '@type': 'Organization', name: 'Core Home' }, alumniOf: { '@type': 'CollegeOrUniversity', name: 'Full Sail University' } } }]
   });
 }
 
