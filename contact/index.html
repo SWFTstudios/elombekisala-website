@@ -2,59 +2,150 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Contact — Elombe Kisala | Designer &amp; Developer</title>
-  <meta name="description" content="Get in touch for web design, development, or automation projects. Elombe responds within 24 hours.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact · Elombe Kisala</title>
+  <meta name="description" content="Start a project or talk about a role with Elombe Kisala, designer and developer in Jersey City / NYC. Replies within one business day.">
   <link rel="canonical" href="https://elombekisala.com/contact/">
-  <meta property="og:title" content="Contact — Elombe Kisala">
-  <meta property="og:description" content="Get in touch for web design, development, or automation projects. Elombe responds within 24 hours.">
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Elombe Kisala">
+  <meta property="og:title" content="Contact · Elombe Kisala">
+  <meta property="og:description" content="Start a project or talk about a role with Elombe Kisala, designer and developer in Jersey City / NYC. Replies within one business day.">
   <meta property="og:url" content="https://elombekisala.com/contact/">
-  <meta property="og:image" content="https://elombekisala.com/images/webclip.jpg">
-  <link href="/css/normalize.css" rel="stylesheet" type="text/css">
-  <link href="/css/components.css" rel="stylesheet" type="text/css">
-  <link href="/css/elombekisala.css" rel="stylesheet" type="text/css">
-  <link href="/src/system/tokens.css" rel="stylesheet" type="text/css">
-  <link href="/src/system/util.css" rel="stylesheet" type="text/css">
-  <link href="/src/system/components.css" rel="stylesheet" type="text/css">
+  <meta property="og:image" content="https://elombekisala.com/assets/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0b0b0a">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/images/webclip.jpg">
+  <link rel="preload" href="/fonts/Satoshi-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/instrument-serif-latin-400-italic.woff2" as="font" type="font/woff2" crossorigin>
+  
+  <link rel="stylesheet" href="/assets/css/site.css?v=199a9315">
+  <script>
+    (function(d){var h=d.documentElement;h.classList.add('js');
+    if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches)h.classList.add('motion');
+    try{if(!sessionStorage.getItem('ek-visited'))h.classList.add('first-visit')}catch(e){}
+    setTimeout(function(){if(!h.classList.contains('ready'))h.classList.remove('motion')},3500);})(document);
+  </script>
+  
 </head>
-<body class="body">
-  <div class="main-body">
-    <div data-include="header"></div>
-    <main>
-      <section class="ek-section">
-        <div class="ek-container">
-          <h1>Contact</h1>
-          <p class="ek-prose">Fill out the form below and I'll get back to you within 24 hours. You can also email <a href="mailto:elombekisala@gmail.com">elombekisala@gmail.com</a> or connect on <a href="https://www.linkedin.com/in/nsonsa-kisala/" target="_blank" rel="noopener noreferrer">LinkedIn</a>.</p>
-          <div class="ek-form" style="max-width: 500px; margin-top: 2rem;">
-            <form id="contact-form" action="#" method="post" class="ek-stack-md">
-              <div class="ek-field">
-                <label class="ek-label" for="contact-name">Name</label>
-                <input type="text" id="contact-name" name="name" class="ek-input" required placeholder="Your name">
-              </div>
-              <div class="ek-field">
-                <label class="ek-label" for="contact-email">Email</label>
-                <input type="email" id="contact-email" name="email" class="ek-input" required placeholder="your@email.com">
-              </div>
-              <div class="ek-field">
-                <label class="ek-label" for="contact-message">Message</label>
-                <textarea id="contact-message" name="message" class="ek-textarea" required placeholder="How can I help?"></textarea>
-              </div>
-              <div id="contact-status" class="ek-success" style="display: none;"></div>
-              <div id="contact-error" class="ek-error" style="display: none;"></div>
-              <button type="submit" class="ek-btn">Send message</button>
-            </form>
-          </div>
-          <div class="ek-stack-lg" style="margin-top: 2rem;">
-            <h2>What happens next</h2>
-            <p class="ek-prose">I'll reply within 24 hours. We can set up a short call to discuss your project, timeline, and next steps.</p>
-          </div>
-        </div>
-      </section>
-    </main>
-    <div data-include="footer"></div>
+<body class="is-contact">
+
+<div class="curtain" data-curtain aria-hidden="true"></div>
+<div class="cursor" data-cursor-el aria-hidden="true"><span class="cursor-label" data-cursor-label></span></div>
+
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header" data-header>
+  <a href="/" class="brand" aria-label="Elombe Kisala, home">
+    <span class="brand-mark" aria-hidden="true">EK</span>
+    <span class="brand-name"><span class="roll"><span>Elombe Kisala</span><span aria-hidden="true">Elombe Kisala</span></span></span>
+  </a>
+  <nav class="nav" aria-label="Main"><a href="/work/" class="nav-link"><span class="roll"><span>Work</span><span aria-hidden="true">Work</span></span></a><a href="/about/" class="nav-link"><span class="roll"><span>About</span><span aria-hidden="true">About</span></span></a><a href="/services/" class="nav-link"><span class="roll"><span>Services</span><span aria-hidden="true">Services</span></span></a><a href="/contact/" class="nav-link is-active" aria-current="page"><span class="roll"><span>Contact</span><span aria-hidden="true">Contact</span></span></a></nav>
+  <div class="header-end">
+    <span class="status"><span class="pulse" aria-hidden="true"></span><span class="status-text">Open to projects &amp; roles</span></span>
+    <span class="clock mono" data-clock aria-label="Local time in New York">NYC --:--</span>
+    <a href="/contact/" class="btn btn-sm" data-magnetic><span class="roll"><span>Let’s talk</span><span aria-hidden="true">Let’s talk</span></span></a>
+    <button class="menu-btn" data-menu-btn aria-expanded="false" aria-controls="menu"><span></span><span></span><span class="sr-only">Menu</span></button>
   </div>
-  <script src="/src/scripts/injectPartials.js"></script>
-  <script src="/contact/index.js"></script>
+</header>
+<div class="menu" id="menu" data-menu hidden>
+  <nav aria-label="Mobile">
+    <a href="/" class="menu-link"><span class="mono">00</span>Home</a>
+    <a href="/work/" class="menu-link"><span class="mono">01</span>Work</a>
+    <a href="/about/" class="menu-link"><span class="mono">02</span>About</a>
+    <a href="/services/" class="menu-link"><span class="mono">03</span>Services</a>
+    <a href="/contact/" class="menu-link"><span class="mono">04</span>Contact</a>
+  </nav>
+  <div class="menu-foot">
+    <a href="mailto:elombekisala@gmail.com">elombekisala@gmail.com</a>
+    <div class="menu-social"><a href="https://www.linkedin.com/in/nsonsa-kisala/" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/elombekisala" target="_blank" rel="noopener">GitHub</a></div>
+  </div>
+</div>
+<main id="main">
+
+<section class="page-hero contact-hero">
+  <div class="wrap contact-grid">
+    <div>
+      <p class="eyebrow" data-hero-in><span class="dot"></span> Contact</p>
+      <h1 class="display" data-split-hero>Tell me what <em class="serif">you’re building.</em></h1>
+      <p class="lead muted" data-hero-in>Projects, roles or a quick question. I reply within one business day.</p>
+      <div class="contact-direct" data-hero-in>
+        <button class="copy" data-copy="elombekisala@gmail.com" type="button"><span class="mono">Email</span><span class="copy-text">elombekisala@gmail.com</span><span class="copy-hint mono" aria-live="polite">Copy</span></button>
+        <a class="direct-link" href="https://www.linkedin.com/in/nsonsa-kisala/" target="_blank" rel="noopener"><span class="mono">LinkedIn</span>Connect <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+        <a class="direct-link" href="https://github.com/elombekisala" target="_blank" rel="noopener"><span class="mono">GitHub</span>See the code <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+      </div>
+      <ol class="next-steps" data-reveal>
+        <li><span class="mono">01</span>You send a few details.</li>
+        <li><span class="mono">02</span>I reply within a business day with questions or a time to talk.</li>
+        <li><span class="mono">03</span>You get a written scope, timeline and price.</li>
+      </ol>
+    </div>
+    <form class="form" data-contact-form action="https://formsubmit.co/elombekisala@gmail.com" method="POST" data-hero-in>
+      <input type="hidden" name="_subject" value="New inquiry from elombekisala.com">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <fieldset class="field">
+        <legend class="mono">What can I help with?</legend>
+        <div class="chips"><label class="chip"><input type="checkbox" name="interest" value="Website"><span>Website</span></label><label class="chip"><input type="checkbox" name="interest" value="Shopify store"><span>Shopify store</span></label><label class="chip"><input type="checkbox" name="interest" value="Web app"><span>Web app</span></label><label class="chip"><input type="checkbox" name="interest" value="iOS app"><span>iOS app</span></label><label class="chip"><input type="checkbox" name="interest" value="Automation"><span>Automation</span></label><label class="chip"><input type="checkbox" name="interest" value="Hiring / full-time role"><span>Hiring / full-time role</span></label><label class="chip"><input type="checkbox" name="interest" value="Something else"><span>Something else</span></label></div>
+      </fieldset>
+      <div class="field-row">
+        <label class="field"><span class="mono">Your name</span><input name="name" autocomplete="name" required></label>
+        <label class="field"><span class="mono">Email</span><input name="email" type="email" autocomplete="email" required></label>
+      </div>
+      <div class="field-row">
+        <label class="field"><span class="mono">Company or website <i>(optional)</i></span><input name="company" autocomplete="organization"></label>
+        <label class="field"><span class="mono">Budget <i>(optional)</i></span>
+          <select name="budget"><option value="">Select a range</option><option>Under $2,500</option><option>$2,500 – $7,500</option><option>$7,500 – $15,000</option><option>$15,000+</option><option>Not sure yet</option><option>It’s a job opening</option></select>
+        </label>
+      </div>
+      <label class="field"><span class="mono">Tell me about it</span><textarea name="message" rows="5" required placeholder="What you’re building, who it’s for, and when you’d like to launch."></textarea></label>
+      <div class="form-foot">
+        <button class="btn btn-lg" type="submit" data-magnetic><span class="roll"><span>Send message</span><span aria-hidden="true">Send message</span></span> <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
+        <p class="form-status" role="status" data-form-status></p>
+      </div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <p class="mono muted">Based in</p>
+        <p>Jersey City, NJ · New York<br>Working worldwide</p>
+      </div>
+      <div>
+        <p class="mono muted">Pages</p>
+        <ul class="footer-links">
+          <li><a href="/work/">Work</a></li><li><a href="/about/">About &amp; résumé</a></li><li><a href="/services/">Services</a></li><li><a href="/blog/">Writing</a></li><li><a href="/contact/">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="mono muted">Elsewhere</p>
+        <ul class="footer-links">
+          <li><a href="https://www.linkedin.com/in/nsonsa-kisala/" target="_blank" rel="noopener">LinkedIn <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a></li>
+          <li><a href="https://github.com/elombekisala" target="_blank" rel="noopener">GitHub <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a></li>
+          <li><a href="mailto:elombekisala@gmail.com">Email <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a></li>
+        </ul>
+      </div>
+      <div class="footer-top">
+        <button class="to-top mono" data-top type="button">Back to top ↑</button>
+      </div>
+    </div>
+    <div class="footer-word" aria-hidden="true">Elombe Kisala</div>
+    <div class="footer-base mono">
+      <span>© 2026 Elombe Kisala</span>
+      <span>Designed &amp; built by hand. No templates.</span>
+      <span><a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a></span>
+    </div>
+  </div>
+</footer>
+<script src="/assets/vendor/gsap.min.js" defer></script>
+<script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
+<script src="/assets/vendor/SplitText.min.js" defer></script>
+<script src="/assets/vendor/lenis.min.js" defer></script>
+<script src="/assets/js/site.js?v=4cc91941" defer></script>
 </body>
 </html>

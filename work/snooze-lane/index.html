@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Snooze Lane: case study · Elombe Kisala</title>
+  <meta name="description" content="A native iOS alarm that wakes commuters before their stop, using geofencing, live NYC/NJ transit data and a phone-call backup.">
+  <link rel="canonical" href="https://elombekisala.com/work/snooze-lane/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Elombe Kisala">
+  <meta property="og:title" content="Snooze Lane: case study · Elombe Kisala">
+  <meta property="og:description" content="A native iOS alarm that wakes commuters before their stop, using geofencing, live NYC/NJ transit data and a phone-call backup.">
+  <meta property="og:url" content="https://elombekisala.com/work/snooze-lane/">
+  <meta property="og:image" content="https://elombekisala.com/assets/work/snooze-lane/cover-sm.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0b0b0a">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/images/webclip.jpg">
+  <link rel="preload" href="/fonts/Satoshi-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/instrument-serif-latin-400-italic.woff2" as="font" type="font/woff2" crossorigin>
+  
+  <link rel="stylesheet" href="/assets/css/site.css?v=199a9315">
+  <script>
+    (function(d){var h=d.documentElement;h.classList.add('js');
+    if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches)h.classList.add('motion');
+    try{if(!sessionStorage.getItem('ek-visited'))h.classList.add('first-visit')}catch(e){}
+    setTimeout(function(){if(!h.classList.contains('ready'))h.classList.remove('motion')},3500);})(document);
+  </script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CreativeWork","name":"Snooze Lane case study","about":"A native iOS alarm that wakes commuters before their stop, using geofencing, live NYC/NJ transit data and a phone-call backup.","author":{"@type":"Person","name":"Elombe Kisala","url":"https://elombekisala.com"},"image":"https://elombekisala.com/assets/work/snooze-lane/cover.webp","url":"https://elombekisala.com/work/snooze-lane/","sameAs":"https://snoozelane.webflow.io"}</script>
+</head>
+<body class="is-case" style="--cs:#ff7a1a">
+
+<div class="curtain" data-curtain aria-hidden="true"></div>
+<div class="cursor" data-cursor-el aria-hidden="true"><span class="cursor-label" data-cursor-label></span></div>
+
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header" data-header>
+  <a href="/" class="brand" aria-label="Elombe Kisala, home">
+    <span class="brand-mark" aria-hidden="true">EK</span>
+    <span class="brand-name"><span class="roll"><span>Elombe Kisala</span><span aria-hidden="true">Elombe Kisala</span></span></span>
+  </a>
+  <nav class="nav" aria-label="Main"><a href="/work/" class="nav-link is-active" aria-current="page"><span class="roll"><span>Work</span><span aria-hidden="true">Work</span></span></a><a href="/about/" class="nav-link"><span class="roll"><span>About</span><span aria-hidden="true">About</span></span></a><a href="/services/" class="nav-link"><span class="roll"><span>Services</span><span aria-hidden="true">Services</span></span></a><a href="/contact/" class="nav-link"><span class="roll"><span>Contact</span><span aria-hidden="true">Contact</span></span></a></nav>
+  <div class="header-end">
+    <span class="status"><span class="pulse" aria-hidden="true"></span><span class="status-text">Open to projects &amp; roles</span></span>
+    <span class="clock mono" data-clock aria-label="Local time in New York">NYC --:--</span>
+    <a href="/contact/" class="btn btn-sm" data-magnetic><span class="roll"><span>Let’s talk</span><span aria-hidden="true">Let’s talk</span></span></a>
+    <button class="menu-btn" data-menu-btn aria-expanded="false" aria-controls="menu"><span></span><span></span><span class="sr-only">Menu</span></button>
+  </div>
+</header>
+<div class="menu" id="menu" data-menu hidden>
+  <nav aria-label="Mobile">
+    <a href="/" class="menu-link"><span class="mono">00</span>Home</a>
+    <a href="/work/" class="menu-link"><span class="mono">01</span>Work</a>
+    <a href="/about/" class="menu-link"><span class="mono">02</span>About</a>
+    <a href="/services/" class="menu-link"><span class="mono">03</span>Services</a>
+    <a href="/contact/" class="menu-link"><span class="mono">04</span>Contact</a>
+  </nav>
+  <div class="menu-foot">
+    <a href="mailto:elombekisala@gmail.com">elombekisala@gmail.com</a>
+    <div class="menu-social"><a href="https://www.linkedin.com/in/nsonsa-kisala/" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/elombekisala" target="_blank" rel="noopener">GitHub</a></div>
+  </div>
+</div>
+<main id="main">
+
+<article class="cs">
+  <header class="cs-hero">
+    <div class="wrap">
+      <a href="/work/" class="back mono" data-hero-in>← All work</a>
+      <p class="eyebrow" data-hero-in><span class="dot cs-dot"></span> iOS app · 2025–26</p>
+      <h1 class="display cs-title" data-split-hero>Snooze Lane</h1>
+      <p class="cs-summary" data-hero-in>Snooze Lane lets you fall asleep on the train or bus and still wake up on time. You pick a destination, and the app wakes you when you get close, by distance, not by guessing a time. I designed and built the whole product: the SwiftUI app, the Firebase backend and a Cloudflare Worker that serves live transit data.</p>
+      <ul class="tags"><li>iOS app</li><li>Web app</li></ul>
+      <dl class="cs-meta" data-hero-in><div><dt class="mono">Client</dt><dd>Own product</dd></div><div><dt class="mono">Role</dt><dd>Product, design, iOS and backend development</dd></div><div><dt class="mono">Timeline</dt><dd>Oct 2025 – present</dd></div><div><dt class="mono">Platform</dt><dd>SwiftUI, Firebase, Cloudflare Workers, RevenueCat, Twilio</dd></div><div><dt class="mono">Live</dt><dd><a href="https://snoozelane.webflow.io" target="_blank" rel="noopener" class="ulink">snoozelane.webflow.io <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a></dd></div></dl>
+    </div>
+  </header>
+  <figure class="cs-cover" data-cover>
+    <div class="cs-cover-inner" data-parallax><video src="/assets/work/snooze-lane/motion.mp4" poster="/assets/work/snooze-lane/cover.webp" muted loop playsinline autoplay preload="metadata" aria-label="Snooze Lane motion preview"></video></div>
+  </figure>
+  <section class="cs-metrics wrap"><dl class="metrics"><div data-reveal><dt>115</dt><dd>Swift files, ~28,600 lines</dd></div><div data-reveal><dt>3</dt><dd>transit agencies in one feed: MTA, NJ Transit, PATH</dd></div><div data-reveal><dt>88</dt><dd>commits from prototype to App Store hardening</dd></div><div data-reveal><dt>4.0 mi</dt><dd>adjustable live transit search radius</dd></div></dl></section>
+  <div class="wrap cs-content"><section class="cs-block"><div class="cs-label"><span class="mono">01</span><h2>The challenge</h2></div><div class="cs-body prose-lg"><p data-reveal>Time-based alarms fail commuters. Delays, express trains and traffic make “wake me in 40 minutes” useless. A location alarm has its own problems: iOS limits background location, trains go underground, and an alarm that never fires is worse than none.</p><p data-reveal>It also had to pass App Store review with subscriptions, ads consent, account deletion and a privacy manifest.</p></div></section><section class="cs-block"><div class="cs-label"><span class="mono">02</span><h2>The approach</h2></div><div class="cs-body prose-lg"><p data-reveal>Build the alarm around geofences and location triggers that iOS honors in the background, then layer backups on top: on-device alarms, a timed fallback, and a Twilio wake-up call that retries offline.</p><p data-reveal>Keep transit APIs off the phone. A Cloudflare Worker normalizes MTA subway and bus, NJ Transit rail and bus, and PATH feeds into one JSON contract, checks the user’s Pro entitlement and caches realtime data briefly.</p></div></section><section class="cs-block cs-wide"><div class="cs-label"><span class="mono">03</span><h2>What I built</h2></div><div class="features"><div class="feature" data-reveal><span class="mono">01</span><h3>Trip-based wake-up alarms</h3><p>Pick a destination and alarm range; a progress ring shows how close you are. Geofences fire even with the app closed.</p></div><div class="feature" data-reveal><span class="mono">02</span><h3>Underground-proof backups</h3><p>On-device alarms, a timed backup and a phone call that starts speaking when you answer.</p></div><div class="feature" data-reveal><span class="mono">03</span><h3>Live Transit Nearby</h3><p>Stops by route or by station within 0.10–4.00 miles, official line colors and minutes until departure.</p></div><div class="feature" data-reveal><span class="mono">04</span><h3>Rest-time estimates</h3><p>Apple MapKit routing ETAs with a crow-flies fallback, plus a sleep dashboard built around the commute.</p></div><div class="feature" data-reveal><span class="mono">05</span><h3>Subscriptions and wallet</h3><p>RevenueCat in-app purchases, Basic and Premium tiers, promo codes with an admin view.</p></div><div class="feature" data-reveal><span class="mono">06</span><h3>Store readiness</h3><p>In-app account deletion, UMP + ATT consent, privacy manifest, CI for iOS tests, worker typecheck and functions lint.</p></div></div></section><section class="cs-block cs-wide"><div class="cs-label"><span class="mono">04</span><h2>How it fits together</h2></div><ol class="flow" data-flow><li class="flow-node"><span class="mono flow-k">01</span><strong>SwiftUI app</strong><span>Geofence + trip state</span></li><li class="flow-node"><span class="mono flow-k">02</span><strong>Firebase</strong><span>Auth, Firestore, Functions</span></li><li class="flow-node"><span class="mono flow-k">03</span><strong>Worker</strong><span>Pro check + transit API</span></li><li class="flow-node"><span class="mono flow-k">04</span><strong>GTFS-RT feeds</strong><span>MTA · NJT · PATH</span></li><li class="flow-node"><span class="mono flow-k">05</span><strong>Twilio</strong><span>Wake-up call backup</span></li></ol></section></div>
+  <section class="cs-gallery wrap"><figure class="frame-desktop" data-reveal><div class="browser"><div class="browser-bar"><i></i><i></i><i></i><span class="mono">snoozelane.webflow.io</span></div><img src="/assets/work/snooze-lane/desk2.webp" alt="Snooze Lane marketing site" width="2000" height="1106" loading="lazy" decoding="async" sizes="(max-width: 900px) 100vw, 80vw"></div><figcaption class="mono">Snooze Lane marketing site</figcaption></figure></section>
+  <div class="wrap cs-content"><section class="cs-block cs-wide"><div class="cs-label"><span class="mono">05</span><h2>What improved</h2></div><div class="compare"><div class="compare-head mono"><span>Before</span><span>After</span></div><div class="compare-row" data-reveal><span class="before">Alarms set by guessing a time</span><span class="after">Alarms triggered by distance to the stop</span></div><div class="compare-row" data-reveal><span class="before">Location lost underground</span><span class="after">On-device and timed backups, offline call retry</span></div><div class="compare-row" data-reveal><span class="before">Three agencies, three formats</span><span class="after">One normalized Worker API the app trusts</span></div><div class="compare-row" data-reveal><span class="before">Rejected for an unused background mode</span><span class="after">Permissions trimmed to exactly what the app uses</span></div></div></section><section class="cs-block"><div class="cs-label"><span class="mono">06</span><h2>Stack &amp; why</h2></div><ul class="stack-why"><li data-reveal><strong>Swift 6 / SwiftUI / MapKit</strong><span>Native background location and the smoothest map experience on iPhone.</span></li><li data-reveal><strong>Firebase</strong><span>Phone auth, cloud-synced trips and preferences, server functions.</span></li><li data-reveal><strong>Cloudflare Workers</strong><span>One fast, cached API in front of messy transit feeds.</span></li><li data-reveal><strong>RevenueCat</strong><span>Subscriptions and entitlements without hand-rolled receipt checks.</span></li><li data-reveal><strong>Twilio</strong><span>A real phone call when a push notification is not enough.</span></li><li data-reveal><strong>GitHub Actions</strong><span>Tests and lint on every pull request.</span></li></ul></section><section class="cs-block"><div class="cs-label"><span class="mono">07</span><h2>Build log</h2></div><div class="log">
+    <p class="log-sum" data-reveal><span class="mono">88 commits · Oct 2025 – Oct 2026</span><span class="muted">Highlights from the repository’s commit history, in the original words.</span></p>
+    <ol class="log-list"><li data-reveal><time class="mono" datetime="2025-10-06">Oct 6, 2025</time><code>Add comprehensive export and sleep analytics functionality</code></li><li data-reveal><time class="mono" datetime="2025-10-06">Oct 6, 2025</time><code>Add access code entry for free user view in admin section</code></li><li data-reveal><time class="mono" datetime="2026-03-30">Mar 30, 2026</time><code>Trip progress ring, alarm range, map theming, and layout</code></li><li data-reveal><time class="mono" datetime="2026-06-19">Jun 19, 2026</time><code>Redesign Sleep Dashboard around commute rest estimates</code></li><li data-reveal><time class="mono" datetime="2026-09-10">Sep 10, 2026</time><code>Add PATH and NJ Transit live nearby via Worker GTFS feeds</code></li><li data-reveal><time class="mono" datetime="2026-10-07">Oct 7, 2026</time><code>Keep wake-ups working underground: on-device alarms, timed backup, offline call retry</code></li><li data-reveal><time class="mono" datetime="2026-10-25">Oct 25, 2026</time><code>Add in-app account deletion (App Store guideline 5.1.1(v))</code></li><li data-reveal><time class="mono" datetime="2026-10-25">Oct 25, 2026</time><code>Harden the alarm path for lock-screen and underground trips</code></li></ol>
+  </div></section></div>
+  
+  <nav class="next" aria-label="Next project">
+    <a href="/work/only-at-the-kiosk/" class="next-link" style="--cs:#7aa7ff" data-cursor="Next">
+      <span class="mono">Next project</span>
+      <span class="next-title">Only at the Kiosk</span>
+      <span class="next-media"><img src="/assets/work/only-at-the-kiosk/cover-sm.webp" alt="" width="960" height="600" loading="lazy" decoding="async" sizes="40vw"></span>
+    </a>
+  </nav>
+</article>
+
+<section class="cta" data-cta>
+  <div class="wrap">
+    <p class="eyebrow"><span class="dot"></span> Have a project or a role in mind?</p>
+    <a href="/contact/" class="cta-title" data-cursor="Say hi">
+      <span class="cta-line" data-split>Let’s build</span>
+      <span class="cta-line" data-split><em class="serif">something</em> good.</span>
+    </a>
+    <div class="cta-row">
+      <button class="copy" data-copy="elombekisala@gmail.com" type="button"><span class="mono">Email</span><span class="copy-text">elombekisala@gmail.com</span><span class="copy-hint mono" aria-live="polite">Copy</span></button>
+      <a href="/contact/" class="btn btn-lg" data-magnetic><span class="roll"><span>Start a project</span><span aria-hidden="true">Start a project</span></span> <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <p class="mono muted">Based in</p>
+        <p>Jersey City, NJ · New York<br>Working worldwide</p>
+      </div>
+      <div>
+        <p class="mono muted">Pages</p>
+        <ul class="footer-links">
+          <li><a href="/work/">Work</a></li><li><a href="/about/">About &amp; résumé</a></li><li><a href="/services/">Services</a></li><li><a href="/blog/">Writing</a></li><li><a href="/contact/">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="mono muted">Elsewhere</p>
+        <ul class="footer-links">
+          <li><a href="https://www.linkedin.com/in/nsonsa-kisala/" target="_blank" rel="noopener">LinkedIn <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a></li>
+          <li><a href="https://github.com/elombekisala" target="_blank" rel="noopener">GitHub <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a></li>
+          <li><a href="mailto:elombekisala@gmail.com">Email <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a></li>
+        </ul>
+      </div>
+      <div class="footer-top">
+        <button class="to-top mono" data-top type="button">Back to top ↑</button>
+      </div>
+    </div>
+    <div class="footer-word" aria-hidden="true">Elombe Kisala</div>
+    <div class="footer-base mono">
+      <span>© 2026 Elombe Kisala</span>
+      <span>Designed &amp; built by hand. No templates.</span>
+      <span><a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a></span>
+    </div>
+  </div>
+</footer>
+<script src="/assets/vendor/gsap.min.js" defer></script>
+<script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
+<script src="/assets/vendor/SplitText.min.js" defer></script>
+<script src="/assets/vendor/lenis.min.js" defer></script>
+<script src="/assets/js/site.js?v=4cc91941" defer></script>
+</body>
+</html>

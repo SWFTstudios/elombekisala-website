@@ -1,0 +1,12 @@
+{
+  "name": "elombekisala-website",
+  "private": true,
+  "version": "2.0.0",
+  "description": "Elombe Kisala portfolio: static site generated from project data.",
+  "type": "module",
+  "scripts": {
+    "build": "node src/build/build.mjs",
+    "dev": "node src/build/build.mjs && python3 -m http.server 8080"
+  },
+  "engines": { "node": ">=18" }
+}
