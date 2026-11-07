@@ -21,6 +21,8 @@
 export const projects = [
   {
     slug: 'built-by-me-ez',
+    result: 'Sales by text message → 6 packages sold and booked online',
+    file: 'workers/package-booking/index.js',
     title: 'Built By Me EZ',
     client: 'Omar Ndiaye, personal trainer',
     year: '2025–26',
@@ -95,6 +97,8 @@ export const projects = [
 
   {
     slug: 'snooze-lane',
+    result: 'Wake-ups that still fire underground, across 3 transit agencies',
+    file: 'Managers/LocationManager.swift',
     title: 'Snooze Lane',
     client: 'Own product',
     year: '2025–26',
@@ -161,6 +165,8 @@ export const projects = [
 
   {
     slug: 'only-at-the-kiosk',
+    result: 'Magazine, radio, shop and member accounts, shipped in 14 days',
+    file: 'js/kiosk-dotearth.js',
     title: 'Only at the Kiosk',
     client: 'Only at the Kiosk',
     year: '2026',
@@ -228,6 +234,8 @@ export const projects = [
 
   {
     slug: 'learn-lingala',
+    result: 'Zero to conversational: 227 phrases, offline, with AI speakers',
+    file: 'src/chat.js',
     title: 'Learn Lingala',
     client: 'Own product',
     year: '2026',
@@ -293,6 +301,8 @@ export const projects = [
 
   {
     slug: 'finish-library',
+    result: 'Excel and slide specs → one 3D source of truth for 108 finishes',
+    file: 'js/configurator-preview-3d.js',
     title: 'Core Home Finish Library',
     client: 'Core Home',
     year: '2026',
@@ -355,6 +365,8 @@ export const projects = [
 
   {
     slug: 'fizz',
+    result: 'A Webflow prototype → 16 motion modules and a matching Shopify theme',
+    file: 'js/fizz-bottle-scroll.js',
     title: 'FIZZ',
     client: 'Core Home',
     year: '2026',
@@ -419,6 +431,7 @@ export const projects = [
 
   {
     slug: 'swft-studios',
+    result: 'Quotes by email → 25 packages payable online, deposits included',
     title: 'SWFT Studios',
     client: 'My studio',
     year: '2026',
@@ -481,6 +494,7 @@ export const projects = [
 
   {
     slug: 'people-of-spice',
+    result: '44 blends from 22 kitchens, explorable from one globe',
     title: 'People of Spice',
     client: 'Core Home',
     year: '2025–26',
@@ -540,6 +554,7 @@ export const projects = [
 
   {
     slug: 'roller-reels',
+    result: 'Quotes in DMs → a 7-step booking flow in under 3 minutes',
     title: 'Roller Reels',
     client: 'Roller Reels',
     year: '2026',
@@ -597,6 +612,7 @@ export const projects = [
 
   {
     slug: 'winslow-pantry',
+    result: 'Three languages, WCAG 2.2 AA, live in one day',
     title: 'Winslow Pantry',
     client: 'Core Home',
     year: '2026',
@@ -651,6 +667,7 @@ export const projects = [
 
   {
     slug: 'alder-meadow',
+    result: 'One JSON catalog → every product page and a store finder',
     title: 'Alder Meadow',
     client: 'Core Home',
     year: '2026',
@@ -696,6 +713,7 @@ export const projects = [
 
   {
     slug: 'brooklyn-steel-co',
+    result: 'A product launch, a parts range and a help center in one store',
     title: 'Brooklyn Steel Co.',
     client: 'Core Home',
     year: '2025–26',
@@ -743,6 +761,7 @@ export const projects = [
 
   {
     slug: 'manna-hydration',
+    result: 'Lifestyle-first storefront with guided bottle discovery',
     title: 'Manna Hydration',
     client: 'Core Home',
     year: '2023–26',
@@ -774,6 +793,7 @@ export const projects = [
 
   {
     slug: 'tal-hydration',
+    result: 'Shop by use, or hand off to Walmart in one tap',
     title: 'TAL Hydration',
     client: 'Core Home',
     year: '2023–26',
@@ -804,6 +824,7 @@ export const projects = [
 
   {
     slug: 'thyme-and-table',
+    result: 'Hundreds of products, organized the way people cook',
     title: 'Thyme & Table',
     client: 'Core Home',
     year: '2023–26',
@@ -834,6 +855,7 @@ export const projects = [
 
   {
     slug: 'core-home',
+    result: '898 compliance records, findable from one modal',
     title: 'corehome.com',
     client: 'Core Home',
     year: '2023–26',
@@ -870,6 +892,7 @@ export const projects = [
 
   {
     slug: 'core-home-reports',
+    result: 'Commit logs → plain-language reports for leadership',
     title: 'Core Home Project Reports',
     client: 'Core Home',
     year: '2025–26',
@@ -914,6 +937,7 @@ export const projects = [
 
   {
     slug: 'blurred-lines',
+    result: 'Video moved to R2, the whole site served from the edge',
     title: 'Blurred Lines Entertainment',
     client: 'Yanko Hernando',
     year: '2023–26',
@@ -956,6 +980,7 @@ export const projects = [
 
   {
     slug: 'alpha-ministries-international',
+    result: 'Ministries, events and giving, one click from home',
     title: 'Alpha Ministries International',
     client: 'Alpha Ministries International',
     year: '2025',

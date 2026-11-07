@@ -11,15 +11,16 @@ export const site = {
 
 export const nav = [
   { href: '/work/', label: 'Work' },
-  { href: '/about/', label: 'About' },
   { href: '/services/', label: 'Services' },
-  { href: '/contact/', label: 'Contact' }
+  { href: '/about/', label: 'About' },
+  { href: '/blog/', label: 'Writing' }
 ];
 
 // The toolkit: what I use and what it means for a client.
 export const toolkit = [
   { name: 'Figma', cat: 'Design', mono: 'Fi', benefit: 'You see and approve the site before a line of code is written, so there are no surprises at launch.', used: [] },
   { name: 'Webflow', cat: 'Build', mono: 'Wf', benefit: 'A custom design your team can edit like a document, without calling a developer for every change.', used: ['core-home', 'blurred-lines', 'alpha-ministries-international'] },
+  { name: 'Payload CMS', cat: 'Build', mono: 'Pl', benefit: 'A free, open-source CMS your team edits with live preview, drafts and permissions, and that you own outright. New in my toolkit for 2026.', used: [] },
   { name: 'Shopify', cat: 'Commerce', mono: 'Sh', benefit: 'Checkout, inventory and payments you can trust, with a storefront that looks like your brand, not a template.', used: ['brooklyn-steel-co', 'manna-hydration', 'tal-hydration', 'thyme-and-table', 'fizz'] },
   { name: 'Cloudflare Workers', cat: 'Build', mono: 'Cf', benefit: 'Pages load fast everywhere and hosting costs stay close to zero, even with real back-end features.', used: ['built-by-me-ez', 'only-at-the-kiosk', 'learn-lingala', 'swft-studios'] },
   { name: 'D1 · KV · R2', cat: 'Build', mono: 'D1', benefit: 'Accounts, orders and media storage built into the same platform, with no extra servers to rent or patch.', used: ['only-at-the-kiosk', 'learn-lingala', 'blurred-lines'] },

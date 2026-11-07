@@ -13,15 +13,17 @@
   <meta property="og:url" content="https://elombekisala.com/work/swft-studios/">
   <meta property="og:image" content="https://elombekisala.com/assets/work/swft-studios/cover-sm.webp">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="theme-color" content="#0b0b0a">
+  <meta name="theme-color" content="#0f0f0e" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#ecebe6" media="(prefers-color-scheme: light)">
+  <meta name="color-scheme" content="dark light">
   <link rel="icon" href="/assets/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <link rel="preload" href="/fonts/Satoshi-Variable.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/fonts/instrument-serif-latin-400-italic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/work/swft-studios/cover.webp" as="image" fetchpriority="high">
-  <link rel="stylesheet" href="/assets/css/site.css?v=5cb93a08">
+  <link rel="stylesheet" href="/assets/css/site.css?v=4ab82b61">
   <script>
     (function(d){var h=d.documentElement;h.classList.add('js');
+    var t;try{t=localStorage.getItem('ek-theme')}catch(e){}if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';h.setAttribute('data-theme',t);
     if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches)h.classList.add('motion');
     try{if(!sessionStorage.getItem('ek-visited'))h.classList.add('first-visit');if(sessionStorage.getItem('ek-transition'))h.classList.add('is-arriving')}catch(e){}
     setTimeout(function(){if(!h.classList.contains('ready'))h.classList.remove('motion','is-arriving')},3500);})(document);
@@ -39,11 +41,15 @@
     <img class="brand-logo" src="/assets/brand/ek-logo-96.webp" alt="" width="52" height="48" aria-hidden="true">
     <span class="brand-name"><span class="roll"><span>Elombe Kisala</span><span aria-hidden="true">Elombe Kisala</span></span></span>
   </a>
-  <nav class="nav" aria-label="Main"><a href="/work/" class="nav-link is-active" aria-current="page"><span class="roll"><span>Work</span><span aria-hidden="true">Work</span></span></a><a href="/about/" class="nav-link"><span class="roll"><span>About</span><span aria-hidden="true">About</span></span></a><a href="/services/" class="nav-link"><span class="roll"><span>Services</span><span aria-hidden="true">Services</span></span></a><a href="/contact/" class="nav-link"><span class="roll"><span>Contact</span><span aria-hidden="true">Contact</span></span></a></nav>
+  <nav class="nav" aria-label="Main"><a href="/work/" class="nav-link is-active" aria-current="page"><span class="roll"><span>Work</span><span aria-hidden="true">Work</span></span></a><a href="/services/" class="nav-link"><span class="roll"><span>Services</span><span aria-hidden="true">Services</span></span></a><a href="/about/" class="nav-link"><span class="roll"><span>About</span><span aria-hidden="true">About</span></span></a><a href="/blog/" class="nav-link"><span class="roll"><span>Writing</span><span aria-hidden="true">Writing</span></span></a></nav>
   <div class="header-end">
-    <span class="status"><span class="pulse" aria-hidden="true"></span><span class="status-text">Open to projects &amp; roles</span></span>
-    <span class="clock mono" data-clock aria-label="Local time in New York">NYC --:--</span>
-    <a href="/contact/" class="btn btn-sm" data-magnetic><span class="roll"><span>Let’s talk</span><span aria-hidden="true">Let’s talk</span></span></a>
+    <a href="/contact/" class="btn btn-sm btn-outline header-cta" data-magnetic><span class="roll"><span>Start a project</span><span aria-hidden="true">Start a project</span></span></a>
+    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme">
+      <span class="tt-knob" aria-hidden="true">
+        <svg class="tt-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="tt-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+      </span>
+    </button>
     <button class="menu-btn" data-menu-btn aria-expanded="false" aria-controls="menu"><span></span><span></span><span class="sr-only">Menu</span></button>
   </div>
 </header>
@@ -51,9 +57,9 @@
   <nav aria-label="Mobile">
     <a href="/" class="menu-link"><span class="mono">00</span>Home</a>
     <a href="/work/" class="menu-link"><span class="mono">01</span>Work</a>
-    <a href="/about/" class="menu-link"><span class="mono">02</span>About</a>
-    <a href="/services/" class="menu-link"><span class="mono">03</span>Services</a>
-    <a href="/contact/" class="menu-link"><span class="mono">04</span>Contact</a>
+    <a href="/services/" class="menu-link"><span class="mono">02</span>Services</a>
+    <a href="/about/" class="menu-link"><span class="mono">03</span>About</a>
+    <a href="/blog/" class="menu-link"><span class="mono">04</span>Writing</a>
   </nav>
   <div class="menu-foot">
     <a href="mailto:elombekisala@gmail.com">elombekisala@gmail.com</a>
@@ -66,8 +72,9 @@
   <header class="cs-hero">
     <div class="wrap">
       <a href="/work/" class="back mono" data-hero-in>← All work</a>
-      <p class="eyebrow" data-hero-in><span class="dot cs-dot"></span> Agency platform · 2026</p>
+      <p class="eyebrow" data-hero-in>agency platform · 2026</p>
       <h1 class="display cs-title" data-split-hero>SWFT Studios</h1>
+      <div class="cs-result" data-hero-in><span class="mono muted">// result</span><p>Quotes by email → 25 packages payable online, deposits included</p></div>
       <p class="cs-summary" data-hero-in>SWFT Studios gets local businesses in NYC and North Jersey seen, chosen and booked: websites, photo and video, ads and follow-up. The site is also the business’s operating system: services with live pricing, online payments, a client portal and an AI-assisted outreach pipeline.</p>
       <ul class="tags"><li>Web app</li><li>Automation</li><li>AI</li></ul>
       <dl class="cs-meta" data-hero-in><div><dt class="mono">Client</dt><dd>My studio</dd></div><div><dt class="mono">Role</dt><dd>Founder &amp; creative director, design and build</dd></div><div><dt class="mono">Timeline</dt><dd>Sep – Nov 2026 (163 commits)</dd></div><div><dt class="mono">Platform</dt><dd>Cloudflare Workers, D1, Workers AI, Stripe, PostHog</dd></div><div><dt class="mono">Live</dt><dd><a href="https://www.swftstudios.com" target="_blank" rel="noopener" class="ulink">swftstudios.com <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a></dd></div></dl>
@@ -95,10 +102,10 @@
 
 <section class="cta" data-cta>
   <div class="wrap">
-    <p class="eyebrow"><span class="dot"></span> Have a project or a role in mind?</p>
+    <p class="eyebrow">Have a project or a role in mind?</p>
     <a href="/contact/" class="cta-title" data-cursor="Say hi">
       <span class="cta-line" data-split>Let’s build</span>
-      <span class="cta-line" data-split><em class="serif">something</em> good.</span>
+      <span class="cta-line" data-split><em class="em">something</em> good.</span>
     </a>
     <div class="cta-row">
       <button class="copy" data-copy="elombekisala@gmail.com" type="button"><span class="mono">Email</span><span class="copy-text">elombekisala@gmail.com</span><span class="copy-hint mono" aria-live="polite">Copy</span></button>
@@ -110,34 +117,48 @@
 
 <footer class="site-footer">
   <div class="wrap">
+    <div class="footer-top-row">
+      <a href="/" class="footer-brand" aria-label="Elombe Kisala, home"><img src="/assets/brand/ek-logo-192.webp" alt="" width="104" height="96"><span>Elombe Kisala</span></a>
+      <div class="footer-pitch">
+        <p>Design and engineering for brands, from first sketch to launch.</p>
+        <a href="mailto:elombekisala@gmail.com" class="footer-email">elombekisala@gmail.com</a>
+      </div>
+    </div>
     <div class="footer-grid">
       <div>
-        <p class="mono muted">Based in</p>
-        <p>Jersey City, NJ · New York<br>Working worldwide</p>
-      </div>
-      <div>
-        <p class="mono muted">Pages</p>
+        <p class="mono label">sitemap</p>
         <ul class="footer-links">
-          <li><a href="/work/">Work</a></li><li><a href="/about/">About &amp; résumé</a></li><li><a href="/services/">Services</a></li><li><a href="/blog/">Writing</a></li><li><a href="/contact/">Contact</a></li>
+          <li><a href="/work/">Work</a></li><li><a href="/services/">Services</a></li><li><a href="/about/">About &amp; résumé</a></li><li><a href="/blog/">Writing</a></li><li><a href="/contact/">Start a project</a></li>
         </ul>
       </div>
       <div>
-        <p class="mono muted">Elsewhere</p>
+        <p class="mono label">elsewhere</p>
         <ul class="footer-links">
           <li><a href="https://www.linkedin.com/in/nsonsa-kisala/" target="_blank" rel="noopener">LinkedIn <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a></li>
           <li><a href="https://github.com/elombekisala" target="_blank" rel="noopener">GitHub <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a></li>
           <li><a href="mailto:elombekisala@gmail.com">Email <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a></li>
         </ul>
       </div>
-      <div class="footer-top">
-        <button class="to-top mono" data-top type="button">Back to top ↑</button>
+      <div>
+        <p class="mono label">based</p>
+        <ul class="footer-links plain">
+          <li><span class="pulse" aria-hidden="true"></span> Jersey City, NJ</li>
+          <li class="muted" data-clock data-clock-suffix=" ET">--:--</li>
+          <li class="muted">Working with teams anywhere</li>
+        </ul>
+      </div>
+      <div>
+        <p class="mono label">availability</p>
+        <ul class="footer-links plain">
+          <li>Open to freelance projects and full-time roles.</li>
+          <li class="muted">Replies within one business day.</li>
+        </ul>
       </div>
     </div>
-    <div class="footer-word" aria-hidden="true">Elombe Kisala</div>
     <div class="footer-base mono">
       <span>© 2026 Elombe Kisala</span>
-      <span>Designed &amp; built by hand. No templates.</span>
-      <span><a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a></span>
+      <span>Designed &amp; built by hand</span>
+      <span><a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a> · <button class="to-top" data-top type="button">Back to top ↑</button></span>
     </div>
   </div>
 </footer>
@@ -145,6 +166,6 @@
 <script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
 <script src="/assets/vendor/SplitText.min.js" defer></script>
 <script src="/assets/vendor/lenis.min.js" defer></script>
-<script src="/assets/js/site.js?v=86ff6bce" defer></script>
+<script src="/assets/js/site.js?v=547f16e8" defer></script>
 </body>
 </html>

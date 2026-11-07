@@ -7,6 +7,8 @@ import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
 import { projects, more } from './data/projects.mjs';
 import { site, nav, toolkit, capabilities, experience, education, testimonials, process as steps } from './data/site.mjs';
+import { groups, services } from './data/services.mjs';
+import { art, preview } from './data/art.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const commits = JSON.parse(readFileSync(join(ROOT, 'src/build/data/commits.json'), 'utf8'));
@@ -71,15 +73,17 @@ function head({ title, description, path, image = '/assets/og.jpg', jsonld = [],
   <meta property="og:url" content="${url}">
   <meta property="og:image" content="${site.url}${image}">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="theme-color" content="#0b0b0a">
+  <meta name="theme-color" content="#0f0f0e" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#ecebe6" media="(prefers-color-scheme: light)">
+  <meta name="color-scheme" content="dark light">
   <link rel="icon" href="/assets/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <link rel="preload" href="/fonts/Satoshi-Variable.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/fonts/instrument-serif-latin-400-italic.woff2" as="font" type="font/woff2" crossorigin>
   ${preload.map(p => `<link rel="preload" href="${p}" as="image" fetchpriority="high">`).join('\n  ')}
   <link rel="stylesheet" href="/assets/css/site.css?v=${ver('assets/css/site.css')}">
   <script>
     (function(d){var h=d.documentElement;h.classList.add('js');
+    var t;try{t=localStorage.getItem('ek-theme')}catch(e){}if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';h.setAttribute('data-theme',t);
     if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches)h.classList.add('motion');
     try{if(!sessionStorage.getItem('ek-visited'))h.classList.add('first-visit');if(sessionStorage.getItem('ek-transition'))h.classList.add('is-arriving')}catch(e){}
     setTimeout(function(){if(!h.classList.contains('ready'))h.classList.remove('motion','is-arriving')},3500);})(document);
@@ -99,9 +103,13 @@ function header(path) {
   </a>
   <nav class="nav" aria-label="Main">${nav.map(link).join('')}</nav>
   <div class="header-end">
-    <span class="status"><span class="pulse" aria-hidden="true"></span><span class="status-text">Open to projects &amp; roles</span></span>
-    <span class="clock mono" data-clock aria-label="Local time in New York">NYC --:--</span>
-    <a href="/contact/" class="btn btn-sm" data-magnetic>${roll('Let’s talk')}</a>
+    <a href="/contact/" class="btn btn-sm btn-outline header-cta" data-magnetic>${roll('Start a project')}</a>
+    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme">
+      <span class="tt-knob" aria-hidden="true">
+        <svg class="tt-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="tt-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+      </span>
+    </button>
     <button class="menu-btn" data-menu-btn aria-expanded="false" aria-controls="menu"><span></span><span></span><span class="sr-only">Menu</span></button>
   </div>
 </header>
@@ -121,10 +129,10 @@ function cta() {
   return `
 <section class="cta" data-cta>
   <div class="wrap">
-    <p class="eyebrow"><span class="dot"></span> Have a project or a role in mind?</p>
+    <p class="eyebrow">Have a project or a role in mind?</p>
     <a href="/contact/" class="cta-title" data-cursor="Say hi">
       <span class="cta-line" data-split>Let’s build</span>
-      <span class="cta-line" data-split><em class="serif">something</em> good.</span>
+      <span class="cta-line" data-split><em class="em">something</em> good.</span>
     </a>
     <div class="cta-row">
       <button class="copy" data-copy="${site.email}" type="button"><span class="mono">Email</span><span class="copy-text">${site.email}</span><span class="copy-hint mono" aria-live="polite">Copy</span></button>
@@ -138,34 +146,48 @@ function footer() {
   return `
 <footer class="site-footer">
   <div class="wrap">
+    <div class="footer-top-row">
+      <a href="/" class="footer-brand" aria-label="${site.name}, home"><img src="/assets/brand/ek-logo-192.webp" alt="" width="104" height="96"><span>Elombe Kisala</span></a>
+      <div class="footer-pitch">
+        <p>Design and engineering for brands, from first sketch to launch.</p>
+        <a href="mailto:${site.email}" class="footer-email">${site.email}</a>
+      </div>
+    </div>
     <div class="footer-grid">
       <div>
-        <p class="mono muted">Based in</p>
-        <p>${site.location}<br>Working worldwide</p>
-      </div>
-      <div>
-        <p class="mono muted">Pages</p>
+        <p class="mono label">sitemap</p>
         <ul class="footer-links">
-          <li><a href="/work/">Work</a></li><li><a href="/about/">About &amp; résumé</a></li><li><a href="/services/">Services</a></li><li><a href="/blog/">Writing</a></li><li><a href="/contact/">Contact</a></li>
+          <li><a href="/work/">Work</a></li><li><a href="/services/">Services</a></li><li><a href="/about/">About &amp; résumé</a></li><li><a href="/blog/">Writing</a></li><li><a href="/contact/">Start a project</a></li>
         </ul>
       </div>
       <div>
-        <p class="mono muted">Elsewhere</p>
+        <p class="mono label">elsewhere</p>
         <ul class="footer-links">
           <li><a href="${site.linkedin}" target="_blank" rel="noopener">LinkedIn ${arrow}</a></li>
           <li><a href="${site.github}" target="_blank" rel="noopener">GitHub ${arrow}</a></li>
           <li><a href="mailto:${site.email}">Email ${arrow}</a></li>
         </ul>
       </div>
-      <div class="footer-top">
-        <button class="to-top mono" data-top type="button">Back to top ↑</button>
+      <div>
+        <p class="mono label">based</p>
+        <ul class="footer-links plain">
+          <li><span class="pulse" aria-hidden="true"></span> Jersey City, NJ</li>
+          <li class="muted" data-clock data-clock-suffix=" ET">--:--</li>
+          <li class="muted">Working with teams anywhere</li>
+        </ul>
+      </div>
+      <div>
+        <p class="mono label">availability</p>
+        <ul class="footer-links plain">
+          <li>Open to freelance projects and full-time roles.</li>
+          <li class="muted">Replies within one business day.</li>
+        </ul>
       </div>
     </div>
-    <div class="footer-word" aria-hidden="true">Elombe Kisala</div>
     <div class="footer-base mono">
       <span>© ${new Date().getFullYear()} Elombe Kisala</span>
-      <span>Designed &amp; built by hand. No templates.</span>
-      <span><a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a></span>
+      <span>Designed &amp; built by hand</span>
+      <span><a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a> · <button class="to-top" data-top type="button">Back to top ↑</button></span>
     </div>
   </div>
 </footer>`;
@@ -219,6 +241,94 @@ const moreCard = m => `<a href="${m.url}" target="_blank" rel="noopener" class="
   <p class="mono more-kind">${esc(m.kind)}</p>
 </a>`;
 
+const groupLabel = id => groups.find(g => g.id === id).label;
+const svcCard = (sv, i) => `<a href="/services/${sv.slug}/" class="svc-card" data-group="${sv.group}" data-draw>
+  <div class="svc-art">${art[sv.art]()}<span class="mono svc-fig">fig. ${String(i + 1).padStart(2, '0')} · ${esc(sv.fig)}</span>${sv.isNew ? '<span class="mono svc-new">new</span>' : ''}</div>
+  <div class="svc-body">
+    <div class="svc-meta mono"><span>${String(i + 1).padStart(2, '0')}</span><span>// ${esc(groupLabel(sv.group).toLowerCase())}</span></div>
+    <h3 class="svc-title">${esc(sv.title)} <span class="svc-arrow">${arrowRight}</span></h3>
+    <p>${esc(sv.short)}</p>
+  </div>
+</a>`;
+
+const groupRow = (asButtons) => `<div class="group-row" ${asButtons ? 'role="toolbar" aria-label="Filter services" data-svc-filters' : ''}>
+  ${asButtons ? `<button type="button" class="group-cell is-on" data-filter="All" aria-pressed="true"><span>All</span><span class="mono">${services.length} services</span></button>` : ''}
+  ${groups.map(g => {
+    const n = services.filter(x => x.group === g.id).length;
+    return asButtons
+      ? `<button type="button" class="group-cell" data-filter="${g.id}" aria-pressed="false"><span>${g.label} <span class="svc-arrow">${arrowRight}</span></span><span class="mono">${g.id === 'partner' ? 'alongside your team' : n + (n === 1 ? ' service' : ' services')}</span></button>`
+      : `<a href="/services/#${g.id}" class="group-cell"><span>${g.label} <span class="svc-arrow">${arrowRight}</span></span><span class="mono">${g.id === 'partner' ? 'alongside your team' : n + (n === 1 ? ' service' : ' services')}</span></a>`;
+  }).join('')}
+</div>`;
+
+function editorSection() {
+  const featured = projects.filter(p => p.featured).sort((a, b) => a.featured - b.featured);
+  const base = f => f.split('/').pop();
+  return `
+<section class="editor-section" id="work" data-editor style="--files:${featured.length}">
+  <div class="editor-pin" data-editor-pin>
+    <div class="wrap">
+      <div class="editor-head">
+        <div>
+          <p class="eyebrow">selected work</p>
+          <h2 class="h2">Selected <em class="em">work.</em></h2>
+        </div>
+        <p class="mono muted hide-sm">// one file per project</p>
+      </div>
+      <div class="editor">
+        <div class="editor-tabs" role="tablist" aria-label="Selected projects">
+          ${featured.map((p, i) => `<button type="button" role="tab" class="editor-tab" id="tab-${p.slug}" aria-controls="pane-${p.slug}" aria-selected="${i === 0}" tabindex="${i === 0 ? 0 : -1}" data-tab="${i}" data-file="${esc(p.slug + '/' + p.file)}"><span class="tab-dot" aria-hidden="true"></span><span class="tab-title">${esc(p.title)}</span><span class="mono tab-file">${esc(base(p.file))}</span></button>`).join('')}
+        </div>
+        <div class="editor-panes">
+          ${featured.map((p, i) => `<div class="editor-pane${i === 0 ? ' is-active' : ''}" role="tabpanel" id="pane-${p.slug}" aria-labelledby="tab-${p.slug}" data-pane="${i}" style="--cs:${p.accent}"${i === 0 ? '' : ' hidden'}>
+            <div class="editor-code">
+              <ol class="code-lines">
+                <li><span class="mono muted">// result</span></li>
+                <li><p class="code-result">${esc(p.result)}</p></li>
+                <li><p class="code-sub"># ${esc(p.kind)} · <span class="muted">${esc(p.client)}</span></p></li>
+                <li><p class="code-desc">${esc(p.summary)}</p></li>
+                <li><dl class="code-kv mono"><div><dt>type</dt><dd>${esc(p.kind)}</dd></div><div><dt>stack</dt><dd>${esc(p.stack.slice(0, 3).map(x => x.name.split(' (')[0].split(' / ')[0]).join(', '))}</dd></div><div><dt>year</dt><dd>${esc(p.year)}</dd></div></dl></li>
+                <li><a href="/work/${p.slug}/" class="btn btn-ghost" data-magnetic>${roll('Case study')} ${arrowRight}</a></li>
+              </ol>
+            </div>
+            <div class="editor-preview">
+              <p class="mono muted">// preview</p>
+              <div class="preview-stage">
+                <div class="preview-shot"><div class="browser-bar"><i></i><i></i><i></i></div>${img(small(p), `${p.title} screenshot`, { sizes: '(max-width: 980px) 60vw, 24vw' })}</div>
+                <div class="preview-art" data-draw>${preview[p.slug]()}</div>
+              </div>
+            </div>
+          </div>`).join('')}
+        </div>
+        <div class="editor-status mono">
+          <span>main · <span data-editor-file>${esc(featured[0].slug + '/' + featured[0].file)}</span></span>
+          <span class="status-right"><span data-editor-count>01 / ${String(featured.length).padStart(2, '0')}</span><span class="status-bar" aria-hidden="true"><i data-editor-bar></i></span><span class="hide-sm">scroll to open the next file ·</span> <a href="#after-work" class="skip-link" data-editor-skip>skip ↓</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div id="after-work"></div>`;
+}
+
+function servicesTeaser() {
+  return `
+<section class="section services-teaser">
+  <div class="wrap">
+    <div class="section-head two-col">
+      <div>
+        <p class="eyebrow">services</p>
+        <h2 class="h2" data-split>Four ways I help. <em class="em">Twelve things I build.</em></h2>
+      </div>
+      <p class="lead section-lead" data-reveal>Build it from scratch, connect the tools you already use, improve what’s live, or have me join your team for a while.</p>
+    </div>
+    ${groupRow(false)}
+    <div class="svc-grid">${services.slice(0, 6).map(svcCard).join('')}</div>
+    <div class="center-row"><a href="/services/" class="btn btn-ghost btn-lg" data-magnetic>${roll('All twelve services')} ${arrowRight}</a></div>
+  </div>
+</section>`;
+}
+
 // ---------- home ----------
 function home() {
   const featured = projects.filter(p => p.featured).sort((a, b) => a.featured - b.featured);
@@ -233,11 +343,11 @@ function home() {
 <section class="hero">
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <p class="eyebrow" data-hero-in><span class="dot"></span> Designer &amp; developer · Jersey City / NYC</p>
+      <p class="eyebrow" data-hero-in>Designer &amp; developer · Jersey City / NYC</p>
       <h1 class="display hero-title">
         <span class="line" data-split-hero>I design and build</span>
-        <span class="line" data-split-hero>websites, <em class="serif">stores</em> &amp;</span>
-        <span class="line" data-split-hero>apps that <em class="serif accent-text">earn</em></span>
+        <span class="line" data-split-hero>websites, <em class="em">stores</em> &amp;</span>
+        <span class="line" data-split-hero>apps that <em class="em accent-text">earn</em></span>
         <span class="line" data-split-hero>their keep.</span>
       </h1>
       <p class="lead hero-lead" data-hero-in>I’m Elombe Kisala. I lead web development for Core Home’s family of consumer brands and run SWFT Studios. From Shopify storefronts to Cloudflare web apps and a native iOS app, I design the experience and engineer what’s behind it.</p>
@@ -265,36 +375,15 @@ function home() {
   </div>
 </section>
 
-<section class="section work-feature" id="work">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow"><span class="dot"></span> Selected work · 2025–26</p>
-      <h2 class="h2" data-split>Six projects, <em class="serif">from brief to build log.</em></h2>
-      <p class="lead muted section-lead" data-reveal>Each case study covers the problem, what I built, how the pieces connect, what improved, and the real commit history behind it.</p>
-    </div>
-    <div class="stack">
-      ${featured.map((p, i) => `
-      <article class="stack-card" style="--cs:${p.accent}" data-stack>
-        <a href="/work/${p.slug}/" class="stack-inner" data-cursor="Case study">
-          <div class="stack-media">${p.video ? `<video src="${p.video.src}" poster="${p.video.poster}" muted loop playsinline preload="none" data-autoplay></video>` : img(p.cover, `${p.title} project`, { sizes: '(max-width: 900px) 100vw, 62vw' })}</div>
-          <div class="stack-info">
-            <div class="stack-top"><span class="mono">${String(i + 1).padStart(2, '0')} / ${String(featured.length).padStart(2, '0')}</span><span class="mono">${esc(p.kind)}</span></div>
-            <h3 class="stack-title">${esc(p.title)}</h3>
-            <p class="stack-sum">${esc(p.summary)}</p>
-            ${p.metrics.length ? `<dl class="stack-metrics">${p.metrics.slice(0, 2).map(m => `<div><dt>${esc(m.value)}</dt><dd>${esc(m.label)}</dd></div>`).join('')}</dl>` : ''}
-            <span class="stack-link">${roll('Read the case study')} ${arrowRight}</span>
-          </div>
-        </a>
-      </article>`).join('')}
-    </div>
-  </div>
-</section>
+${editorSection()}
+
+${servicesTeaser()}
 
 <section class="section index-section">
   <div class="wrap">
     <div class="section-head split-head">
-      <p class="eyebrow"><span class="dot"></span> More projects</p>
-      <h2 class="h2" data-split>Brands, stores <em class="serif">&amp; tools.</em></h2>
+      <p class="eyebrow">More projects</p>
+      <h2 class="h2" data-split>Brands, stores <em class="em">&amp; tools.</em></h2>
     </div>
     <ul class="index-list" data-index-list>
       ${rest.map((p, i) => `<li><a href="/work/${p.slug}/" class="index-row" data-preview="${small(p)}" data-reveal>
@@ -313,8 +402,8 @@ function home() {
   <div class="wrap">
     <div class="section-head split-head">
       <div>
-        <p class="eyebrow"><span class="dot"></span> Also live</p>
-        <h2 class="h2" data-split>Sites, VR tours <em class="serif">&amp; 3D.</em></h2>
+        <p class="eyebrow">Also live</p>
+        <h2 class="h2" data-split>Sites, VR tours <em class="em">&amp; 3D.</em></h2>
       </div>
       <a href="/work/#more" class="btn btn-ghost" data-magnetic>${roll('See all work')} ${arrowRight}</a>
     </div>
@@ -322,30 +411,15 @@ function home() {
   </div>
 </section>
 
-<section class="section caps">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow"><span class="dot"></span> What I do</p>
-      <h2 class="h2" data-split>One person from <em class="serif">first sketch</em> to <em class="serif">last commit.</em></h2>
-    </div>
-    <div class="caps-grid">
-      ${capabilities.map(c => `<div class="cap" data-reveal>
-        <span class="mono cap-n">${c.n}</span>
-        <h3 class="cap-title">${c.title}</h3>
-        <p>${c.text}</p>
-        <ul class="cap-items">${c.items.map(x => `<li>${x}</li>`).join('')}</ul>
-      </div>`).join('')}
-    </div>
-  </div>
-</section>
+
 
 ${toolkitSection()}
 
 <section class="section process">
   <div class="wrap process-grid">
     <div class="process-head">
-      <p class="eyebrow"><span class="dot"></span> How we’d work together</p>
-      <h2 class="h2" data-split>A clear process, <em class="serif">no black box.</em></h2>
+      <p class="eyebrow">How we’d work together</p>
+      <h2 class="h2" data-split>A clear process, <em class="em">no black box.</em></h2>
       <p class="lead muted" data-reveal>You see progress every week, and you own everything at the end: code, accounts, docs.</p>
     </div>
     <ol class="process-list">
@@ -357,8 +431,8 @@ ${toolkitSection()}
 <section class="section voices">
   <div class="wrap">
     <div class="section-head">
-      <p class="eyebrow"><span class="dot"></span> Kind words</p>
-      <h2 class="h2" data-split>From the people <em class="serif">I’ve built for.</em></h2>
+      <p class="eyebrow">Kind words</p>
+      <h2 class="h2" data-split>From the people <em class="em">I’ve built for.</em></h2>
     </div>
     <div class="quotes" data-quotes>
       ${testimonials.map(t => `<figure class="quote-card" data-reveal>
@@ -391,8 +465,8 @@ function toolkitSection({ compact = false } = {}) {
   <div class="wrap">
     <div class="section-head toolkit-head">
       <div>
-        <p class="eyebrow"><span class="dot"></span> The toolkit</p>
-        <h2 class="h2" data-split>The tools I use, <em class="serif">and what they do for you.</em></h2>
+        <p class="eyebrow">The toolkit</p>
+        <h2 class="h2" data-split>The tools I use, <em class="em">and what they do for you.</em></h2>
       </div>
       <p class="lead section-lead" data-reveal>I pick tools for the business, not the résumé. Here’s each one in plain terms, with the projects where it earned its place.</p>
     </div>
@@ -417,8 +491,8 @@ function workIndex() {
   const body = `
 <section class="page-hero">
   <div class="wrap">
-    <p class="eyebrow" data-hero-in><span class="dot"></span> Work · ${projects.length} case studies</p>
-    <h1 class="display" data-split-hero>Selected <em class="serif">work</em></h1>
+    <p class="eyebrow" data-hero-in>Work · ${projects.length} case studies</p>
+    <h1 class="display" data-split-hero>Selected <em class="em">work</em></h1>
     <p class="lead muted page-lead" data-hero-in>Web apps, Shopify stores, brand sites, internal tools and a native iOS app. Every case study is written from the project’s code and commit history.</p>
   </div>
 </section>
@@ -435,8 +509,8 @@ function workIndex() {
 <section class="section more-section" id="more">
   <div class="wrap">
     <div class="section-head">
-      <p class="eyebrow"><span class="dot"></span> More work · ${more.length} live links</p>
-      <h2 class="h2" data-split>Websites, VR tours <em class="serif">&amp; 3D animation.</em></h2>
+      <p class="eyebrow">More work · ${more.length} live links</p>
+      <h2 class="h2" data-split>Websites, VR tours <em class="em">&amp; 3D animation.</em></h2>
       <p class="lead muted section-lead" data-reveal>Earlier client sites, virtual tours built with Matterport and 3DVista, and 3D animation. Each opens the live project.</p>
     </div>
     <div class="more-grid">${more.map(moreCard).join('')}</div>
@@ -478,7 +552,7 @@ function caseStudy(p, i) {
   </div></section>`);
 
   const metrics = p.metrics?.length ? `<section class="cs-metrics wrap"><dl class="metrics">${p.metrics.map(m => `<div data-reveal><dt>${esc(m.value)}</dt><dd>${esc(m.label)}</dd></div>`).join('')}</dl></section>` : '';
-  const quote = p.quote ? `<section class="cs-quote wrap"><figure data-reveal><blockquote class="serif">“${esc(p.quote.text)}”</blockquote><figcaption><strong>${esc(p.quote.name)}</strong><span class="mono">${esc(p.quote.role)}</span></figcaption></figure></section>` : '';
+  const quote = p.quote ? `<section class="cs-quote wrap"><figure data-reveal><blockquote class="quote-text">“${esc(p.quote.text)}”</blockquote><figcaption><strong>${esc(p.quote.name)}</strong><span class="mono">${esc(p.quote.role)}</span></figcaption></figure></section>` : '';
   const coverMedia = p.video
     ? `<video src="${p.video.src}" poster="${p.cover}" muted loop playsinline autoplay preload="metadata" aria-label="${esc(p.title)} motion preview"></video>`
     : img(p.cover, `${p.title}: homepage`, { eager: true, sizes: '100vw' });
@@ -492,8 +566,9 @@ function caseStudy(p, i) {
   <header class="cs-hero">
     <div class="wrap">
       <a href="/work/" class="back mono" data-hero-in>← All work</a>
-      <p class="eyebrow" data-hero-in><span class="dot cs-dot"></span> ${esc(p.kind)} · ${esc(p.year)}</p>
+      <p class="eyebrow" data-hero-in>${esc(p.kind.toLowerCase())} · ${esc(p.year)}</p>
       <h1 class="display cs-title" data-split-hero>${esc(p.title)}</h1>
+      <div class="cs-result" data-hero-in><span class="mono muted">// result</span><p>${esc(p.result)}</p></div>
       <p class="cs-summary" data-hero-in>${esc(p.intro)}</p>
       ${tagList(p.tags)}
       <dl class="cs-meta" data-hero-in>${meta.map(([k, v]) => `<div><dt class="mono">${k}</dt><dd>${k === 'Live' ? v : esc(v)}</dd></div>`).join('')}</dl>
@@ -538,7 +613,7 @@ function about() {
   const skills = [
     ['Design', 'Figma, art direction, UI/UX, design systems, prototyping, Google Stitch'],
     ['Front end', 'HTML, CSS, JavaScript, TypeScript, GSAP, Lenis, Three.js, Lottie, Barba, Vite'],
-    ['Platforms', 'Webflow, Shopify (Liquid, themes, Admin API), WordPress'],
+    ['Platforms', 'Webflow, Shopify (Liquid, themes, Admin API), Payload CMS, WordPress'],
     ['Back end', 'Cloudflare Workers, Pages, D1, KV, R2, Email; Firebase; Node'],
     ['Mobile', 'Swift 6, SwiftUI, MapKit, HealthKit, RevenueCat'],
     ['Integrations', 'Stripe, Airtable, Cal.com, Twilio, Spotify, Claude API, Make, Zapier'],
@@ -549,8 +624,8 @@ function about() {
 <section class="page-hero about-hero">
   <div class="wrap about-grid">
     <div>
-      <p class="eyebrow" data-hero-in><span class="dot"></span> About · Résumé</p>
-      <h1 class="display" data-split-hero>Hi, I’m <em class="serif">Elombe.</em></h1>
+      <p class="eyebrow" data-hero-in>About · Résumé</p>
+      <h1 class="display" data-split-hero>Hi, I’m <em class="em">Elombe.</em></h1>
       <div class="prose-lg about-intro" data-hero-in>
         <p>I’m a designer and developer in Jersey City with a bachelor’s in Mobile Development from Full Sail University. I started building websites in 2019 for family and friends, and I haven’t stopped since.</p>
         <p>Today I lead web development for <a class="ulink" href="/work/core-home/">Core Home</a>, where I run Shopify storefronts, launch brand sites and build internal tools for a portfolio of consumer brands. I also founded <a class="ulink" href="/work/swft-studios/">SWFT Studios</a>, and ship products of my own, like the iOS app <a class="ulink" href="/work/snooze-lane/">Snooze Lane</a> and <a class="ulink" href="/work/learn-lingala/">Learn Lingala</a>.</p>
@@ -619,8 +694,8 @@ function contact(path = '/contact/') {
 <section class="page-hero contact-hero">
   <div class="wrap contact-grid">
     <div>
-      <p class="eyebrow" data-hero-in><span class="dot"></span> Contact</p>
-      <h1 class="display" data-split-hero>Tell me what <em class="serif">you’re building.</em></h1>
+      <p class="eyebrow" data-hero-in>Contact</p>
+      <h1 class="display" data-split-hero>Tell me what <em class="em">you’re building.</em></h1>
       <p class="lead muted" data-hero-in>Projects, roles or a quick question. I reply within one business day.</p>
       <div class="contact-direct" data-hero-in>
         <button class="copy" data-copy="${site.email}" type="button"><span class="mono">Email</span><span class="copy-text">${site.email}</span><span class="copy-hint mono" aria-live="polite">Copy</span></button>
@@ -628,9 +703,9 @@ function contact(path = '/contact/') {
         <a class="direct-link" href="${site.github}" target="_blank" rel="noopener"><span class="mono">GitHub</span>See the code ${arrow}</a>
       </div>
       <ol class="next-steps" data-reveal>
-        <li><span class="mono">01</span>You send a few details.</li>
-        <li><span class="mono">02</span>I reply within a business day with questions or a time to talk.</li>
-        <li><span class="mono">03</span>You get a written scope, timeline and price.</li>
+        <li><span class="mono">01</span><strong>I read every message</strong><span>No forms going to a void. It comes straight to me.</span></li>
+        <li><span class="mono">02</span><strong>A reply within a day</strong><span>A few questions, or a time to talk.</span></li>
+        <li><span class="mono">03</span><strong>A written scope</strong><span>What we’re building, by when, and the price, before anything starts.</span></li>
       </ol>
     </div>
     <form class="form" data-contact-form action="https://formsubmit.co/${site.email}" method="POST" data-hero-in>
@@ -664,45 +739,92 @@ function contact(path = '/contact/') {
 }
 
 // ---------- services ----------
-function services() {
-  const offers = [
-    { title: 'Websites', slug: '/services/webflow/', text: 'Custom-designed sites in Webflow or hand-coded on Cloudflare. Fast, accessible, easy to update, built to convert.', proof: ['built-by-me-ez', 'winslow-pantry', 'people-of-spice'] },
-    { title: 'Shopify stores', slug: '/services/shopify-webflow/', text: 'Theme design and development, catalog structure, launches and the support content owners need.', proof: ['brooklyn-steel-co', 'thyme-and-table', 'fizz'] },
-    { title: 'Web & iOS apps', slug: '/contact/', text: 'Products with accounts, payments, data and AI, from an MVP to App Store-ready.', proof: ['learn-lingala', 'snooze-lane', 'finish-library'] },
-    { title: 'Automation', slug: '/services/automation/', text: 'Payments, booking, CRM and follow-up connected, so leads never fall through the cracks.', proof: ['built-by-me-ez', 'swft-studios', 'core-home-reports'] }
-  ];
+function servicesIndex() {
   const body = `
 <section class="page-hero">
-  <div class="wrap">
-    <p class="eyebrow" data-hero-in><span class="dot"></span> Services</p>
-    <h1 class="display" data-split-hero>Design, build, <em class="serif">automate.</em></h1>
-    <p class="lead muted page-lead" data-hero-in>For founders, brands and teams who want one capable person from first idea to launch, and after.</p>
+  <div class="wrap two-col hero-two">
+    <div>
+      <p class="eyebrow" data-hero-in>services</p>
+      <h1 class="display" data-split-hero>Four ways I help. <em class="em">Twelve things I build.</em></h1>
+    </div>
+    <p class="lead" data-hero-in>Build it from scratch, connect the tools you already use, improve what’s live, or join your team for a while. Every service links to the projects that prove it.</p>
   </div>
 </section>
 <section class="section-sm">
   <div class="wrap">
-    <div class="offers">
-      ${offers.map((o, k) => `<article class="offer" data-reveal>
-        <span class="mono">${String(k + 1).padStart(2, '0')}</span>
-        <h2>${o.title}</h2>
-        <p>${o.text}</p>
-        <p class="offer-proof"><span class="mono">See it in</span> ${o.proof.map(s => `<a href="/work/${s}/">${esc(bySlug[s].title)}</a>`).join(', ')}</p>
-        <a href="${o.slug}" class="ulink">${o.slug === '/contact/' ? 'Talk about an app' : 'Details'} ${arrowRight}</a>
-      </article>`).join('')}
-    </div>
+    ${groupRow(true)}
+    <div class="svc-grid" data-svc-grid>${services.map(svcCard).join('')}</div>
   </div>
 </section>
 <section class="section process">
   <div class="wrap process-grid">
     <div class="process-head">
-      <p class="eyebrow"><span class="dot"></span> Process</p>
-      <h2 class="h2" data-split>How a project <em class="serif">runs.</em></h2>
+      <p class="eyebrow">process</p>
+      <h2 class="h2" data-split>How a project <em class="em">runs.</em></h2>
     </div>
-    <ol class="process-list">${steps.map(s => `<li class="process-step" data-reveal><span class="mono">${s.n}</span><div><h3>${s.title}</h3><p>${s.text}</p></div></li>`).join('')}</ol>
+    <ol class="process-list">${steps.map(x => `<li class="process-step" data-reveal><span class="mono">${x.n}</span><div><h3>${x.title}</h3><p>${x.text}</p></div></li>`).join('')}</ol>
   </div>
 </section>
 ${toolkitSection()}`;
-  return page({ title: 'Services · Elombe Kisala', description: 'Websites, Shopify stores, web and iOS apps, and automation by Elombe Kisala, with links to the case studies that prove each one.', path: '/services/', body, bodyClass: 'is-services' });
+  return page({ title: 'Services · Elombe Kisala', description: 'Websites, Shopify stores, web and iOS apps, portals, payments, automation, Payload CMS, migrations and performance by Elombe Kisala, each backed by real projects.', path: '/services/', body, bodyClass: 'is-services' });
+}
+
+function serviceDetail(sv, i) {
+  const next = services[(i + 1) % services.length];
+  const proof = sv.proof.map(sl => bySlug[sl]).filter(Boolean);
+  const body = `
+<section class="page-hero svc-hero">
+  <div class="wrap svc-hero-grid">
+    <div>
+      <a href="/services/" class="back mono" data-hero-in>← All services</a>
+      <p class="eyebrow" data-hero-in>${esc(groupLabel(sv.group).toLowerCase())} · ${String(i + 1).padStart(2, '0')}${sv.isNew ? ' · new' : ''}</p>
+      <h1 class="h1" data-split-hero>${esc(sv.title)}</h1>
+      <p class="lead svc-intro" data-hero-in>${esc(sv.intro)}</p>
+      <div class="hero-actions" data-hero-in><a href="/contact/" class="btn btn-lg" data-magnetic>${roll('Start a project')} ${arrowRight}</a></div>
+    </div>
+    <figure class="svc-hero-art" data-draw data-hero-in>${art[sv.art]()}<figcaption class="mono">fig. ${String(i + 1).padStart(2, '0')} · ${esc(sv.fig)}</figcaption></figure>
+  </div>
+</section>
+<div class="wrap cs-content">
+  <section class="cs-block">
+    <div class="cs-label"><span class="mono">01</span><h2>What you get</h2></div>
+    <ol class="code-list">${sv.deliverables.map((d, k) => `<li data-reveal><span class="mono">${String(k + 1).padStart(2, '0')}</span>${esc(d)}</li>`).join('')}</ol>
+  </section>
+  ${sv.payload ? `<section class="cs-block cs-wide">
+    <div class="cs-label"><span class="mono">02</span><h2>Why Payload CMS</h2></div>
+    <div>
+      <p class="lead payload-note" data-reveal>${esc(sv.payload.note)} <a class="ulink" href="https://payloadcms.com/" target="_blank" rel="noopener">payloadcms.com ${arrow}</a></p>
+      <div class="features">${sv.payload.features.map((f, k) => `<div class="feature" data-reveal><span class="mono">${String(k + 1).padStart(2, '0')}</span><h3>${esc(f.title)}</h3><p>${esc(f.text)}</p></div>`).join('')}</div>
+    </div>
+  </section>` : ''}
+  <section class="cs-block cs-wide">
+    <div class="cs-label"><span class="mono">${sv.payload ? '03' : '02'}</span><h2>${sv.payload ? 'CMS work so far' : 'Proof'}</h2></div>
+    <div class="proof-grid">${proof.map(p => `<a href="/work/${p.slug}/" class="proof" style="--cs:${p.accent}" data-reveal>
+      <div class="proof-media">${img(small(p), `${p.title}`, { sizes: '(max-width: 980px) 100vw, 30vw' })}</div>
+      <span class="mono muted">// result</span>
+      <p class="proof-result">${esc(p.result)}</p>
+      <span class="proof-title">${esc(p.title)} ${arrowRight}</span>
+    </a>`).join('')}</div>
+  </section>
+  <section class="cs-block">
+    <div class="cs-label"><span class="mono">${sv.payload ? '04' : '03'}</span><h2>Tools</h2></div>
+    <ul class="stack-why">${sv.tools.map(n => toolkit.find(t => t.name === n)).filter(Boolean).map(t => `<li data-reveal><strong>${esc(t.name)}</strong><span>${esc(t.benefit)}</span></li>`).join('')}</ul>
+  </section>
+</div>
+<nav class="next" aria-label="Next service">
+  <a href="/services/${next.slug}/" class="next-link next-svc" data-cursor="Next">
+    <span class="mono">Next service</span>
+    <span class="next-title">${esc(next.title)}</span>
+    <span class="next-art" data-draw>${art[next.art]()}</span>
+  </a>
+</nav>`;
+  return page({ title: `${sv.title} · Services · Elombe Kisala`, description: `${sv.short} ${sv.intro}`.slice(0, 158), path: `/services/${sv.slug}/`, body, bodyClass: 'is-service',
+    jsonld: [{ '@context': 'https://schema.org', '@type': 'Service', name: sv.title, description: sv.intro, provider: { '@type': 'Person', name: site.name, url: site.url }, areaServed: 'Worldwide' }] });
+}
+
+// Old service URLs now point to their closest new service.
+function redirectPage(from, to) {
+  return `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Moved</title><link rel="canonical" href="${site.url}${to}"><meta http-equiv="refresh" content="0; url=${to}"><meta name="robots" content="noindex"></head><body><p>This page moved to <a href="${to}">${site.url}${to}</a>.</p></body></html>\n`;
 }
 
 // ---------- blog ----------
@@ -711,8 +833,8 @@ function blogIndex() {
   const body = `
 <section class="page-hero">
   <div class="wrap">
-    <p class="eyebrow" data-hero-in><span class="dot"></span> Writing</p>
-    <h1 class="display" data-split-hero>Notes on <em class="serif">the craft.</em></h1>
+    <p class="eyebrow" data-hero-in>Writing</p>
+    <h1 class="display" data-split-hero>Notes on <em class="em">the craft.</em></h1>
     <p class="lead muted page-lead" data-hero-in>Short, practical guides on platforms, SEO and automation.</p>
   </div>
 </section>
@@ -753,7 +875,7 @@ function legacyPages() {
   <header class="page-hero article-hero">
     <div class="wrap narrow">
       <a href="${isPost ? '/blog/' : meta.path.startsWith('/services/') ? '/services/' : '/'}" class="back mono" data-hero-in>← ${isPost ? 'All writing' : meta.path.startsWith('/services/') ? 'All services' : 'Home'}</a>
-      ${dateMatch ? `<p class="eyebrow" data-hero-in><span class="dot"></span> ${dateMatch[1].trim()}</p>` : ''}
+      ${dateMatch ? `<p class="eyebrow" data-hero-in>${dateMatch[1].trim()}</p>` : ''}
       <h1 class="h1" data-split-hero>${esc(title)}</h1>
     </div>
   </header>
@@ -769,8 +891,8 @@ function notFound() {
   const body = `
 <section class="page-hero notfound">
   <div class="wrap">
-    <p class="eyebrow" data-hero-in><span class="dot"></span> Error 404</p>
-    <h1 class="display" data-split-hero>This page <em class="serif">took a wrong turn.</em></h1>
+    <p class="eyebrow" data-hero-in>Error 404</p>
+    <h1 class="display" data-split-hero>This page <em class="em">took a wrong turn.</em></h1>
     <p class="lead muted page-lead" data-hero-in>The link may be old, or the page may have moved. The work is still here.</p>
     <div class="hero-actions" data-hero-in><a href="/" class="btn btn-lg">${roll('Go home')}</a><a href="/work/" class="btn btn-lg btn-ghost">${roll('See the work')}</a></div>
   </div>
@@ -779,7 +901,7 @@ function notFound() {
 }
 
 function sitemap() {
-  const urls = ['/', '/work/', ...projects.map(p => `/work/${p.slug}/`), '/about/', '/services/', '/services/webflow/', '/services/shopify-webflow/', '/services/automation/', '/contact/', '/blog/', ...posts.map(p => p.url), '/privacy/', '/terms/'];
+  const urls = ['/', '/work/', ...projects.map(p => `/work/${p.slug}/`), '/about/', '/services/', ...services.map(x => `/services/${x.slug}/`), '/contact/', '/blog/', ...posts.map(p => p.url), '/privacy/', '/terms/'];
   const today = new Date().toISOString().slice(0, 10);
   write('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(u => `  <url><loc>${site.url}${u}</loc><lastmod>${today}</lastmod></url>`).join('\n')}\n</urlset>\n`);
   write('llms.txt', `# ${site.name}, Designer & Developer
@@ -792,6 +914,7 @@ ${ordered.map(p => `- [${p.title}](${site.url}/work/${p.slug}/): ${p.summary}`).
 ## Pages
 - [About & résumé](${site.url}/about/)
 - [Services](${site.url}/services/)
+${services.map(x => `  - [${x.title}](${site.url}/services/${x.slug}/): ${x.short}`).join('\n')}
 - [Contact](${site.url}/contact/)
 - [Writing](${site.url}/blog/)
 
@@ -809,7 +932,10 @@ projects.forEach((p, i) => write(`work/${p.slug}/index.html`, caseStudy(p, i)));
 write('about/index.html', about());
 write('contact/index.html', contact());
 write('start/index.html', contact('/start/').replace(`<link rel="canonical" href="${site.url}/start/">`, `<link rel="canonical" href="${site.url}/contact/">`));
-write('services/index.html', services());
+write('services/index.html', servicesIndex());
+services.forEach((sv, i) => write(`services/${sv.slug}/index.html`, serviceDetail(sv, i)));
+write('services/webflow/index.html', redirectPage('/services/webflow/', '/services/marketing-sites/'));
+write('services/shopify-webflow/index.html', redirectPage('/services/shopify-webflow/', '/services/shopify/'));
 write('blog/index.html', blogIndex());
 legacyPages();
 write('404.html', notFound());

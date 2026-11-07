@@ -39,12 +39,11 @@
   onScroll();
 
   /* ---------- clock ---------- */
-  var clock = $('[data-clock]');
   function tick() {
-    if (!clock) return;
-    try {
-      clock.textContent = 'NYC ' + new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', timeZone: 'America/New_York' });
-    } catch (e) { clock.textContent = ''; }
+    $$('[data-clock]').forEach(function (el) {
+      try { el.textContent = new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', timeZone: 'America/New_York' }) + (el.getAttribute('data-clock-suffix') || ''); }
+      catch (e) { el.textContent = ''; }
+    });
   }
   tick(); setInterval(tick, 20000);
 
@@ -75,6 +74,78 @@
   $$('[data-top]').forEach(function (b) { b.addEventListener('click', function () { if (lenis) lenis.scrollTo(0, { duration: 1.6 }); else window.scrollTo({ top: 0, behavior: 'smooth' }); }); });
   $$('[data-print]').forEach(function (b) { b.addEventListener('click', function () { window.print(); }); });
 
+  /* ---------- theme toggle (circular reveal where supported) ---------- */
+  var themeBtns = $$('[data-theme-toggle]');
+  function labelTheme() { var t = html.getAttribute('data-theme'); themeBtns.forEach(function (b) { b.setAttribute('aria-label', 'Switch to ' + (t === 'dark' ? 'light' : 'dark') + ' mode'); }); }
+  labelTheme();
+  themeBtns.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      var apply = function () { html.setAttribute('data-theme', next); try { localStorage.setItem('ek-theme', next); } catch (e) {} labelTheme(); };
+      if (document.startViewTransition && html.classList.contains('motion')) {
+        var r = b.getBoundingClientRect(), x = r.left + r.width / 2, y = r.top + r.height / 2;
+        var end = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y));
+        document.startViewTransition(apply).ready.then(function () {
+          html.animate({ clipPath: ['circle(0px at ' + x + 'px ' + y + 'px)', 'circle(' + end + 'px at ' + x + 'px ' + y + 'px)'] }, { duration: 700, easing: 'cubic-bezier(.22,1,.36,1)', pseudoElement: '::view-transition-new(root)' });
+        });
+      } else apply();
+    });
+  });
+
+  /* ---------- line art: draw when it scrolls into view ---------- */
+  function redraw(el) { el.classList.remove('is-drawn'); void el.getBoundingClientRect(); requestAnimationFrame(function () { el.classList.add('is-drawn'); }); }
+  if ('IntersectionObserver' in window) {
+    var dio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('is-drawn'); dio.unobserve(en.target); } });
+    }, { threshold: .25 });
+    $$('[data-draw]').forEach(function (el) { dio.observe(el); });
+  } else $$('[data-draw]').forEach(function (el) { el.classList.add('is-drawn'); });
+
+  /* ---------- selected work: one file per project ---------- */
+  var ed = $('[data-editor]');
+  if (ed) {
+    var tabs = $$('.editor-tab', ed), panes = $$('.editor-pane', ed), n = tabs.length, edCur = 0;
+    var tabsEl = $('.editor-tabs', ed), fileEl = $('[data-editor-file]', ed), countEl = $('[data-editor-count]', ed), barEl = $('[data-editor-bar]', ed);
+    var pad = function (k) { return String(k).padStart(2, '0'); };
+    var show = function (i) {
+      if (i === edCur) return;
+      edCur = i;
+      tabs.forEach(function (t, k) { t.setAttribute('aria-selected', String(k === i)); t.tabIndex = k === i ? 0 : -1; });
+      panes.forEach(function (p, k) { p.hidden = k !== i; p.classList.toggle('is-active', k === i); p.classList.remove('is-entering'); });
+      var p = panes[i]; void p.offsetWidth; p.classList.add('is-entering');
+      var d = $('[data-draw]', p); if (d) redraw(d);
+      fileEl.textContent = tabs[i].getAttribute('data-file');
+      countEl.textContent = pad(i + 1) + ' / ' + pad(n);
+      barEl.style.transform = 'scaleX(' + ((i + 1) / n) + ')';
+      var t = tabs[i], left = t.offsetLeft - tabsEl.offsetLeft;
+      if (left < tabsEl.scrollLeft || left + t.offsetWidth > tabsEl.scrollLeft + tabsEl.clientWidth) tabsEl.scrollTo({ left: left - 20, behavior: 'smooth' });
+    };
+    barEl.style.transform = 'scaleX(' + (1 / n) + ')';
+    var pinned = motion && window.matchMedia('(min-width: 981px)').matches, st = null;
+    if (pinned) {
+      st = ScrollTrigger.create({ trigger: ed, start: 'top top', end: 'bottom bottom',
+        onUpdate: function (self) { show(Math.min(n - 1, Math.floor(self.progress * n))); } });
+    }
+    var goTo = function (k) {
+      if (st) {
+        var y = st.start + (st.end - st.start) * (k + 0.5) / n;
+        if (lenis) lenis.scrollTo(y, { duration: 1.1 }); else window.scrollTo({ top: y, behavior: 'smooth' });
+      } else show(k);
+    };
+    tabs.forEach(function (t, k) { t.addEventListener('click', function () { goTo(k); }); });
+    tabsEl.addEventListener('keydown', function (e) {
+      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+      e.preventDefault();
+      var k = (edCur + (e.key === 'ArrowRight' ? 1 : -1) + n) % n; goTo(k); tabs[k].focus();
+    });
+    var skip = $('[data-editor-skip]', ed);
+    if (skip) skip.addEventListener('click', function (e) {
+      var target = $('#after-work'); if (!target) return;
+      e.preventDefault();
+      if (lenis) lenis.scrollTo(target, { duration: 1.2 }); else target.scrollIntoView({ behavior: 'smooth' });
+    });
+  }
+
   /* ---------- filters (work grid + toolkit) ---------- */
   function wireFilter(barSel, itemsSel, match) {
     var bar = $(barSel); if (!bar) return;
@@ -90,6 +161,11 @@
   }
   wireFilter('[data-work-filters]', '[data-work-grid] .card', function (el, f) { return el.getAttribute('data-tags').split('|').indexOf(f) > -1; });
   wireFilter('[data-tool-filters]', '[data-tools] .tool', function (el, f) { return el.getAttribute('data-cat') === f; });
+  wireFilter('[data-svc-filters]', '[data-svc-grid] .svc-card', function (el, f) { return el.getAttribute('data-group') === f; });
+  (function () {
+    var bar = $('[data-svc-filters]'); if (!bar || !location.hash) return;
+    var b = $('[data-filter="' + location.hash.slice(1) + '"]', bar); if (b) b.click();
+  })();
 
   /* ---------- contact form (FormSubmit AJAX, falls back to normal POST) ---------- */
   var form = $('[data-contact-form]');

@@ -26,6 +26,18 @@
 ## Pages
 - [About & résumé](https://elombekisala.com/about/)
 - [Services](https://elombekisala.com/services/)
+  - [Marketing & brand sites](https://elombekisala.com/services/marketing-sites/): Webflow or hand-built on Cloudflare, whichever suits how you’ll run it.
+  - [Shopify stores](https://elombekisala.com/services/shopify/): Themes, catalogs and launches for stores that need to sell, not just exist.
+  - [Web apps](https://elombekisala.com/services/web-apps/): Accounts, data, payments and AI, from the first screen to production.
+  - [iOS apps](https://elombekisala.com/services/ios-apps/): Native SwiftUI apps with location, subscriptions and a real backend.
+  - [Client portals & internal tools](https://elombekisala.com/services/portals-and-tools/): One product, two sides: what your clients see and what your team runs.
+  - [Learning platforms](https://elombekisala.com/services/learning-platforms/): Courses, progress and practice in one place, online or off.
+  - [Payments & booking](https://elombekisala.com/services/payments-and-booking/): Take money, deposits and bookings online the day you launch.
+  - [CRM & automation](https://elombekisala.com/services/automation/): Leads, follow-up and admin connected, so nothing falls through.
+  - [A CMS anyone can edit](https://elombekisala.com/services/payload-cms/): Payload CMS or Webflow CMS: editing that doesn’t need a developer on call.
+  - [Migrations](https://elombekisala.com/services/migrations/): Move platforms without losing what works.
+  - [Speed, SEO & hosting costs](https://elombekisala.com/services/speed-and-seo/): Faster pages, better rankings and smaller bills.
+  - [Embedded developer & agency partner](https://elombekisala.com/services/team-partner/): Join your team for a launch, a season or ongoing work.
 - [Contact](https://elombekisala.com/contact/)
 - [Writing](https://elombekisala.com/blog/)
 

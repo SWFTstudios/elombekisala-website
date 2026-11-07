@@ -9,6 +9,8 @@ Portfolio and résumé site for Elombe Kisala. Plain static HTML, generated from
 | Case studies (all of `/work/`) | `src/build/data/projects.mjs` |
 | Build-log commit highlights | `src/build/data/commits.json` |
 | Toolkit, experience, testimonials, process, contact links | `src/build/data/site.mjs` |
+| Services (12 services in 4 groups, incl. Payload CMS) | `src/build/data/services.mjs` |
+| Line-art illustrations and animated work previews (SVG) | `src/build/data/art.mjs` |
 | Service detail pages, blog posts, privacy, terms | `src/content/pages/*.html` (blog list: `content/posts.json`) |
 | Styles | `assets/css/site.css` |
 | Interactions and motion | `assets/js/site.js` |
@@ -30,7 +32,10 @@ npm run dev     # build + serve at http://localhost:8080
 
 ## How it's built
 
-- **Type:** Satoshi (sans), Instrument Serif italic (accent words), JetBrains Mono (labels), all self-hosted in `fonts/`.
+- **Themes:** light and dark, following the system setting until the visitor uses the header toggle (saved in localStorage, circular reveal via the View Transitions API).
+- **Type:** Satoshi at a light display weight with bold-italic emphasis, and JetBrains Mono for `// labels`, self-hosted in `fonts/`.
+- **Selected work:** a code-editor section with one tab ("file") per project. On desktop it pins and scrolling opens the next file; on phones the tabs are tappable.
+- **Line art:** each service has an SVG drawing that draws itself in on scroll (`[data-draw]`).
 - **Motion:** GSAP 3.13 with ScrollTrigger and SplitText, plus Lenis smooth scroll, self-hosted in `assets/vendor/` (GSAP standard license). Line-by-line text reveals, a first-visit preloader, page-transition curtain, stacked project cards, a cursor-following project preview, magnetic buttons and a velocity-reactive marquee.
 - **Accessibility:** everything is visible without JavaScript. Motion is skipped for `prefers-reduced-motion`, focus states are visible, and there's a skip link.
 - **Contact form:** posts to FormSubmit (`formsubmit.co`) for elombekisala@gmail.com. The first submission sends an activation email to that inbox, which must be confirmed once.
