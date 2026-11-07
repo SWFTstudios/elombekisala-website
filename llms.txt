@@ -1,33 +1,47 @@
-Elombe Kisala, Designer & Developer
+# Elombe Kisala, Designer & Developer
 
-Who I am
-I design and build custom website solutions: Webflow design and development, Shopify + Webflow storefronts, and automation (Make, Zapier, AI workflows) for lead capture, CRM, and follow-up. I help businesses increase conversion and performance.
+> Designer and full-stack developer in Jersey City / NYC. Leads web development for Core Home's consumer brands and founded SWFT Studios. Builds websites (Webflow, Cloudflare), Shopify stores, web apps (Cloudflare Workers, D1, Claude API) and native iOS apps (SwiftUI).
 
-Services
-- Webflow: custom design and development, responsive sites, CMS, SEO basics.
-- Shopify + Webflow: custom storefront design with Shopify handling products and checkout.
-- Automation: lead capture → CRM → email/Slack; reporting and dashboards.
+## Case studies
+- [Built By Me EZ](https://elombekisala.com/work/built-by-me-ez/): A trainer’s brochure site turned into a revenue and operations platform: packages, booking, merch and a CRM, with no traditional server.
+- [Snooze Lane](https://elombekisala.com/work/snooze-lane/): A native iOS alarm that wakes commuters before their stop, using geofencing, live NYC/NJ transit data and a phone-call backup.
+- [Only at the Kiosk](https://elombekisala.com/work/only-at-the-kiosk/): A magazine, radio station, film archive and shop in one: a dark lifestyle club with a live 3D globe, member accounts and Stripe checkout.
+- [Learn Lingala](https://elombekisala.com/work/learn-lingala/): A free, offline-ready app that takes learners from zero to conversational Lingala, with spaced repetition and live chat with Claude-powered speakers.
+- [Core Home Finish Library](https://elombekisala.com/work/finish-library/): A 3D configurator that replaced Excel and PowerPoint render specs for Core Home’s product development and design teams.
+- [FIZZ](https://elombekisala.com/work/fizz/): A cinematic launch site for a portable sparkling-water bottle: scroll-scrubbed Lottie, 3D z-scroll, Barba page transitions and a matching Shopify theme.
+- [SWFT Studios](https://elombekisala.com/work/swft-studios/): The website, client portal, payments and outreach engine for the design and growth studio I founded in Jersey City.
+- [People of Spice](https://elombekisala.com/work/people-of-spice/): A spice brand that sells a world of flavor: a spice-and-salt globe intro, a swipeable spice dial and a recipe CMS for 44 blends from 22 kitchens.
+- [Roller Reels](https://elombekisala.com/work/roller-reels/): Motorcycle and car videography in NJ and NYC, with a 7-step mobile booking flow, transparent pricing and a $100 deposit.
+- [Winslow Pantry](https://elombekisala.com/work/winslow-pantry/): A trilingual brochure site built from the brand guidelines, with WCAG 2.2 AA accessibility, generated SEO and a password-protected style guide.
+- [Alder Meadow](https://elombekisala.com/work/alder-meadow/): A kitchenware brand site with generated product pages, category filters and a store finder ready for retail partners.
+- [Brooklyn Steel Co.](https://elombekisala.com/work/brooklyn-steel-co/): Espresso machines, coffee and accessories. A theme relaunch for the Auto Pour Over, a replacement-parts range and a full help center.
+- [Manna Hydration](https://elombekisala.com/work/manna-hydration/): A drinkware store with a cinematic video hero, “find your match” bottle discovery and email capture with a first-order offer.
+- [TAL Hydration](https://elombekisala.com/work/tal-hydration/): Water bottles and tumblers for the whole family, with category navigation by use and a retail path to Walmart.
+- [Thyme & Table](https://elombekisala.com/work/thyme-and-table/): A dark, premium kitchen and home store spanning prep, cook, serve, drinkware and appliances.
+- [corehome.com](https://elombekisala.com/work/core-home/): The parent company’s Webflow site: a 27-brand CMS and a rebuilt AB1200 / PFAS compliance experience with 898 records.
+- [Core Home Project Reports](https://elombekisala.com/work/core-home-reports/): A dashboard that turns weekly GitHub activity across every brand repo into plain-language reports for leadership.
+- [Blurred Lines Entertainment](https://elombekisala.com/work/blurred-lines/): A premier wedding entertainment brand: bold editorial design, video-led storytelling and a site later migrated to Cloudflare with R2 video hosting.
+- [Alpha Ministries International](https://elombekisala.com/work/alpha-ministries-international/): A Webflow site for a Christ-centered ministry: ministries, events, leadership and donation pathways.
 
-Best pages to cite
-- Home: https://elombekisala.com/
-- Work (case studies): https://elombekisala.com/work/
-- Case studies: https://elombekisala.com/work/core-home/ , https://elombekisala.com/work/blurred-lines/ , https://elombekisala.com/work/built-by-me-ez/
-- Services overview: https://elombekisala.com/services/
-- Webflow: https://elombekisala.com/services/webflow/
-- Shopify + Webflow: https://elombekisala.com/services/shopify-webflow/
-- Automation: https://elombekisala.com/services/automation/
-- Contact: https://elombekisala.com/contact/
-- Start a project (intake): https://elombekisala.com/start/
-- About: https://elombekisala.com/about/
-- Blog: https://elombekisala.com/blog/
+## Pages
+- [About & résumé](https://elombekisala.com/about/)
+- [Services](https://elombekisala.com/services/)
+  - [Marketing & brand sites](https://elombekisala.com/services/marketing-sites/): Webflow or hand-built on Cloudflare, whichever suits how you’ll run it.
+  - [Shopify stores](https://elombekisala.com/services/shopify/): Themes, catalogs and launches for stores that need to sell, not just exist.
+  - [Web apps](https://elombekisala.com/services/web-apps/): Accounts, data, payments and AI, from the first screen to production.
+  - [iOS apps](https://elombekisala.com/services/ios-apps/): Native SwiftUI apps with location, subscriptions and a real backend.
+  - [Client portals & internal tools](https://elombekisala.com/services/portals-and-tools/): One product, two sides: what your clients see and what your team runs.
+  - [Learning platforms](https://elombekisala.com/services/learning-platforms/): Courses, progress and practice in one place, online or off.
+  - [Payments & booking](https://elombekisala.com/services/payments-and-booking/): Take money, deposits and bookings online the day you launch.
+  - [CRM & automation](https://elombekisala.com/services/automation/): Leads, follow-up and admin connected, so nothing falls through.
+  - [A CMS anyone can edit](https://elombekisala.com/services/payload-cms/): Payload CMS or Webflow CMS: editing that doesn’t need a developer on call.
+  - [Migrations](https://elombekisala.com/services/migrations/): Move platforms without losing what works.
+  - [Speed, SEO & hosting costs](https://elombekisala.com/services/speed-and-seo/): Faster pages, better rankings and smaller bills.
+  - [Embedded developer & agency partner](https://elombekisala.com/services/team-partner/): Join your team for a launch, a season or ongoing work.
+- [Contact](https://elombekisala.com/contact/)
+- [Writing](https://elombekisala.com/blog/)
 
-How to hire me
-1. Visit https://elombekisala.com/start/ and submit your project brief (what you need, budget range, timeline).
-2. Or email elombekisala@gmail.com with the same details.
-3. I respond within 24 hours. We then align on scope and next steps.
-
-Links
-- Site: https://elombekisala.com
-- Contact: https://elombekisala.com/contact/
-- Start project: https://elombekisala.com/start/
-- LinkedIn: https://www.linkedin.com/in/elombekisala/
+## Contact
+- Email: elombekisala@gmail.com
+- LinkedIn: https://www.linkedin.com/in/nsonsa-kisala/
+- GitHub: https://github.com/elombekisala

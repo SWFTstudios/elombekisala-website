@@ -1,0 +1,372 @@
+{
+ "built-by-me-ez": [
+  {
+   "date": "2025-11-16",
+   "text": "Initial commit: Add Google Analytics tag to all pages"
+  },
+  {
+   "date": "2026-03-21",
+   "text": "Cal.com embed pages and homepage booking links"
+  },
+  {
+   "date": "2026-05-27",
+   "text": "Add pay-first package booking flow with Cloudflare Worker backend"
+  },
+  {
+   "date": "2026-06-02",
+   "text": "Add date-interest lead capture calendar to all 6 package pages"
+  },
+  {
+   "date": "2026-06-05",
+   "text": "Harden calendar layout and cap date selections per package"
+  },
+  {
+   "date": "2026-06-05",
+   "text": "Add merch Checkout Sessions flow with webhook fulfillment"
+  },
+  {
+   "date": "2026-06-05",
+   "text": "Add script to verify all merch Stripe payment links are reachable"
+  },
+  {
+   "date": "2026-06-07",
+   "text": "Add paginated case study documentation for Built By Me EZ"
+  }
+ ],
+ "snooze-lane": [
+  {
+   "date": "2025-10-06",
+   "text": "Add comprehensive export and sleep analytics functionality"
+  },
+  {
+   "date": "2025-10-06",
+   "text": "Add access code entry for free user view in admin section"
+  },
+  {
+   "date": "2026-03-30",
+   "text": "Trip progress ring, alarm range, map theming, and layout"
+  },
+  {
+   "date": "2026-06-19",
+   "text": "Redesign Sleep Dashboard around commute rest estimates"
+  },
+  {
+   "date": "2026-09-10",
+   "text": "Add PATH and NJ Transit live nearby via Worker GTFS feeds"
+  },
+  {
+   "date": "2026-10-07",
+   "text": "Keep wake-ups working underground: on-device alarms, timed backup, offline call retry"
+  },
+  {
+   "date": "2026-10-25",
+   "text": "Add in-app account deletion (App Store guideline 5.1.1(v))"
+  },
+  {
+   "date": "2026-10-25",
+   "text": "Harden the alarm path for lock-screen and underground trips"
+  }
+ ],
+ "only-at-the-kiosk": [
+  {
+   "date": "2026-10-15",
+   "text": "Restyle Shop and Lost & Found as a luxury glass shopping experience"
+  },
+  {
+   "date": "2026-10-17",
+   "text": "Shop: 3D hero carousel, clear carousels, mobile command bar and filter sheet"
+  },
+  {
+   "date": "2026-10-17",
+   "text": "Spec sheets: show the factory drawing next to the schematic"
+  },
+  {
+   "date": "2026-10-18",
+   "text": "Home cover: the carousel floats in a second layer of cloud"
+  },
+  {
+   "date": "2026-10-20",
+   "text": "Home: one roaming Atlas globe, a black zone, and Why the kiosk as a slider"
+  },
+  {
+   "date": "2026-10-21",
+   "text": "Sell through Stripe until Shopify: bag, checkout, orders, back office"
+  },
+  {
+   "date": "2026-10-22",
+   "text": "Home globe: float a full sphere in space instead of a flat horizon strip"
+  },
+  {
+   "date": "2026-10-28",
+   "text": "Home: replace bento with featured stream rails and fix card overflow"
+  }
+ ],
+ "learn-lingala": [
+  {
+   "date": "2026-07-09",
+   "text": "Add Lingala learning site: alphabet and sentence structure lessons"
+  },
+  {
+   "date": "2026-10-25",
+   "text": "Add interactive Lingala learning app with accounts and progress sync"
+  },
+  {
+   "date": "2026-10-25",
+   "text": "Restructure course into 5 levels toward conversational Lingala"
+  },
+  {
+   "date": "2026-10-25",
+   "text": "Add live chat practice with Claude-powered Lingala speakers"
+  },
+  {
+   "date": "2026-10-26",
+   "text": "Premium redesign, base language (English/French), translate & dictionary"
+  },
+  {
+   "date": "2026-10-26",
+   "text": "Study cards: word breakdowns, personal notes, science-backed review"
+  },
+  {
+   "date": "2026-10-26",
+   "text": "Email auth, word of the day, reminders (email + Pro texts), ad space"
+  }
+ ],
+ "finish-library": [
+  {
+   "date": "2026-05-21",
+   "text": "Scaffold Render Portal from PROJECT.md"
+  },
+  {
+   "date": "2026-05-21",
+   "text": "Configurator 3D preview, standards library UX, and Lumina HUD"
+  },
+  {
+   "date": "2026-05-22",
+   "text": "Finish wheel browse, HUD layout, and search card alignment"
+  },
+  {
+   "date": "2026-06-03",
+   "text": "Import ceramic, glass, and plastic finishes from factory v3 xlsx"
+  }
+ ],
+ "fizz": [
+  {
+   "date": "2026-05-26",
+   "text": "Port Webflow homepage hero, scroll scale, and Lottie transitions"
+  },
+  {
+   "date": "2026-06-15",
+   "text": "Add Kinetic Spark theme from Stitch designs"
+  },
+  {
+   "date": "2026-10-12",
+   "text": "Add cleaned-up fizz-final Webflow export with new intro and transitions"
+  },
+  {
+   "date": "2026-10-13",
+   "text": "Add \"Keep the fizz coming\" refill loop section"
+  },
+  {
+   "date": "2026-10-27",
+   "text": "Expand-in nav entrance after the homepage intro"
+  },
+  {
+   "date": "2026-10-28",
+   "text": "Editorial menu, site-wide bubble depth, scroll story, underwater cursor"
+  },
+  {
+   "date": "2026-10-29",
+   "text": "Clarify canister refill subscription copy"
+  },
+  {
+   "date": "2026-11-03",
+   "text": "Install Google Tag Manager (GTM-K68V2J4C) on all fizz-final pages"
+  }
+ ],
+ "swft-studios": [
+  {
+   "date": "2026-09-30",
+   "text": "Expand homepage services package copy"
+  },
+  {
+   "date": "2026-10-01",
+   "text": "Home: move Creative Services up, right after the problem tabs"
+  },
+  {
+   "date": "2026-10-01",
+   "text": "Home: sticky SWFT Method intro column; holographic letter cube"
+  },
+  {
+   "date": "2026-10-07",
+   "text": "Services: organize into Digital and Visual with itemized offers"
+  },
+  {
+   "date": "2026-11-02",
+   "text": "Outreach slice 3: Claude drafting and approval page"
+  },
+  {
+   "date": "2026-11-03",
+   "text": "Stripe: live payment links for all 25 packages"
+  },
+  {
+   "date": "2026-11-04",
+   "text": "Shop with cart + 50% deposit checkout; live client results"
+  },
+  {
+   "date": "2026-11-05",
+   "text": "Growth Guide: Customer Journey Check (web) + printable PDF; fix /growth-guide redirect loop"
+  }
+ ],
+ "people-of-spice": [
+  {
+   "date": "2025-09-16",
+   "text": "Initial commit: People of Spice website files"
+  },
+  {
+   "date": "2025-10-21",
+   "text": "Add animated thank you page for form submissions"
+  },
+  {
+   "date": "2025-10-21",
+   "text": "Add video background to services-section on mobile devices"
+  },
+  {
+   "date": "2025-11-06",
+   "text": "Add Google Analytics tag (G-35LQYB32YH) to all HTML pages"
+  },
+  {
+   "date": "2025-11-06",
+   "text": "Add Airtable form integration"
+  },
+  {
+   "date": "2026-10-19",
+   "text": "Homepage: darker art direction and a flavour-inspired first-visit intro"
+  },
+  {
+   "date": "2026-10-19",
+   "text": "Homepage intro: spice and salt form a globe, then fly into the hero"
+  },
+  {
+   "date": "2026-10-19",
+   "text": "Our Story timeline and SEO for every page"
+  }
+ ],
+ "roller-reels": [
+  {
+   "date": "2026-03-18",
+   "text": "Premium booking estimator v1"
+  },
+  {
+   "date": "2026-03-19",
+   "text": "Enable AI crawling: robots, sitemap, and schema"
+  },
+  {
+   "date": "2026-05-27",
+   "text": "Add Team page + update site-wide navigation"
+  },
+  {
+   "date": "2026-05-27",
+   "text": "Redesign sitewide nav + booking form step headings to match Stitch"
+  },
+  {
+   "date": "2026-05-25",
+   "text": "Mobile booking overhaul: GSAP slide transitions, swipe navigation, Lenis scroll, race progress bar"
+  },
+  {
+   "date": "2026-05-27",
+   "text": "Redesign booking flow: compact cards, upgrade tiles, mission build bar, new 7-step structure"
+  },
+  {
+   "date": "2026-07-01",
+   "text": "Set Full Cinematic to flat $999 for photos + video"
+  },
+  {
+   "date": "2026-10-12",
+   "text": "Add Cloudflare Worker to serve the static site"
+  }
+ ],
+ "winslow-pantry": [
+  {
+   "date": "2026-10-22",
+   "text": "Add Winslow Pantry brochure site and internal style guide"
+  },
+  {
+   "date": "2026-10-22",
+   "text": "Add GSAP motion matched to the brand"
+  },
+  {
+   "date": "2026-10-22",
+   "text": "Move fruit prints from the public site into the style guide"
+  },
+  {
+   "date": "2026-10-22",
+   "text": "Add the brand name to Contact email subjects"
+  },
+  {
+   "date": "2026-10-22",
+   "text": "Move to winslowpantry.shop and add a product preview switch"
+  },
+  {
+   "date": "2026-10-22",
+   "text": "Fingerprint CSS and JS URLs so updates reach browsers right away"
+  }
+ ],
+ "alder-meadow": [
+  {
+   "date": "2026-10-21",
+   "text": "Add Alder Meadow website and brand style guide"
+  },
+  {
+   "date": "2026-10-21",
+   "text": "Add landing page, shop, product pages and store finder"
+  },
+  {
+   "date": "2026-10-21",
+   "text": "Remove color palette from the public site; focus copy on feeling"
+  }
+ ],
+ "core-home-reports": [
+  {
+   "date": "2025-12-04",
+   "text": "Phase 2-4: Fix WebGL errors + Add Lenis smooth scroll"
+  },
+  {
+   "date": "2025-12-04",
+   "text": "Implement Simple List Commit Summary Feature"
+  },
+  {
+   "date": "2025-12-04",
+   "text": "Add PDF snapshot viewer with lightbox to analytics page"
+  },
+  {
+   "date": "2025-12-04",
+   "text": "Expand Brand Ecosystem section with mobile/web apps and Shopify Storefront API details"
+  },
+  {
+   "date": "2026-05-05",
+   "text": "Add Core Home brand cards and sync tracked repos"
+  },
+  {
+   "date": "2026-10-30",
+   "text": "Add new brands, finish library and year-in-review summary page"
+  },
+  {
+   "date": "2026-10-30",
+   "text": "Add Shopify change log page starting with Brooklyn Steel Co."
+  },
+  {
+   "date": "2026-11-03",
+   "text": "Add daily report for November 3, 2026"
+  }
+ ],
+ "blurred-lines": [
+  {
+   "date": "2026-02-04",
+   "text": "Initialize project and add GA4 (Google Analytics 4) per client request"
+  },
+  {
+   "date": "2026-09-22",
+   "text": "Migrate site to Cloudflare Workers with R2 video hosting"
+  }
+ ]
+}
