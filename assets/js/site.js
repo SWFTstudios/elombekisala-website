@@ -221,18 +221,30 @@
     return tl;
   }
 
-  /* preloader (home, first visit per session) */
+  /* 3D logo intro (Spline scene, home, first visit per session).
+     Timing follows the original site: the scene plays ~4.4s, then fades out over 0.6s. */
   var pre = $('[data-preloader]');
   if (pre && html.classList.contains('first-visit')) {
     try { sessionStorage.setItem('ek-visited', '1'); } catch (e) {}
     if (lenis) lenis.stop();
-    var count = $('[data-preloader-count]'), bar = $('[data-preloader-bar]'), obj = { v: 0 };
-    var name = $$('.preloader-name > *');
-    gsap.timeline()
-      .from(name, { yPercent: 110, duration: 1, stagger: .08, ease: 'expo.out' })
-      .to(obj, { v: 100, duration: 1.6, ease: 'power2.inOut', onUpdate: function () { count.textContent = String(Math.round(obj.v)).padStart(3, '0'); gsap.set(bar, { scaleX: obj.v / 100 }); } }, 0.1)
-      .to(pre, { clipPath: 'inset(0 0 100% 0)', duration: 1, ease: 'expo.inOut' }, '+=.15')
-      .add(function () { pre.remove(); html.classList.remove('first-visit'); if (lenis) lenis.start(); heroIn(); }, '-=.55');
+    var scene = $('.preloader-scene', pre), finished = false, holdTimer;
+    var finish = function () {
+      if (finished) return; finished = true;
+      clearTimeout(holdTimer);
+      gsap.to(pre, { opacity: 0, duration: .6, ease: 'power2.out', onComplete: function () {
+        pre.remove(); html.classList.remove('first-visit'); if (lenis) lenis.start();
+      } });
+      gsap.delayedCall(.25, heroIn);
+    };
+    if (scene) {
+      scene.addEventListener('load', function () {
+        pre.classList.add('is-scene-ready');
+        clearTimeout(holdTimer); holdTimer = setTimeout(finish, 4400);
+      });
+      scene.src = scene.getAttribute('data-src');
+    }
+    holdTimer = setTimeout(finish, 7000); // if the scene never loads, don't hold the page
+    pre.addEventListener('click', finish); // tap to skip
   } else {
     if (pre) pre.remove();
     heroIn();

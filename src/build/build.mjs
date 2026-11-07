@@ -5,7 +5,7 @@ import { readFileSync, writeFileSync, mkdirSync, readdirSync, existsSync, statSy
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
-import { projects, archive } from './data/projects.mjs';
+import { projects, more } from './data/projects.mjs';
 import { site, nav, toolkit, capabilities, experience, education, testimonials, process as steps } from './data/site.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
@@ -72,8 +72,8 @@ function head({ title, description, path, image = '/assets/og.jpg', jsonld = [],
   <meta property="og:image" content="${site.url}${image}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#0b0b0a">
-  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/images/webclip.jpg">
+  <link rel="icon" href="/assets/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <link rel="preload" href="/fonts/Satoshi-Variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/instrument-serif-latin-400-italic.woff2" as="font" type="font/woff2" crossorigin>
   ${preload.map(p => `<link rel="preload" href="${p}" as="image" fetchpriority="high">`).join('\n  ')}
@@ -94,7 +94,7 @@ function header(path) {
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header" data-header>
   <a href="/" class="brand" aria-label="${site.name}, home">
-    <span class="brand-mark" aria-hidden="true">EK</span>
+    <img class="brand-logo" src="/assets/brand/ek-logo-96.webp" alt="" width="52" height="48" aria-hidden="true">
     <span class="brand-name">${roll('Elombe Kisala')}</span>
   </a>
   <nav class="nav" aria-label="Main">${nav.map(link).join('')}</nav>
@@ -176,13 +176,10 @@ function page({ title, description, path, body, bodyClass = '', image, jsonld, p
   return `${head({ title, description, path, image, jsonld, preload })}
 <body class="${bodyClass}"${style}>
 ${preloader ? `<div class="preloader" data-preloader aria-hidden="true">
-  <div class="preloader-inner">
-    <span class="preloader-name"><span>Elombe</span> <em class="serif">Kisala</em></span>
-    <span class="preloader-count mono" data-preloader-count>000</span>
-  </div>
-  <div class="preloader-bar"><span data-preloader-bar></span></div>
+  <img class="preloader-logo" src="/assets/brand/ek-logo-192.webp" alt="" width="104" height="96">
+  <iframe class="preloader-scene" data-src="https://my.spline.design/untitled-e42e33bdae89919f1af0a26b028a02f0/" title="Elombe Kisala 3D logo intro" tabindex="-1" loading="eager"></iframe>
 </div>` : ''}
-<div class="curtain" data-curtain aria-hidden="true"></div>
+<div class="curtain" data-curtain aria-hidden="true"><img src="/assets/brand/ek-logo-192.webp" alt="" width="104" height="96"></div>
 <div class="cursor" data-cursor-el aria-hidden="true"><span class="cursor-label" data-cursor-label></span></div>
 ${header(path)}
 <main id="main">
@@ -214,6 +211,13 @@ function workCard(p, i, { big = false } = {}) {
   <p class="card-sum">${esc(p.summary)}</p>
 </a>`;
 }
+
+
+const moreCard = m => `<a href="${m.url}" target="_blank" rel="noopener" class="more-card" data-cursor="${esc(m.cta)}" data-reveal>
+  <div class="more-media">${img(m.img, `${m.title}`, { sizes: '(max-width: 680px) 100vw, (max-width: 980px) 50vw, 33vw' })}<span class="more-type mono">${esc(m.type)}</span></div>
+  <div class="more-info"><h3>${esc(m.title)}</h3><span class="more-cta">${esc(m.cta)} ${arrow}<span class="sr-only"> (opens in a new tab)</span></span></div>
+  <p class="mono more-kind">${esc(m.kind)}</p>
+</a>`;
 
 // ---------- home ----------
 function home() {
@@ -302,7 +306,19 @@ function home() {
       </a></li>`).join('')}
     </ul>
     <div class="index-preview" data-index-preview aria-hidden="true"><img alt="" src="${small(rest[0])}"></div>
-    <div class="center-row"><a href="/work/" class="btn btn-ghost btn-lg" data-magnetic>${roll('All work &amp; archive')} ${arrowRight}</a></div>
+  </div>
+</section>
+
+<section class="section more-section">
+  <div class="wrap">
+    <div class="section-head split-head">
+      <div>
+        <p class="eyebrow"><span class="dot"></span> Also live</p>
+        <h2 class="h2" data-split>Sites, VR tours <em class="serif">&amp; 3D.</em></h2>
+      </div>
+      <a href="/work/#more" class="btn btn-ghost" data-magnetic>${roll('See all work')} ${arrowRight}</a>
+    </div>
+    <div class="more-grid">${more.slice(0, 6).map(moreCard).join('')}</div>
   </div>
 </section>
 
@@ -416,22 +432,14 @@ function workIndex() {
     </div>
   </div>
 </section>
-<section class="section archive">
+<section class="section more-section" id="more">
   <div class="wrap">
     <div class="section-head">
-      <p class="eyebrow"><span class="dot"></span> Archive · 2019–2024</p>
-      <h2 class="h2" data-split>Earlier <em class="serif">work.</em></h2>
+      <p class="eyebrow"><span class="dot"></span> More work · ${more.length} live links</p>
+      <h2 class="h2" data-split>Websites, VR tours <em class="serif">&amp; 3D animation.</em></h2>
+      <p class="lead muted section-lead" data-reveal>Earlier client sites, virtual tours built with Matterport and 3DVista, and 3D animation. Each opens the live project.</p>
     </div>
-    <ul class="index-list" data-index-list>
-      ${archive.map((a, i) => `<li><a href="${a.url}" target="_blank" rel="noopener" class="index-row"${a.img ? ` data-preview="${a.img}"` : ''} data-reveal>
-        <span class="mono index-num">A${String(i + 1).padStart(2, '0')}</span>
-        <span class="index-title">${esc(a.title)}</span>
-        <span class="index-kind">${esc(a.kind)}</span>
-        <span class="mono index-year">${a.year}</span>
-        <span class="index-arrow">${arrow}<span class="sr-only"> (opens in a new tab)</span></span>
-      </a></li>`).join('')}
-    </ul>
-    <div class="index-preview" data-index-preview aria-hidden="true"><img alt="" src="${archive[0].img}"></div>
+    <div class="more-grid">${more.map(moreCard).join('')}</div>
   </div>
 </section>`;
   return page({ title: 'Work · Elombe Kisala', description: `Case studies from Elombe Kisala: ${projects.slice(0, 6).map(p => p.title).join(', ')} and more.`, path: '/work/', body, bodyClass: 'is-work' });
@@ -553,7 +561,7 @@ function about() {
         <button type="button" class="btn btn-lg btn-ghost" data-print>${roll('Save résumé as PDF')}</button>
       </div>
     </div>
-    <figure class="about-photo" data-reveal>${img('/assets/work/about/portrait.webp', 'Elombe Kisala', { eager: true, sizes: '(max-width: 900px) 100vw, 40vw' })}</figure>
+    <figure class="about-photo" data-reveal>${img('/assets/work/about/portrait.webp', 'Portrait of Elombe Kisala', { eager: true, sizes: '(max-width: 900px) 100vw, 40vw' })}</figure>
   </div>
 </section>
 

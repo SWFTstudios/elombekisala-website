@@ -985,13 +985,16 @@ export const projects = [
   }
 ];
 
-// Earlier work shown in the archive table on /work/.
-export const archive = [
-  { title: 'Hawthorne Global Ministries', kind: 'Web design · Email automation', year: '2023', url: 'https://www.hawthorneglobalministries.org/', img: '/assets/work/archive/hawthorne_global_ministries_thumbnail.webp' },
-  { title: 'Scribble & Scribe', kind: 'Web design & development', year: '2023', url: 'https://scribbleandscribe.webflow.io/', img: '/assets/work/archive/scribble_and_scribe_thumbnail.webp' },
-  { title: 'Apex Fitness', kind: 'Branding · Web · Google Analytics', year: '2023', url: 'https://www.apexfitcoaching.com/' },
-  { title: 'Hamper App', kind: 'App marketing site', year: '2023', url: 'https://hamperapp.webflow.io', img: '/assets/work/archive/hamper_app_website_thumbnail.webp' },
-  { title: 'WDYM Virtual Boutique', kind: 'VR tour, with Company5', year: '2022', url: 'https://mantisvisuals.com/wdym-demo-3/' },
-  { title: 'Pico Ski Resort', kind: 'VR tour demo', year: '2022', url: 'https://mantisvisuals.com/pico-resort-tour/', img: '/assets/work/archive/pico-vr-thumbnail.webp' },
-  { title: 'Broadway Supercars', kind: 'VR showroom', year: '2022', url: 'https://mantisvisuals.com/broadway-supercars-tour/', img: '/assets/work/archive/broadway_super_cars_vr_thumbnail.webp' }
+// More work from the original portfolio: live sites, VR tours and 3D animation.
+// Shown as cards with outbound links on /work/ and the homepage.
+export const more = [
+  { title: 'Hawthorne Global Ministries', kind: 'Website · Email automation', type: 'Website', url: 'https://www.hawthorneglobalministries.org/', cta: 'Visit site', img: '/assets/work/more/hawthorne.webp' },
+  { title: 'Scribble & Scribe', kind: 'Brand website', type: 'Website', url: 'https://scribbleandscribe.webflow.io/', cta: 'Visit site', img: '/assets/work/more/scribble-and-scribe.webp' },
+  { title: 'Apex Fitness', kind: 'Branding · Website · Google Analytics', type: 'Website', url: 'https://www.apexfitcoaching.com/', cta: 'Visit site', img: '/assets/work/more/apex-fitness.webp' },
+  { title: 'Hamper', kind: 'iOS app landing page', type: 'Website', url: 'https://hamperapp.webflow.io', cta: 'Visit site', img: '/assets/work/more/hamper.webp' },
+  { title: 'WDYM Virtual Showroom', kind: 'VR tour · with Company5', type: 'VR tour', url: 'https://mantisvisuals.com/wdym-demo-3/', cta: 'Take the tour', img: '/assets/work/more/wdym.webp' },
+  { title: 'Pico Ski Resort', kind: 'VR tour demo', type: 'VR tour', url: 'https://mantisvisuals.com/pico-resort-tour/', cta: 'Take the tour', img: '/assets/work/more/pico.webp' },
+  { title: 'Broadway Supercars', kind: 'VR showroom', type: 'VR tour', url: 'https://mantisvisuals.com/broadway-supercars-tour/', cta: 'Take the tour', img: '/assets/work/more/broadway-supercars.webp' },
+  { title: 'Eevee Cube Over Water', kind: '3D design & animation', type: '3D animation', url: 'https://vimeo.com/839084087/1eaaa40b22', cta: 'Watch', img: '/assets/work/more/eevee-cube.webp' },
+  { title: 'Animated Möbius Strip', kind: '3D design & animation', type: '3D animation', url: 'https://vimeo.com/839085191/314f95cd21', cta: 'Watch', img: '/assets/work/more/mobius-strip.webp' }
 ];
