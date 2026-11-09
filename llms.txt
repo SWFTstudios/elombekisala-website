@@ -24,7 +24,7 @@
 - [Alpha Ministries International](https://elombekisala.com/work/alpha-ministries-international/): A Webflow site for a Christ-centered ministry: ministries, events, leadership and donation pathways.
 
 ## Pages
-- [Project garden: each case study as a 3D bonsai](https://elombekisala.com/garden/)
+- [Project garden: each project a bonsai, each limb a git branch](https://elombekisala.com/garden/)
 - [About & résumé](https://elombekisala.com/about/)
 - [Services](https://elombekisala.com/services/)
   - [Marketing & brand sites](https://elombekisala.com/services/marketing-sites/): Webflow or hand-built on Cloudflare, whichever suits how you’ll run it.

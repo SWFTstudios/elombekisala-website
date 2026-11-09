@@ -68,16 +68,38 @@ function hexToHsl(hex) {
 
 const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
 
-export function traits(p) {
+export const MAX_LIMBS = 36;
+const DAY = 864e5;
+
+// One limb per real branch. Without a repo, one limb per tool in the stack.
+export function limbsFor(p, repoBranches) {
+  if (repoBranches && repoBranches.branches && repoBranches.branches.length) {
+    const all = repoBranches.branches;
+    const trunk = all.find(b => b.default) || all[0];
+    const newest = Math.max(...all.map(b => Date.parse(b.last)));
+    const limbs = all.filter(b => b !== trunk).map(b => {
+      const quiet = (newest - Date.parse(b.last)) / DAY;
+      const state = b.merged ? 'merged' : quiet <= 45 ? 'open' : 'stale';
+      return { name: b.name, commits: b.commits, at: b.orphan ? 0 : clamp(b.forkedAt / Math.max(1, trunk.commits), 0, 1), state, last: b.last.slice(0, 10), root: !!b.orphan };
+    });
+    const rank = l => (l.state === 'open' ? 1000 : 0) + l.commits * 10 + (l.state === 'merged' ? 5 : 0);
+    const shown = [...limbs].sort((a, b) => rank(b) - rank(a)).slice(0, MAX_LIMBS).sort((a, b) => a.at - b.at);
+    return { source: 'git', trunk: { name: trunk.name, commits: trunk.commits, last: trunk.last.slice(0, 10) }, limbs: shown, hidden: limbs.length - shown.length, total: limbs.length, fetched: repoBranches.fetched, private: !!repoBranches.private };
+  }
+  const stack = (p.stack || []).map(s => s.name || s);
+  const tools = (stack.length ? stack : ['site']).map((name, i, a) => ({ name, commits: 3, at: 0.35 + 0.55 * (i + 0.5) / a.length, state: 'merged', tool: true }));
+  return { source: 'stack', trunk: { name: 'main' }, limbs: tools, hidden: 0, total: tools.length };
+}
+
+export function traits(p, branchData = {}) {
   const commits = p.log && p.log.commits ? p.log.commits : null;
   const spanFromLog = p.log && p.log.span ? spanDays(p.log.span) : null;
   const days = spanFromLog || yearDays(p.year);
   const age = clamp(Math.log10(days + 1) / Math.log10(1200), 0.15, 1);
   const stack = (p.stack || []).map(s => s.name || s);
-  const built = (p.built || []).length;
-  const pads = commits ? Math.round(clamp(3 + 2.6 * Math.log2(1 + commits), 6, 24)) : Math.round(clamp(4 + built * 1.5, 6, 14));
   const { h, s } = hexToHsl(p.accent || '#35e07a');
   const style = styleFor(p.tags);
+  const br = limbsFor(p, branchData[p.slug]);
   return {
     slug: p.slug,
     seed: hash(p.slug),
@@ -87,14 +109,18 @@ export function traits(p) {
     commits,
     repo: p.log && p.log.repo ? p.log.repo : null,
     days,
-    spanLabel: spanFromLog ? (p.log.span) : String(p.year || ''),
+    spanLabel: spanFromLog ? p.log.span : String(p.year || ''),
     age,
-    limbs: clamp(stack.length, 2, 7),
     stack,
-    pads,
+    branches: br,
+    counts: {
+      merged: br.limbs.filter(l => l.state === 'merged').length,
+      open: br.limbs.filter(l => l.state === 'open').length,
+      stale: br.limbs.filter(l => l.state === 'stale').length
+    },
     hue: s < 0.08 ? 0.42 : h,
     sat: clamp(s, 0.6, 1),
-    height: 1.55 + 1.15 * age,
-    trunk: 0.075 + 0.1 * age
+    height: 2.4 + 1.3 * age,
+    trunk: 0.13 + 0.12 * age
   };
 }
