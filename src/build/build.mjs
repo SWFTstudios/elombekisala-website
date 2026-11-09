@@ -6,6 +6,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
 import { projects, more } from './data/projects.mjs';
+import { traits, STYLES } from '../../assets/js/bonsai-traits.mjs';
 import { site, nav, toolkit, capabilities, experience, education, testimonials, process as steps } from './data/site.mjs';
 import { groups, services } from './data/services.mjs';
 import { art, preview } from './data/art.mjs';
@@ -157,7 +158,7 @@ function footer() {
       <div>
         <p class="mono label">sitemap</p>
         <ul class="footer-links">
-          <li><a href="/work/">Work</a></li><li><a href="/services/">Services</a></li><li><a href="/about/">About &amp; résumé</a></li><li><a href="/blog/">Writing</a></li><li><a href="/contact/">Start a project</a></li>
+          <li><a href="/work/">Work</a></li><li><a href="/garden/">Garden</a></li><li><a href="/services/">Services</a></li><li><a href="/about/">About &amp; résumé</a></li><li><a href="/blog/">Writing</a></li><li><a href="/contact/">Start a project</a></li>
         </ul>
       </div>
       <div>
@@ -493,7 +494,7 @@ function workIndex() {
   <div class="wrap">
     <p class="eyebrow" data-hero-in>Work · ${projects.length} case studies</p>
     <h1 class="display" data-split-hero>Selected <em class="em">work</em></h1>
-    <p class="lead muted page-lead" data-hero-in>Web apps, Shopify stores, brand sites, internal tools and a native iOS app. Every case study is written from the project’s code and commit history.</p>
+    <p class="lead muted page-lead" data-hero-in>Web apps, Shopify stores, brand sites, internal tools and a native iOS app. Every case study is written from the project’s code and commit history. <a class="text-link" href="/garden/">See them grown as bonsai →</a></p>
   </div>
 </section>
 <section class="section-sm">
@@ -517,6 +518,78 @@ function workIndex() {
   </div>
 </section>`;
   return page({ title: 'Work · Elombe Kisala', description: `Case studies from Elombe Kisala: ${projects.slice(0, 6).map(p => p.title).join(', ')} and more.`, path: '/work/', body, bodyClass: 'is-work' });
+}
+
+
+// ---------- garden: one procedural bonsai per project ----------
+function garden() {
+  const trees = ordered.map(p => ({ slug: p.slug, title: p.title, kind: p.kind, accent: p.accent, t: traits(p) }));
+  const stylesUsed = Object.entries(STYLES).filter(([k]) => trees.some(x => x.t.style === k));
+  const body = `
+<section class="page-hero">
+  <div class="wrap">
+    <p class="eyebrow" data-hero-in>Garden · ${trees.length} trees</p>
+    <h1 class="display" data-split-hero>Project <em class="em">bonsai</em></h1>
+    <p class="lead muted page-lead" data-hero-in>Every case study, grown as a tree from its own repository: commits become foliage, the stack becomes limbs, time in build thickens the trunk. Light travels up through glass bark from the roots to the needles.</p>
+  </div>
+</section>
+<section class="section-sm garden-section">
+  <div class="wrap">
+    <div class="garden-stage" data-garden tabindex="-1" style="--tree:${trees[0].accent}">
+      <canvas class="garden-canvas" data-garden-canvas tabindex="0" role="img" aria-label="Interactive 3D bonsai for the selected project. Drag to orbit; use the arrow keys to change project."></canvas>
+      <div class="garden-hud" data-hud aria-live="polite">
+        <p class="mono garden-n"><span data-hud-n>01 / ${String(trees.length).padStart(2, '0')}</span> · <span data-hud-style>${trees[0].t.styleName.toLowerCase()} · ${trees[0].t.styleJp}</span></p>
+        <h2 class="garden-title" data-hud-title>${esc(trees[0].title)}</h2>
+        <p class="garden-kind" data-hud-summary>${esc(trees[0].kind)}</p>
+        <dl class="garden-stats" data-hud-stats></dl>
+        <ul class="garden-stack" data-hud-stack></ul>
+        <a class="btn btn-sm garden-link" data-hud-link href="/work/${trees[0].slug}/">${roll('Case study')} ${arrowRight}</a>
+      </div>
+      <div class="garden-nav">
+        <button type="button" class="garden-btn" data-prev aria-label="Previous tree">←</button>
+        <button type="button" class="garden-btn" data-next aria-label="Next tree">→</button>
+      </div>
+      <p class="mono garden-hint" aria-hidden="true">drag to orbit · click, then scroll to zoom</p>
+      <p class="garden-fallback">The 3D garden needs WebGL. Every tree is listed below with the numbers it grows from.</p>
+    </div>
+  </div>
+</section>
+<section class="section-sm">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">The grove</p>
+      <h2 class="h2" data-split>Pick a <em class="em">tree.</em></h2>
+    </div>
+    <div class="grove">
+      ${trees.map((x, i) => `<button type="button" class="tree-card" data-tree="${x.slug}" aria-pressed="${i === 0}" style="--cs:${x.accent}">
+        <span class="tree-thumb"><img alt="" width="360" height="360" decoding="async"><span class="tree-dot" aria-hidden="true"></span></span>
+        <span class="mono tree-n">${String(i + 1).padStart(2, '0')} · ${esc(x.t.styleName.toLowerCase())}</span>
+        <span class="tree-title">${esc(x.title)}</span>
+        <span class="mono tree-meta">${x.t.commits != null ? x.t.commits + ' commits' : 'no public log'} · ${x.t.stack.length} tools</span>
+      </button>`).join('\n      ')}
+    </div>
+  </div>
+</section>
+<section class="section-sm garden-key">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">How a project grows</p>
+      <h2 class="h2" data-split>Real numbers, <em class="em">no invented ones.</em></h2>
+      <p class="lead muted section-lead" data-reveal>Each tree is generated in your browser from the same data as its case study. The project name seeds the randomness, so a tree looks the same every visit.</p>
+    </div>
+    <dl class="key-list">
+      <div><dt>Foliage pads</dt><dd>Commits in the project’s repository, on a log scale (3 commits → 8 pads, 163 → 22). Projects without a public log grow from the number of things built.</dd></div>
+      <div><dt>Main limbs</dt><dd>Tools in the stack, at least two.</dd></div>
+      <div><dt>Trunk and height</dt><dd>Time in build, from the first to the last commit (or the project’s years).</dd></div>
+      <div><dt>Glow</dt><dd>The case study’s accent color runs through the veins, needles and the glaze on the pot.</dd></div>
+      <div><dt>Shape</dt><dd>${stylesUsed.map(([, v]) => `${v.name} (<em>${v.jp}</em>) for ${v.rule}`).join('; ')}.</dd></div>
+    </dl>
+  </div>
+</section>
+<script type="application/json" id="garden-data">${JSON.stringify(trees).replace(/</g, '\\u003c')}</script>
+<script type="importmap">{"imports":{"three":"/assets/vendor/three/three.module.min.js","three/addons/":"/assets/vendor/three/addons/"}}</script>
+<script type="module" src="/assets/js/garden.js?v=${ver('assets/js/garden.js')}"></script>`;
+  return page({ title: 'Garden · Elombe Kisala', description: `Every case study grown as a 3D bonsai from its repository: commits become foliage, the stack becomes limbs and time in build thickens the trunk.`, path: '/garden/', body, bodyClass: 'is-garden', showCta: false });
 }
 
 // ---------- case study ----------
@@ -901,7 +974,7 @@ function notFound() {
 }
 
 function sitemap() {
-  const urls = ['/', '/work/', ...projects.map(p => `/work/${p.slug}/`), '/about/', '/services/', ...services.map(x => `/services/${x.slug}/`), '/contact/', '/blog/', ...posts.map(p => p.url), '/privacy/', '/terms/'];
+  const urls = ['/', '/work/', ...projects.map(p => `/work/${p.slug}/`), '/garden/', '/about/', '/services/', ...services.map(x => `/services/${x.slug}/`), '/contact/', '/blog/', ...posts.map(p => p.url), '/privacy/', '/terms/'];
   const today = new Date().toISOString().slice(0, 10);
   write('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(u => `  <url><loc>${site.url}${u}</loc><lastmod>${today}</lastmod></url>`).join('\n')}\n</urlset>\n`);
   write('llms.txt', `# ${site.name}, Designer & Developer
@@ -912,6 +985,7 @@ function sitemap() {
 ${ordered.map(p => `- [${p.title}](${site.url}/work/${p.slug}/): ${p.summary}`).join('\n')}
 
 ## Pages
+- [Project garden: each case study as a 3D bonsai](${site.url}/garden/)
 - [About & résumé](${site.url}/about/)
 - [Services](${site.url}/services/)
 ${services.map(x => `  - [${x.title}](${site.url}/services/${x.slug}/): ${x.short}`).join('\n')}
@@ -928,6 +1002,7 @@ ${services.map(x => `  - [${x.title}](${site.url}/services/${x.slug}/): ${x.shor
 // ---------- run ----------
 write('index.html', home());
 write('work/index.html', workIndex());
+write('garden/index.html', garden());
 projects.forEach((p, i) => write(`work/${p.slug}/index.html`, caseStudy(p, i)));
 write('about/index.html', about());
 write('contact/index.html', contact());
