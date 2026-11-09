@@ -3,9 +3,14 @@
 //
 //   npm run branches
 //
-// Uses git only (no API token): a bare, blob-less clone per repo in .cache/repos,
-// so just the commit graph is downloaded. Re-run it to refresh the snapshot;
-// commit the JSON. Repos that can't be read are skipped and keep their old entry.
+// A bare, blob-less clone per repo in .cache/repos, so just the commit graph is
+// downloaded. Re-run it to refresh the snapshot; commit the JSON. Repos that can't
+// be read are skipped and keep their old entry. A repo's "fetched" date only moves
+// when its branches changed, so an unchanged run leaves the file untouched.
+//
+// Public repos need no token. For private ones, set BRANCHES_TOKEN to a token with
+// read access (the weekly GitHub Action passes it from a repository secret). It is
+// sent as a header per command and never written into the cached clones.
 //
 // Private repos: the site is public, so their branch names are replaced with
 // "private branch N" (structure, counts and dates stay real). Set
@@ -20,7 +25,9 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../..');
 const CACHE = join(ROOT, '.cache/repos');
 const OUT = join(ROOT, 'src/build/data/branches.json');
 mkdirSync(CACHE, { recursive: true });
-const git = (dir, ...args) => execFileSync('git', ['-C', dir, ...args], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'], maxBuffer: 64 << 20 }).trim();
+const TOKEN = process.env.BRANCHES_TOKEN || '';
+const auth = TOKEN ? ['-c', `http.https://github.com/.extraHeader=Authorization: Basic ${Buffer.from('x-access-token:' + TOKEN).toString('base64')}`] : [];
+const git = (dir, ...args) => execFileSync('git', [...auth, '-C', dir, ...args], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'], maxBuffer: 64 << 20 }).trim();
 const old = existsSync(OUT) ? JSON.parse(readFileSync(OUT, 'utf8')) : {};
 const out = { ...old };
 
@@ -28,7 +35,7 @@ const out = { ...old };
 // last known answer, and if there is none, assume private.
 async function isPrivate(repo, previous) {
   try {
-    const res = await fetch(`https://api.github.com/repos/${repo}`, { headers: { accept: 'application/vnd.github+json' } });
+    const res = await fetch(`https://api.github.com/repos/${repo}`, { headers: { accept: 'application/vnd.github+json', ...(TOKEN ? { authorization: `Bearer ${TOKEN}` } : {}) } });
     if (res.status === 404) return true;
     if (res.ok) return !!(await res.json()).private;
   } catch (e) { /* fall through */ }
@@ -42,7 +49,7 @@ for (const p of projects) {
   const hide = priv && !process.env.SHOW_PRIVATE_BRANCHES;
   const dir = join(CACHE, repo.replace('/', '__') + '.git');
   try {
-    if (!existsSync(dir)) execFileSync('git', ['clone', '--bare', '--filter=blob:none', '--quiet', `https://github.com/${repo}`, dir], { stdio: 'inherit' });
+    if (!existsSync(dir)) execFileSync('git', [...auth, 'clone', '--bare', '--filter=blob:none', '--quiet', `https://github.com/${repo}`, dir], { stdio: 'inherit' });
     else git(dir, 'fetch', '--quiet', '--prune', 'origin', '+refs/heads/*:refs/heads/*');
     const head = git(dir, 'symbolic-ref', '--short', 'HEAD');
     const names = git(dir, 'for-each-ref', '--format=%(refname:short)', 'refs/heads').split('\n').filter(Boolean);
@@ -61,10 +68,14 @@ for (const p of projects) {
     });
     branches.sort((a, b) => (b.default ? 1 : 0) - (a.default ? 1 : 0) || a.forkedAt - b.forkedAt);
     if (hide) { let n = 0; for (const b of branches) if (!b.default) b.name = `private branch ${++n}`; }
-    out[p.slug] = { repo, private: priv, fetched: new Date().toISOString().slice(0, 10), branches };
+    const prev = old[p.slug];
+    const same = prev && JSON.stringify(prev.branches) === JSON.stringify(branches) && prev.private === priv;
+    out[p.slug] = same ? prev : { repo, private: priv, fetched: new Date().toISOString().slice(0, 10), branches };
     console.log(`${p.slug}: ${branches.length} branches (${branches.filter(b => !b.default && !b.merged).length} open)`);
   } catch (e) {
     console.warn(`${p.slug}: skipped (${String(e.stderr || e.message).split('\n')[0]})`);
   }
 }
-writeFileSync(OUT, JSON.stringify(out, null, 2) + '\n');
+const text = JSON.stringify(out, null, 2) + '\n';
+if (!existsSync(OUT) || readFileSync(OUT, 'utf8') !== text) { writeFileSync(OUT, text); console.log('branches.json updated'); }
+else console.log('branches.json unchanged');
