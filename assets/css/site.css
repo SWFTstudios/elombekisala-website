@@ -174,7 +174,11 @@ a:hover .roll > span, button:hover .roll > span, a:focus-visible .roll > span { 
 
 /* ---------- 3D intro + page curtain ---------- */
 .preloader { position: fixed; inset: 0; z-index: 150; display: none; place-items: center; overflow: hidden; background: radial-gradient(circle farthest-corner at 50% 50%, #13151f, #000 136%); }
-.motion.first-visit .preloader { display: grid; }
+.show-intro .preloader { display: grid; cursor: pointer; }
+html.show-intro, html.show-intro body { overflow: hidden; }
+.preloader.is-leaving { opacity: 0; transition: opacity .6s ease; }
+.preloader-skip { position: absolute; right: var(--gutter); bottom: 28px; z-index: 2; color: rgba(239, 237, 232, .6); padding: 8px 14px; border: 1px solid rgba(239, 237, 232, .2); border-radius: 99px; transition: color .3s, border-color .3s; }
+.preloader-skip:hover, .preloader-skip:focus-visible { color: #efede8; border-color: rgba(239, 237, 232, .6); }
 .preloader-logo { grid-area: 1 / 1; width: 104px; height: auto; animation: logo-breathe 1.6s ease-in-out infinite alternate; }
 @keyframes logo-breathe { from { opacity: .35; transform: scale(.96); } to { opacity: .9; transform: scale(1); } }
 /* Same geometry as the original site: a 200% iframe inside a 200% box (4x the viewport, centred). */

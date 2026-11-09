@@ -297,34 +297,11 @@
     return tl;
   }
 
-  /* 3D logo intro (Spline scene, home, first visit per session).
-     Timing follows the original site: the scene plays ~4.4s, then fades out over 0.6s. */
-  var pre = $('[data-preloader]');
-  if (pre && html.classList.contains('first-visit')) {
-    try { sessionStorage.setItem('ek-visited', '1'); } catch (e) {}
+  /* The 3D intro runs from an inline script in the page; start the hero when it ends. */
+  if (html.classList.contains('show-intro')) {
     if (lenis) lenis.stop();
-    var scene = $('.preloader-scene', pre), finished = false, holdTimer;
-    var finish = function () {
-      if (finished) return; finished = true;
-      clearTimeout(holdTimer);
-      gsap.to(pre, { opacity: 0, duration: .6, ease: 'power2.out', onComplete: function () {
-        pre.remove(); html.classList.remove('first-visit'); if (lenis) lenis.start();
-      } });
-      gsap.delayedCall(.25, heroIn);
-    };
-    if (scene) {
-      scene.addEventListener('load', function () {
-        pre.classList.add('is-scene-ready');
-        clearTimeout(holdTimer); holdTimer = setTimeout(finish, 4400);
-      });
-      scene.src = scene.getAttribute('data-src');
-    }
-    holdTimer = setTimeout(finish, 7000); // if the scene never loads, don't hold the page
-    pre.addEventListener('click', finish); // tap to skip
-  } else {
-    if (pre) pre.remove();
-    heroIn();
-  }
+    document.addEventListener('ek:intro-done', function () { if (lenis) lenis.start(); heroIn(); }, { once: true });
+  } else heroIn();
 
   /* section headings: line reveals */
   $$('[data-split]').forEach(function (el) {
