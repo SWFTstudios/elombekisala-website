@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Garden · Elombe Kisala</title>
+  <meta name="description" content="A zen garden of 19 projects: each bonsai is a project and each limb a real git branch, grown in 3D in your browser.">
+  <link rel="canonical" href="https://elombekisala.com/garden/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Elombe Kisala">
+  <meta property="og:title" content="Garden · Elombe Kisala">
+  <meta property="og:description" content="A zen garden of 19 projects: each bonsai is a project and each limb a real git branch, grown in 3D in your browser.">
+  <meta property="og:url" content="https://elombekisala.com/garden/">
+  <meta property="og:image" content="https://elombekisala.com/assets/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#121310" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#ebe5d8" media="(prefers-color-scheme: light)">
+  <meta name="color-scheme" content="dark light">
+  <link rel="icon" href="/assets/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="preload" href="/fonts/Satoshi-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  
+  <link rel="stylesheet" href="/assets/css/site.css?v=2bb28c39">
+  <script>
+    (function(d){var h=d.documentElement;h.classList.add('js');
+    var t;try{t=localStorage.getItem('ek-theme')}catch(e){}if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';h.setAttribute('data-theme',t);
+    if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches)h.classList.add('motion');
+    try{if(!sessionStorage.getItem('ek-visited'))h.classList.add('first-visit');if(sessionStorage.getItem('ek-transition'))h.classList.add('is-arriving')}catch(e){}
+    setTimeout(function(){if(!h.classList.contains('ready'))h.classList.remove('motion','is-arriving')},3500);})(document);
+  </script>
+  
+</head>
+<body class="is-garden">
+
+<div class="curtain" data-curtain aria-hidden="true"><img src="/assets/brand/ek-logo-192.webp" alt="" width="104" height="96"></div>
+<div class="cursor" data-cursor-el aria-hidden="true"><span class="cursor-label" data-cursor-label></span></div>
+
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header" data-header>
+  <a href="/" class="brand" aria-label="Elombe Kisala, home">
+    <img class="brand-logo" src="/assets/brand/ek-logo-96.webp" alt="" width="52" height="48" aria-hidden="true">
+    <span class="brand-name"><span class="roll"><span>Elombe Kisala</span><span aria-hidden="true">Elombe Kisala</span></span></span>
+  </a>
+  <nav class="nav" aria-label="Main"><a href="/work/" class="nav-link"><span class="roll"><span>Work</span><span aria-hidden="true">Work</span></span></a><a href="/garden/" class="nav-link is-active" aria-current="page"><span class="roll"><span>Garden</span><span aria-hidden="true">Garden</span></span></a><a href="/services/" class="nav-link"><span class="roll"><span>Services</span><span aria-hidden="true">Services</span></span></a><a href="/about/" class="nav-link"><span class="roll"><span>About</span><span aria-hidden="true">About</span></span></a><a href="/blog/" class="nav-link"><span class="roll"><span>Writing</span><span aria-hidden="true">Writing</span></span></a></nav>
+  <div class="header-end">
+    <a href="/contact/" class="btn btn-sm btn-outline header-cta" data-magnetic><span class="roll"><span>Start a project</span><span aria-hidden="true">Start a project</span></span></a>
+    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme">
+      <span class="tt-knob" aria-hidden="true">
+        <svg class="tt-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="tt-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+      </span>
+    </button>
+    <button class="menu-btn" data-menu-btn aria-expanded="false" aria-controls="menu"><span></span><span></span><span class="sr-only">Menu</span></button>
+  </div>
+</header>
+<div class="menu" id="menu" data-menu hidden>
+  <nav aria-label="Mobile">
+    <a href="/" class="menu-link"><span class="mono">00</span>Home</a>
+    <a href="/work/" class="menu-link"><span class="mono">01</span>Work</a>
+    <a href="/garden/" class="menu-link"><span class="mono">02</span>Garden</a>
+    <a href="/services/" class="menu-link"><span class="mono">03</span>Services</a>
+    <a href="/about/" class="menu-link"><span class="mono">04</span>About</a>
+    <a href="/blog/" class="menu-link"><span class="mono">05</span>Writing</a>
+  </nav>
+  <div class="menu-foot">
+    <a href="mailto:elombekisala@gmail.com">elombekisala@gmail.com</a>
+    <div class="menu-social"><a href="https://www.linkedin.com/in/nsonsa-kisala/" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/elombekisala" target="_blank" rel="noopener">GitHub</a></div>
+  </div>
+</div>
+<main id="main">
+
+<section class="garden-hero" aria-label="Project garden">
+  <div class="garden-stage" data-garden tabindex="-1">
+    <canvas class="garden-canvas" data-garden-canvas tabindex="0" role="img" aria-label="A 3D zen garden with one bonsai per project. Each limb is a git branch. Drag to look around, click a tree to walk up to it, arrow keys move between trees."></canvas>
+    <div class="garden-intro">
+      <p class="eyebrow">Garden · 19 trees · 224 branches</p>
+      <h1 class="garden-h1">Every project, <em class="em">grown.</em></h1>
+      <p class="garden-lead">Each bonsai is a project. Its trunk is the default branch and every limb is a real git branch, attached where it forked. Click a tree to walk up to it.</p>
+    </div>
+    <div class="garden-hud" data-hud aria-live="polite">
+      <button type="button" class="garden-back mono" data-overview>← whole garden</button>
+      <p class="mono garden-n"><span data-hud-n></span> · <span data-hud-style></span></p>
+      <h2 class="garden-title" data-hud-title></h2>
+      <p class="garden-kind" data-hud-summary></p>
+      <dl class="garden-stats" data-hud-stats></dl>
+      <ul class="branch-list" data-hud-branches aria-label="Branches"></ul>
+      <p class="mono garden-note" data-hud-note></p>
+      <a class="btn btn-sm garden-link" data-hud-link href="/work/"><span class="roll"><span>Case study</span><span aria-hidden="true">Case study</span></span> <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+    </div>
+    <div class="garden-tip" data-tip hidden></div>
+    <div class="garden-nav">
+      <button type="button" class="garden-btn" data-prev aria-label="Previous tree">←</button>
+      <button type="button" class="garden-btn" data-next aria-label="Next tree">→</button>
+    </div>
+    <p class="mono garden-hint" aria-hidden="true">drag to look around · click a tree · hover a limb</p>
+    <p class="garden-fallback">The 3D garden needs WebGL. Every tree is listed below with the branches it grows from.</p>
+  </div>
+</section>
+<section class="section-sm garden-grove-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">The grove</p>
+      <h2 class="h2" data-split>Pick a <em class="em">tree.</em></h2>
+    </div>
+    <div class="grove">
+      <button type="button" class="tree-card" data-tree="built-by-me-ez" aria-pressed="false" style="--cs:#e5372d">
+        <span class="tree-thumb"><img alt="" width="360" height="360" decoding="async"><span class="tree-dot" aria-hidden="true"></span></span>
+        <span class="mono tree-n">01 · twin trunk</span>
+        <span class="tree-title">Built By Me EZ</span>
+        <span class="mono tree-meta">8 branches · 0 open</span>
+      </button>
+      <button type="button" class="tree-card" data-tree="snooze-lane" aria-pressed="false" style="--cs:#ff7a1a">
+        <span class="tree-thumb"><img alt="" width="360" height="360" decoding="async"><span class="tree-dot" aria-hidden="true"></span></span>
+        <span class="mono tree-n">02 · windswept</span>
+        <span class="tree-title">Snooze Lane</span>
+        <span class="mono tree-meta">32 branches · 2 open</span>
+      </button>
+      <button type="button" class="tree-card" data-tree="only-at-the-kiosk" aria-pressed="false" style="--cs:#7aa7ff">
+        <span class="tree-thumb"><img alt="" width="360" height="360" decoding="async"><span class="tree-dot" aria-hidden="true"></span></span>
+        <span class="mono tree-n">03 · cascade</span>
+        <span class="tree-title">Only at the Kiosk</span>
+        <span class="mono tree-meta">47 branches · 3 open</span>
+      </button>
+      <button type="button" class="tree-card" data-tree="learn-lingala" aria-pressed="false" style="--cs:#c8ff3d">
+        <span class="tree-thumb"><img alt="" width="360" height="360" decoding="async"><span class="tree-dot" aria-hidden="true"></span></span>
+        <span class="mono tree-n">04 · literati</span>
+        <span class="tree-title">Learn Lingala</span>
+        <span class="mono tree-meta">3 branches · 0 open</span>
+      </button>
+      <button type="button" class="tree-card" data-tree="finish-library" aria-pressed="false" style="--cs:#4f8cff">
+        <span class="tree-thumb"><img alt="" width="360" height="360" decoding="async"><span class="tree-dot" aria-hidden="true"></span></span>
+        <span class="mono tree-n">05 · informal upright</span>
+        <span class="tree-title">Core Home Finish Library</span>
+        <span class="mono tree-meta">4 branches · 2 open</span>
+      </button>
+      <button type="button" class="tree-card" data-tree="fizz" aria-pressed="false" style="--cs:#8fd3ff">
+        <span class="tree-thumb"><img alt="" width="360" height="360" decoding="async"><span class="tree-dot" aria-hidden="true"></span></span>
+        <span class="mono tree-n">06 · broom</span>
+        <span class="tree-title">FIZZ</span>
+        <span class="mono tree-meta">27 branches · 3 open</span>
+      </button>
+      <button type="button" class="tree-card" data-tree="swft-studios" aria-pressed="false" style="--cs:#ff5a1f">
+        <span class="tree-thumb"><img alt="" width="360" height="360" decoding="async"><span class="tree-dot" aria-hidden="true"></span></span>
+        <span class="mono tree-n">07 · twin trunk</span>
+        <span class="tree-title">SWFT Studios</span>
+        <span class="mono tree-meta">72 branches · 14 open</span>
+      </button>
+      <button type="button" class="tree-card" data-tree="people-of-spice" aria-pressed="false" style="--cs:#d6a24c">
+        <span class="tree-thumb"><img alt="" width="360" height="360" decoding="async"><span class="tree-dot" aria-hidden="true"></span></span>
+        <span class="mono tree-n">08 · broom</span>
+        <span class="tree-title">People of Spice</span>
+        <span class="mono tree-meta">4 branches · 0 open</span>
+      </button>
+      <button type="button" class="tree-card" data-tree="roller-reels" aria-pressed="false" style="--cs:#ff8a00">
+        <span class="tree-thumb"><img alt="" width="360" height="360" decoding="async"><span class="tree-dot" aria-hidden="true"></span></span>
+        <span class="mono tree-n">09 · twin trunk</span>
+        <span class="tree-title">Roller Reels</span>
+        <span class="mono tree-meta">19 branches · 0 open</span>
+      </button>
+      <button type="button" class="tree-card" data-tree="winslow-pantry" aria-pressed="false" style="--cs:#6f97b6">
+        <span class="tree-thumb"><img alt="" width="360" height="360" decoding="async"><span class="tree-dot" aria-hidden="true"></span></span>
+        <span class="mono tree-n">10 · broom</span>
+        <span class="tree-title">Winslow Pantry</span>
+        <span class="mono tree-meta">2 branches · 0 open</span>
+      </button>
+      <button type="button" class="tree-card" data-tree="alder-meadow" aria-pressed="false" style="--cs:#9aa77a">
+        <span class="tree-thumb"><img alt="" width="360" height="360" decoding="async"><span class="tree-dot" aria-hidden="true"></span></span>
+        <span class="mono tree-n">11 · broom</span>
+        <span class="tree-title">Alder Meadow</span>
+        <span class="mono tree-meta">2 branches · 0 open</span>
+      </button>
+      <button type="button" class="tree-card" data-tree="brooklyn-steel-co" aria-pressed="false" style="--cs:#c79a5b">
+        <span class="tree-thumb"><img alt="" width="360" height="360" decoding="async"><span class="tree-dot" aria-hidden="true"></span></span>
+        <span class="mono tree-n">12 · cascade</span>
+        <span class="tree-title">Brooklyn Steel Co.</span>
+        <span class="mono tree-meta">2 tools · no public repo</span>
+      </button>
+      <button type="button" class="tree-card" data-tree="manna-hydration" aria-pressed="false" style="--cs:#9fb59c">
+        <span class="tree-thumb"><img alt="" width="360" height="360" decoding="async"><span class="tree-dot" aria-hidden="true"></span></span>
+        <span class="mono tree-n">13 · cascade</span>
+        <span class="tree-title">Manna Hydration</span>
+        <span class="mono tree-meta">1 tool · no public repo</span>
+      </button>
+      <button type="button" class="tree-card" data-tree="tal-hydration" aria-pressed="false" style="--cs:#c9b45a">
+        <span class="tree-thumb"><img alt="" width="360" height="360" decoding="async"><span class="tree-dot" aria-hidden="true"></span></span>
+        <span class="mono tree-n">14 · cascade</span>
+        <span class="tree-title">TAL Hydration</span>
+        <span class="mono tree-meta">1 tool · no public repo</span>
+      </button>
+      <button type="button" class="tree-card" data-tree="thyme-and-table" aria-pressed="false" style="--cs:#c8a45d">
+        <span class="tree-thumb"><img alt="" width="360" height="360" decoding="async"><span class="tree-dot" aria-hidden="true"></span></span>
+        <span class="mono tree-n">15 · cascade</span>
+        <span class="tree-title">Thyme &amp; Table</span>
+        <span class="mono tree-meta">1 tool · no public repo</span>
+      </button>
+      <button type="button" class="tree-card" data-tree="core-home" aria-pressed="false" style="--cs:#d4b26a">
+        <span class="tree-thumb"><img alt="" width="360" height="360" decoding="async"><span class="tree-dot" aria-hidden="true"></span></span>
+        <span class="mono tree-n">16 · formal upright</span>
+        <span class="tree-title">corehome.com</span>
+        <span class="mono tree-meta">1 tool · no public repo</span>
+      </button>
+      <button type="button" class="tree-card" data-tree="core-home-reports" aria-pressed="false" style="--cs:#00ff41">
+        <span class="tree-thumb"><img alt="" width="360" height="360" decoding="async"><span class="tree-dot" aria-hidden="true"></span></span>
+        <span class="mono tree-n">17 · informal upright</span>
+        <span class="tree-title">Core Home Project Reports</span>
+        <span class="mono tree-meta">3 branches · 0 open</span>
+      </button>
+      <button type="button" class="tree-card" data-tree="blurred-lines" aria-pressed="false" style="--cs:#ff2d6f">
+        <span class="tree-thumb"><img alt="" width="360" height="360" decoding="async"><span class="tree-dot" aria-hidden="true"></span></span>
+        <span class="mono tree-n">18 · broom</span>
+        <span class="tree-title">Blurred Lines Entertainment</span>
+        <span class="mono tree-meta">1 branch · 0 open</span>
+      </button>
+      <button type="button" class="tree-card" data-tree="alpha-ministries-international" aria-pressed="false" style="--cs:#d9b25b">
+        <span class="tree-thumb"><img alt="" width="360" height="360" decoding="async"><span class="tree-dot" aria-hidden="true"></span></span>
+        <span class="mono tree-n">19 · formal upright</span>
+        <span class="tree-title">Alpha Ministries International</span>
+        <span class="mono tree-meta">1 tool · no public repo</span>
+      </button>
+    </div>
+  </div>
+</section>
+<section class="section-sm garden-key">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">How to read a tree</p>
+      <h2 class="h2" data-split>Real branches, <em class="em">nothing invented.</em></h2>
+      <p class="lead muted section-lead" data-reveal>13 of the 19 projects have a public repository. Their trees are read straight from git: 224 branches in all. The project name seeds the rest, so a tree looks the same on every visit.</p>
+    </div>
+    <dl class="key-list">
+      <div><dt>Trunk</dt><dd>The default branch. Short spurs along its top carry its own foliage, more of them the more commits it holds.</dd></div>
+      <div><dt>Limbs</dt><dd>One per branch, leaving the trunk at the height where the branch forked off. Longer and thicker for branches with more commits of their own.</dd></div>
+      <div><dt><span class="key-dot is-merged"></span>Mature foliage</dt><dd>Merged branches: the work is part of the project now.</dd></div>
+      <div><dt><span class="key-dot is-open"></span>Fresh growth</dt><dd>Open branches with recent commits, tinted toward the project’s color.</dd></div>
+      <div><dt><span class="key-dot is-stale"></span>Deadwood (jin)</dt><dd>Open branches that went quiet for more than 45 days. Bonsai artists keep deadwood on purpose, too.</dd></div>
+      <div><dt>Shape</dt><dd>Informal upright (<em>moyōgi</em>) for Web app; Twin trunk (<em>sōkan</em>) for Automation; Windswept (<em>fukinagashi</em>) for iOS app; Cascade (<em>kengai</em>) for Shopify / e-commerce first; Broom (<em>hōkidachi</em>) for Brand site; Literati (<em>bunjin</em>) for AI; Formal upright (<em>chokkan</em>) for Webflow. Projects without a public repo grow one limb per tool in their stack.</dd></div>
+    </dl>
+  </div>
+</section>
+<script type="application/json" id="garden-data">[{"slug":"built-by-me-ez","title":"Built By Me EZ","kind":"Web platform","accent":"#e5372d","t":{"slug":"built-by-me-ez","seed":3242512612,"style":"sokan","styleName":"Twin trunk","styleJp":"sōkan","commits":32,"repo":"SWFTstudios/built_by_me_ez","days":362,"spanLabel":"Nov 2025 – Oct 2026","age":0.8313595142611229,"stack":["Webflow","Cloudflare Pages + Workers + KV","Stripe Payment Links","Cal.com","Airtable","Google Stitch"],"branches":{"source":"git","trunk":{"name":"main","commits":12,"last":"2026-10-04"},"limbs":[{"name":"elombe/booking-cal-com-mvp","commits":3,"at":0.08333333333333333,"state":"merged","last":"2026-03-21","root":false},{"name":"customer-onboarding-flow-update-6.5.26","commits":6,"at":0.25,"state":"merged","last":"2026-06-05","root":false},{"name":"claude/package-payment-multi-booking-ydqiV","commits":2,"at":0.25,"state":"merged","last":"2026-06-02","root":false},{"name":"feature/stitch-product-redesign","commits":6,"at":0.5,"state":"merged","last":"2026-06-05","root":false},{"name":"docs/case-study-documentation","commits":1,"at":0.75,"state":"merged","last":"2026-06-07","root":false},{"name":"cursor/teaneck-location-hours-9779","commits":1,"at":0.8333333333333334,"state":"merged","last":"2026-10-04","root":false},{"name":"cursor/update-phone-number-9779","commits":1,"at":0.9166666666666666,"state":"merged","last":"2026-10-04","root":false}],"hidden":0,"total":7,"fetched":"2026-11-09","private":false},"counts":{"merged":7,"open":0,"stale":0},"hue":0.009057971014492754,"sat":0.7796610169491525,"height":3.4807673685394596,"trunk":0.22976314171133475}},{"slug":"snooze-lane","title":"Snooze Lane","kind":"iOS app","accent":"#ff7a1a","t":{"slug":"snooze-lane","seed":2589452516,"style":"fukinagashi","styleName":"Windswept","styleJp":"fukinagashi","commits":88,"repo":"elombekisala/Snooze-Lane","days":393,"spanLabel":"Oct 2025 – Oct 2026","age":0.8429176506440149,"stack":["Swift 6 / SwiftUI / MapKit","Firebase","Cloudflare Workers","RevenueCat","Twilio","GitHub Actions"],"branches":{"source":"git","trunk":{"name":"main","commits":273,"last":"2026-10-25"},"limbs":[{"name":"private branch 2","commits":10,"at":0,"state":"stale","last":"2025-08-13","root":true},{"name":"private branch 3","commits":7,"at":0,"state":"stale","last":"2025-08-13","root":true},{"name":"private branch 1","commits":3,"at":0,"state":"stale","last":"2026-03-30","root":true},{"name":"private branch 4","commits":3,"at":0.26373626373626374,"state":"stale","last":"2025-08-13","root":false},{"name":"private branch 5","commits":0,"at":0.34798534798534797,"state":"merged","last":"2025-08-14","root":false},{"name":"private branch 6","commits":0,"at":0.6336996336996337,"state":"merged","last":"2025-09-29","root":false},{"name":"private branch 7","commits":0,"at":0.8168498168498168,"state":"merged","last":"2025-10-05","root":false},{"name":"private branch 9","commits":2,"at":0.9084249084249084,"state":"stale","last":"2025-11-15","root":false},{"name":"private branch 8","commits":1,"at":0.9084249084249084,"state":"merged","last":"2026-03-30","root":false},{"name":"private branch 12","commits":8,"at":0.9157509157509157,"state":"merged","last":"2026-06-19","root":false},{"name":"private branch 10","commits":2,"at":0.9157509157509157,"state":"merged","last":"2026-06-18","root":false},{"name":"private branch 11","commits":2,"at":0.9157509157509157,"state":"merged","last":"2026-06-19","root":false},{"name":"private branch 13","commits":2,"at":0.9157509157509157,"state":"stale","last":"2026-08-18","root":false},{"name":"private branch 14","commits":2,"at":0.9230769230769231,"state":"stale","last":"2026-06-22","root":false},{"name":"private branch 15","commits":13,"at":0.9267399267399268,"state":"stale","last":"2026-07-02","root":false},{"name":"private branch 16","commits":2,"at":0.9304029304029304,"state":"merged","last":"2026-08-27","root":false},{"name":"private branch 17","commits":1,"at":0.9304029304029304,"state":"merged","last":"2026-08-27","root":false},{"name":"private branch 18","commits":1,"at":0.9377289377289377,"state":"merged","last":"2026-08-27","root":false},{"name":"private branch 19","commits":1,"at":0.9413919413919414,"state":"merged","last":"2026-08-28","root":false},{"name":"private branch 20","commits":2,"at":0.9523809523809523,"state":"merged","last":"2026-09-10","root":false},{"name":"private branch 21","commits":4,"at":0.9560439560439561,"state":"merged","last":"2026-09-23","root":false},{"name":"private branch 22","commits":3,"at":0.9560439560439561,"state":"merged","last":"2026-09-23","root":false},{"name":"private branch 23","commits":2,"at":0.967032967032967,"state":"open","last":"2026-10-01","root":false},{"name":"private branch 24","commits":2,"at":0.9706959706959707,"state":"merged","last":"2026-10-07","root":false},{"name":"private branch 25","commits":2,"at":0.9706959706959707,"state":"merged","last":"2026-10-07","root":false},{"name":"private branch 26","commits":1,"at":0.978021978021978,"state":"merged","last":"2026-10-14","root":false},{"name":"private branch 28","commits":5,"at":0.9816849816849816,"state":"open","last":"2026-10-25","root":false},{"name":"private branch 27","commits":6,"at":0.9816849816849816,"state":"merged","last":"2026-10-25","root":false},{"name":"private branch 29","commits":5,"at":0.9816849816849816,"state":"merged","last":"2026-10-25","root":false},{"name":"private branch 30","commits":1,"at":0.989010989010989,"state":"merged","last":"2026-10-25","root":false},{"name":"private branch 31","commits":1,"at":0.9963369963369964,"state":"merged","last":"2026-10-25","root":false}],"hidden":0,"total":31,"fetched":"2026-11-09","private":true},"counts":{"merged":21,"open":2,"stale":8},"hue":0.06986899563318777,"sat":1,"height":3.4957929458372194,"trunk":0.2311501180772818}},{"slug":"only-at-the-kiosk","title":"Only at the Kiosk","kind":"Editorial commerce","accent":"#7aa7ff","t":{"slug":"only-at-the-kiosk","seed":1039778927,"style":"kengai","styleName":"Cascade","styleJp":"kengai","commits":113,"repo":"SWFTstudios/onlyatthekiosk-website","days":14,"spanLabel":"Oct 15 – Oct 28, 2026","age":0.3819493446724802,"stack":["Cloudflare Workers + D1","Stripe Checkout","Lenis + custom 3D","Spotify embeds","Playwright","sharp"],"branches":{"source":"git","trunk":{"name":"main","commits":213,"last":"2026-10-28"},"limbs":[{"name":"claude/kiosk-ecommerce-stripe-6ufv8h","commits":4,"at":0.5023474178403756,"state":"stale","last":"2026-06-30","root":false},{"name":"cursor/underlay-nav-rebuild-c864","commits":5,"at":0.5305164319248826,"state":"merged","last":"2026-06-28","root":false},{"name":"cursor/kiosk-copy-restructure-c864","commits":1,"at":0.5305164319248826,"state":"merged","last":"2026-06-28","root":false},{"name":"cursor/collection-3d-scroll-c864","commits":5,"at":0.539906103286385,"state":"stale","last":"2026-07-14","root":false},{"name":"cursor/product-image-generation-6564","commits":2,"at":0.539906103286385,"state":"merged","last":"2026-06-29","root":false},{"name":"cursor/fix-collection-images-6564","commits":1,"at":0.596244131455399,"state":"merged","last":"2026-06-29","root":false},{"name":"cursor/fix-navigation-positioning-4f28","commits":1,"at":0.6009389671361502,"state":"merged","last":"2026-06-30","root":false},{"name":"cursor/shop-page-image-refresh-c48e","commits":1,"at":0.6056338028169014,"state":"merged","last":"2026-06-30","root":false},{"name":"cursor/marquee-collection-fix-c48e","commits":2,"at":0.6103286384976526,"state":"merged","last":"2026-06-30","root":false},{"name":"cursor/mobile-ux-responsiveness-fix-6881","commits":10,"at":0.6150234741784038,"state":"stale","last":"2026-07-09","root":false},{"name":"cursor/product-pages-mobile-0133","commits":1,"at":0.6197183098591549,"state":"merged","last":"2026-07-09","root":false},{"name":"cursor/kiosk-merch-photo-refresh-e6fe","commits":3,"at":0.6384976525821596,"state":"open","last":"2026-10-13","root":false},{"name":"apparel-lifestyle-lookbook","commits":1,"at":0.6384976525821596,"state":"merged","last":"2026-10-13","root":false},{"name":"claude/app-shell-settings","commits":3,"at":0.647887323943662,"state":"merged","last":"2026-10-14","root":false},{"name":"claude/terminal-store","commits":4,"at":0.6525821596244131,"state":"merged","last":"2026-10-14","root":false},{"name":"claude/adoring-davinci-ryr3gj","commits":2,"at":0.6572769953051644,"state":"open","last":"2026-10-14","root":false},{"name":"accounts-dashboard","commits":1,"at":0.6666666666666666,"state":"merged","last":"2026-10-14","root":false},{"name":"claude/remove-flat-lifestyle-images","commits":3,"at":0.6713615023474179,"state":"merged","last":"2026-10-14","root":false},{"name":"claude/account-onboarding","commits":10,"at":0.7370892018779343,"state":"merged","last":"2026-10-15","root":false},{"name":"claude/flight-status","commits":2,"at":0.7699530516431925,"state":"merged","last":"2026-10-15","root":false},{"name":"feature/luxury-shop","commits":2,"at":0.7746478873239436,"state":"merged","last":"2026-10-15","root":false},{"name":"claude/garage-spec-sheets","commits":1,"at":0.8356807511737089,"state":"merged","last":"2026-10-18","root":false},{"name":"claude/editorial-design","commits":2,"at":0.8450704225352113,"state":"merged","last":"2026-10-20","root":false},{"name":"claude/mobile-nav-globe-hero","commits":4,"at":0.8591549295774648,"state":"merged","last":"2026-10-20","root":false},{"name":"claude/board-globe-rails","commits":1,"at":0.8685446009389671,"state":"merged","last":"2026-10-20","root":false},{"name":"claude/roaming-atlas-globe","commits":1,"at":0.8732394366197183,"state":"merged","last":"2026-10-20","root":false},{"name":"claude/smooth-scroll","commits":1,"at":0.8779342723004695,"state":"merged","last":"2026-10-20","root":false},{"name":"cursor/remove-homepage-vimeo-section","commits":2,"at":0.8826291079812206,"state":"merged","last":"2026-10-20","root":false},{"name":"claude/globe-hoodie","commits":1,"at":0.8873239436619719,"state":"merged","last":"2026-10-21","root":false},{"name":"claude/orbit-ringer-tee","commits":1,"at":0.892018779342723,"state":"merged","last":"2026-10-21","root":false},{"name":"claude/fix-globe-home-pin","commits":1,"at":0.9107981220657277,"state":"merged","last":"2026-10-21","root":false},{"name":"claude/3d-radio-scroll-wheel-sydm86","commits":1,"at":0.92018779342723,"state":"merged","last":"2026-10-21","root":false},{"name":"claude/stripe-checkout-admin","commits":2,"at":0.9295774647887324,"state":"merged","last":"2026-10-21","root":false},{"name":"cursor/transparent-globe-intent-menu","commits":3,"at":0.9483568075117371,"state":"merged","last":"2026-10-21","root":false},{"name":"cursor/home-floating-globe-0705","commits":2,"at":0.9624413145539906,"state":"open","last":"2026-10-23","root":false},{"name":"cursor/lifestyle-club-rebuild","commits":2,"at":0.971830985915493,"state":"merged","last":"2026-10-28","root":false}],"hidden":10,"total":46,"fetched":"2026-11-09","private":false},"counts":{"merged":30,"open":3,"stale":3},"hue":0.6102756892230576,"sat":1,"height":2.8965341480742244,"trunk":0.17583392136069764}},{"slug":"learn-lingala","title":"Learn Lingala","kind":"Learning app","accent":"#c8ff3d","t":{"slug":"learn-lingala","seed":3374394848,"style":"bunjin","styleName":"Literati","styleJp":"bunjin","commits":24,"repo":"SWFTstudios/learn-lingala","days":120,"spanLabel":"Jul – Oct 2026","age":0.6764088255570767,"stack":["Cloudflare Workers + D1","Claude API","Service worker","Rate limiting + Turnstile","Node test runner"],"branches":{"source":"git","trunk":{"name":"main","commits":11,"last":"2026-10-26"},"limbs":[{"name":"claude/study-cards","commits":1,"at":0.8181818181818182,"state":"merged","last":"2026-10-26","root":false},{"name":"claude/lingala-learning-platform-0ezbo7","commits":1,"at":0.9090909090909091,"state":"merged","last":"2026-10-26","root":false}],"hidden":0,"total":2,"fetched":"2026-11-09","private":false},"counts":{"merged":2,"open":0,"stale":0},"hue":0.21391752577319587,"sat":1,"height":3.2793314732242,"trunk":0.2111690590668492}},{"slug":"finish-library","title":"Core Home Finish Library","kind":"Internal tool","accent":"#4f8cff","t":{"slug":"finish-library","seed":909251544,"style":"moyogi","styleName":"Informal upright","styleJp":"moyōgi","commits":16,"repo":"SWFTstudios/core-home-finish-library","days":14,"spanLabel":"May 21 – Jun 3, 2026","age":0.3819493446724802,"stack":["Three.js","Cloudflare Pages + D1","GitHub Actions","Google Stitch"],"branches":{"source":"git","trunk":{"name":"main","commits":16,"last":"2026-06-03"},"limbs":[{"name":"cursor/cost-bands-verification-6683","commits":5,"at":1,"state":"open","last":"2026-07-22","root":false},{"name":"2d-version","commits":2,"at":1,"state":"open","last":"2026-06-24","root":false},{"name":"3d-version","commits":0,"at":1,"state":"merged","last":"2026-06-03","root":false}],"hidden":0,"total":3,"fetched":"2026-11-09","private":false},"counts":{"merged":1,"open":2,"stale":0},"hue":0.6089015151515151,"sat":1,"height":2.8965341480742244,"trunk":0.17583392136069764}},{"slug":"fizz","title":"FIZZ","kind":"Brand site + Shopify theme","accent":"#8fd3ff","t":{"slug":"fizz","seed":2814297580,"style":"hokidachi","styleName":"Broom","styleJp":"hōkidachi","commits":121,"repo":"SWFTstudios/fizz_website","days":212,"spanLabel":"May – Nov 2026","age":0.7561684153628173,"stack":["GSAP + ScrollTrigger","Lottie","Barba.js","Shopify (Liquid)","ESLint · Stylelint · TypeScript"],"branches":{"source":"git","trunk":{"name":"main","commits":50,"last":"2026-11-09"},"limbs":[{"name":"chore/ci-and-worker-scaffold","commits":1,"at":0.02,"state":"merged","last":"2026-05-26","root":false},{"name":"feat/homepage-hero-lottie-scroll","commits":1,"at":0.04,"state":"merged","last":"2026-05-26","root":false},{"name":"feat/home-explore-shop-polish","commits":7,"at":0.06,"state":"merged","last":"2026-05-27","root":false},{"name":"feat/barba-explore-transitions","commits":3,"at":0.06,"state":"merged","last":"2026-05-26","root":false},{"name":"docs/readme-build-log","commits":3,"at":0.08,"state":"stale","last":"2026-05-26","root":false},{"name":"cursor/shopify-kinetic-spark-theme","commits":6,"at":0.12,"state":"stale","last":"2026-06-16","root":false},{"name":"claude/vibrant-lamport-3vshgk","commits":1,"at":0.16,"state":"open","last":"2026-10-01","root":false},{"name":"fizz-final","commits":10,"at":0.16,"state":"merged","last":"2026-10-12","root":false},{"name":"fizz-intro-dark","commits":8,"at":0.16,"state":"merged","last":"2026-10-12","root":false},{"name":"fizz-float-intro","commits":6,"at":0.28,"state":"merged","last":"2026-10-12","root":false},{"name":"seo-og-images","commits":1,"at":0.3,"state":"merged","last":"2026-10-12","root":false},{"name":"claude/zen-pasteur-8htxvi","commits":1,"at":0.34,"state":"merged","last":"2026-10-19","root":false},{"name":"feat/infinite-loop-slider","commits":5,"at":0.4,"state":"merged","last":"2026-10-26","root":false},{"name":"fix/carousel-card-height-ladder","commits":2,"at":0.4,"state":"merged","last":"2026-10-19","root":false},{"name":"claude/great-goodall-2bzpzf","commits":0,"at":0.6,"state":"merged","last":"2026-10-27","root":false},{"name":"claude/confident-ritchie-ykdhod","commits":5,"at":0.62,"state":"open","last":"2026-10-28","root":false},{"name":"archive/design-v1","commits":0,"at":0.62,"state":"merged","last":"2026-10-28","root":false},{"name":"cursor/story-swipe-chapters-fd54","commits":1,"at":0.68,"state":"open","last":"2026-10-29","root":false},{"name":"cursor/homepage-clarity-a9c3","commits":11,"at":0.68,"state":"merged","last":"2026-10-29","root":false},{"name":"cursor/hiw-page-restructure-a9c3","commits":3,"at":0.7,"state":"merged","last":"2026-10-29","root":false},{"name":"cursor/hero-float-up-a9c3","commits":1,"at":0.7,"state":"merged","last":"2026-10-29","root":false},{"name":"cursor/story-chapters-a9c3","commits":1,"at":0.7,"state":"merged","last":"2026-10-29","root":false},{"name":"cursor/menu-cards-center-a9c3","commits":1,"at":0.76,"state":"merged","last":"2026-10-29","root":false},{"name":"claude/serene-ride-f4yyax","commits":0,"at":0.9,"state":"merged","last":"2026-10-29","root":false},{"name":"claude/laughing-ptolemy-zqgkjn","commits":0,"at":0.94,"state":"merged","last":"2026-11-03","root":false},{"name":"claude/pensive-einstein-pzbxb5","commits":1,"at":0.98,"state":"merged","last":"2026-11-09","root":false}],"hidden":0,"total":26,"fetched":"2026-11-09","private":false},"counts":{"merged":21,"open":3,"stale":2},"hue":0.5654761904761906,"sat":1,"height":3.3830189399716626,"trunk":0.2207402098435381}},{"slug":"swft-studios","title":"SWFT Studios","kind":"Agency platform","accent":"#ff5a1f","t":{"slug":"swft-studios","seed":3160536175,"style":"sokan","styleName":"Twin trunk","styleJp":"sōkan","commits":163,"repo":"SWFTstudios/swftstudios","days":37,"spanLabel":"Sep 30 – Nov 5, 2026","age":0.5130531366559175,"stack":["Cloudflare Workers + D1","Stripe","Workers AI / Claude","PostHog + GA4","Airtable"],"branches":{"source":"git","trunk":{"name":"main","commits":201,"last":"2026-11-05"},"limbs":[{"name":"brand-revamp-june-2026","commits":6,"at":0.5024875621890548,"state":"merged","last":"2026-06-03","root":false},{"name":"claude/funny-dirac-Wsena","commits":5,"at":0.5124378109452736,"state":"stale","last":"2026-06-08","root":false},{"name":"cursor/venture-studio-redesign","commits":4,"at":0.5124378109452736,"state":"stale","last":"2026-06-14","root":false},{"name":"feat/portfolio-marquee-filters-case-studies","commits":6,"at":0.5323383084577115,"state":"merged","last":"2026-06-19","root":false},{"name":"feat/add-portfolio-projects","commits":4,"at":0.5323383084577115,"state":"merged","last":"2026-06-17","root":false},{"name":"feat/pricing-retainer-v3","commits":3,"at":0.5323383084577115,"state":"merged","last":"2026-06-17","root":false},{"name":"feat/homepage-redesign","commits":6,"at":0.5472636815920398,"state":"merged","last":"2026-06-22","root":false},{"name":"cursor/swft-conversion-funnel-4378","commits":9,"at":0.5970149253731343,"state":"stale","last":"2026-07-19","root":false},{"name":"feat/tier-detail-pages-pt-landing","commits":4,"at":0.5970149253731343,"state":"stale","last":"2026-06-28","root":false},{"name":"cursor/unify-typography-colors-31b2","commits":3,"at":0.6019900497512438,"state":"merged","last":"2026-07-19","root":false},{"name":"cursor/homepage-audience-pricing-tabs-b4ef","commits":5,"at":0.6268656716417911,"state":"stale","last":"2026-08-09","root":false},{"name":"feat/site-punch-list","commits":5,"at":0.6517412935323383,"state":"merged","last":"2026-08-20","root":false},{"name":"feat/portal-secrets-bindings","commits":4,"at":0.6965174129353234,"state":"merged","last":"2026-08-20","root":false},{"name":"feature/clear-pricing-offer-ladder","commits":66,"at":0.7114427860696517,"state":"open","last":"2026-09-23","root":false},{"name":"fix/booking-forms-email-delivery","commits":16,"at":0.7164179104477612,"state":"open","last":"2026-09-23","root":false},{"name":"feat/hero-ocean-cube","commits":9,"at":0.7213930348258707,"state":"open","last":"2026-09-30","root":false},{"name":"swft-araise-2027","commits":3,"at":0.7213930348258707,"state":"open","last":"2026-09-30","root":false},{"name":"claude/swft-form-delivery-debug-ln006g","commits":1,"at":0.7213930348258707,"state":"open","last":"2026-09-25","root":false},{"name":"claude/dazzling-cerf-8ssytx","commits":6,"at":0.7213930348258707,"state":"merged","last":"2026-09-30","root":false},{"name":"feat/home-about-2027","commits":8,"at":0.7263681592039801,"state":"open","last":"2026-09-30","root":false},{"name":"feat/frosted-cube-splash","commits":4,"at":0.7562189054726368,"state":"merged","last":"2026-10-01","root":false},{"name":"feat/araise-services","commits":2,"at":0.7562189054726368,"state":"merged","last":"2026-10-01","root":false},{"name":"feat/swft-method-copy","commits":2,"at":0.7810945273631841,"state":"merged","last":"2026-10-01","root":false},{"name":"feat/video-gallery-slider","commits":3,"at":0.8059701492537313,"state":"merged","last":"2026-10-05","root":false},{"name":"claude/serene-turing-18mg3r","commits":2,"at":0.8059701492537313,"state":"merged","last":"2026-10-01","root":false},{"name":"claude/inspiring-gauss-on9x4j","commits":1,"at":0.845771144278607,"state":"open","last":"2026-10-01","root":false},{"name":"feat/hero-flow-of-ideas","commits":4,"at":0.8557213930348259,"state":"open","last":"2026-10-05","root":false},{"name":"claude/charming-darwin-swshhm","commits":5,"at":0.8805970149253731,"state":"open","last":"2026-11-02","root":false},{"name":"claude/client-portal","commits":5,"at":0.8805970149253731,"state":"open","last":"2026-10-27","root":false},{"name":"claude/services-categories-pricing-yvct3z","commits":1,"at":0.8805970149253731,"state":"open","last":"2026-10-08","root":false},{"name":"feat/outreach-worker","commits":3,"at":0.8855721393034826,"state":"merged","last":"2026-11-02","root":false},{"name":"feat/admin-dashboard","commits":2,"at":0.8855721393034826,"state":"merged","last":"2026-11-02","root":false},{"name":"feat/graffiti-accent","commits":3,"at":0.900497512437811,"state":"merged","last":"2026-11-02","root":false},{"name":"claude/determined-meitner-n2zbh4","commits":2,"at":0.9651741293532339,"state":"open","last":"2026-11-03","root":false},{"name":"claude/focused-franklin-itzdgj","commits":2,"at":0.9651741293532339,"state":"open","last":"2026-11-03","root":false},{"name":"claude/quirky-johnson-a6fwhm","commits":4,"at":0.9701492537313433,"state":"open","last":"2026-11-04","root":false}],"hidden":35,"total":71,"fetched":"2026-11-09","private":false},"counts":{"merged":17,"open":14,"stale":5},"hue":0.04389880952380953,"sat":1,"height":3.0669690776526926,"trunk":0.1915663763987101}},{"slug":"people-of-spice","title":"People of Spice","kind":"Brand site","accent":"#d6a24c","t":{"slug":"people-of-spice","seed":692513559,"style":"hokidachi","styleName":"Broom","styleJp":"hōkidachi","commits":61,"repo":"core-home-web/people_of_spice","days":423,"spanLabel":"Sep 2025 – Oct 2026","age":0.853267686001,"stack":["GSAP","Node build + OG script","Cloudflare Pages Functions","Airtable"],"branches":{"source":"git","trunk":{"name":"main","commits":45,"last":"2026-10-19"},"limbs":[{"name":"shop-recipe-links","commits":0,"at":0.24444444444444444,"state":"merged","last":"2025-10-21","root":false},{"name":"redesign/home-2026","commits":13,"at":0.9777777777777777,"state":"merged","last":"2026-10-19","root":false},{"name":"redesign/world-of-spice-2026","commits":5,"at":0.9777777777777777,"state":"merged","last":"2026-10-19","root":false}],"hidden":0,"total":3,"fetched":"2026-11-09","private":false},"counts":{"merged":3,"open":0,"stale":0},"hue":0.10386473429951688,"sat":0.6272727272727275,"height":3.5092479918013,"trunk":0.23239212232012002}},{"slug":"roller-reels","title":"Roller Reels","kind":"Booking site","accent":"#ff8a00","t":{"slug":"roller-reels","seed":1489018045,"style":"sokan","styleName":"Twin trunk","styleJp":"sōkan","commits":82,"repo":"SWFTstudios/roller-reels","days":242,"spanLabel":"Mar – Oct 2026","age":0.7747534435202308,"stack":["GSAP + Lenis","Cloudflare Worker","Schema.org + sitemap"],"branches":{"source":"git","trunk":{"name":"main","commits":42,"last":"2026-10-12"},"limbs":[{"name":"legal-pages","commits":1,"at":0.35714285714285715,"state":"merged","last":"2026-03-17","root":false},{"name":"bookings","commits":1,"at":0.38095238095238093,"state":"merged","last":"2026-03-17","root":false},{"name":"fix-cal-embed","commits":1,"at":0.40476190476190477,"state":"merged","last":"2026-03-17","root":false},{"name":"calendar-responsive-ux","commits":1,"at":0.42857142857142855,"state":"merged","last":"2026-03-18","root":false},{"name":"bookings-premium-estimator-v1","commits":3,"at":0.4523809523809524,"state":"stale","last":"2026-03-19","root":false},{"name":"bookings-email-validation-fix","commits":3,"at":0.47619047619047616,"state":"merged","last":"2026-03-19","root":false},{"name":"bookings-estimator-card-ux-v2","commits":2,"at":0.47619047619047616,"state":"merged","last":"2026-03-19","root":false},{"name":"bookings-submit-next-calendar-reliability-fix","commits":1,"at":0.5238095238095238,"state":"merged","last":"2026-03-19","root":false},{"name":"bookings-calendar-redirect-handoff","commits":5,"at":0.5476190476190477,"state":"merged","last":"2026-03-19","root":false},{"name":"seo-meta-titles-descriptions","commits":1,"at":0.6666666666666666,"state":"merged","last":"2026-03-19","root":false},{"name":"geo-generative-engine-optimization","commits":1,"at":0.6904761904761905,"state":"merged","last":"2026-03-19","root":false},{"name":"claude/rollerreels-stitch-nav-pr18","commits":8,"at":0.7619047619047619,"state":"merged","last":"2026-05-27","root":false},{"name":"claude/rollerreels-booking-ux-OmK2D","commits":4,"at":0.8095238095238095,"state":"merged","last":"2026-06-01","root":false},{"name":"cursor/updated-pricing-02b9","commits":2,"at":0.8571428571428571,"state":"merged","last":"2026-07-01","root":false},{"name":"cursor/fix-vimeo-lightbox-02b9","commits":1,"at":0.8809523809523809,"state":"merged","last":"2026-07-01","root":false},{"name":"cursor/gallery-no-scroll-02b9","commits":1,"at":0.9047619047619048,"state":"merged","last":"2026-07-01","root":false},{"name":"cursor/jc-meetup-spot-02b9","commits":3,"at":0.9285714285714286,"state":"merged","last":"2026-07-01","root":false},{"name":"claude/funny-gates-kcp4yn","commits":1,"at":0.9761904761904762,"state":"merged","last":"2026-10-12","root":false}],"hidden":0,"total":18,"fetched":"2026-11-09","private":false},"counts":{"merged":17,"open":0,"stale":1},"hue":0.09019607843137255,"sat":1,"height":3.4071794765763,"trunk":0.2229704132224277}},{"slug":"winslow-pantry","title":"Winslow Pantry","kind":"Brand site","accent":"#6f97b6","t":{"slug":"winslow-pantry","seed":423455027,"style":"hokidachi","styleName":"Broom","styleJp":"hōkidachi","commits":18,"repo":"core-home-web/winslow-pantry","days":1,"spanLabel":"Oct 22, 2026","age":0.15,"stack":["Node build scripts","GSAP","Cloudflare Worker"],"branches":{"source":"git","trunk":{"name":"main","commits":10,"last":"2026-10-22"},"limbs":[{"name":"claude/exciting-pascal-b0v4up","commits":2,"at":0.8,"state":"merged","last":"2026-10-22","root":false}],"hidden":0,"total":1,"fetched":"2026-11-09","private":false},"counts":{"merged":1,"open":0,"stale":0},"hue":0.5727699530516431,"sat":0.6,"height":2.5949999999999998,"trunk":0.148}},{"slug":"alder-meadow","title":"Alder Meadow","kind":"Brand site","accent":"#9aa77a","t":{"slug":"alder-meadow","seed":12605363,"style":"hokidachi","styleName":"Broom","styleJp":"hōkidachi","commits":3,"repo":"core-home-web/alder_meadow","days":1,"spanLabel":"Oct 21, 2026","age":0.15,"stack":["Node build","Cloudflare Worker"],"branches":{"source":"git","trunk":{"name":"claude/funny-hopper-9cymdi","commits":3,"last":"2026-10-21"},"limbs":[{"name":"main","commits":0,"at":1,"state":"merged","last":"2026-10-21","root":false}],"hidden":0,"total":1,"fetched":"2026-11-09","private":false},"counts":{"merged":1,"open":0,"stale":0},"hue":0.21481481481481488,"sat":0.6,"height":2.5949999999999998,"trunk":0.148}},{"slug":"brooklyn-steel-co","title":"Brooklyn Steel Co.","kind":"Shopify store","accent":"#c79a5b","t":{"slug":"brooklyn-steel-co","seed":1711843278,"style":"kengai","styleName":"Cascade","styleJp":"kengai","commits":null,"repo":null,"days":365,"spanLabel":"2025–26","age":0.8325203619257046,"stack":["Shopify","Shopify Admin API"],"branches":{"source":"stack","trunk":{"name":"main"},"limbs":[{"name":"Shopify","commits":3,"at":0.4875,"state":"merged","tool":true},{"name":"Shopify Admin API","commits":3,"at":0.7625,"state":"merged","tool":true}],"hidden":0,"total":2},"counts":{"merged":2,"open":0,"stale":0},"hue":0.09722222222222221,"sat":0.6,"height":3.482276470503416,"trunk":0.22990244343108454}},{"slug":"manna-hydration","title":"Manna Hydration","kind":"Shopify store","accent":"#9fb59c","t":{"slug":"manna-hydration","seed":2941841369,"style":"kengai","styleName":"Cascade","styleJp":"kengai","commits":null,"repo":null,"days":1095,"spanLabel":"2023–26","age":0.987213908908477,"stack":["Shopify"],"branches":{"source":"stack","trunk":{"name":"main"},"limbs":[{"name":"Shopify","commits":3,"at":0.625,"state":"merged","tool":true}],"hidden":0,"total":1},"counts":{"merged":1,"open":0,"stale":0},"hue":0.3133333333333334,"sat":0.6,"height":3.6833780815810204,"trunk":0.24846566906901724}},{"slug":"tal-hydration","title":"TAL Hydration","kind":"Shopify store","accent":"#c9b45a","t":{"slug":"tal-hydration","seed":804809121,"style":"kengai","styleName":"Cascade","styleJp":"kengai","commits":null,"repo":null,"days":1095,"spanLabel":"2023–26","age":0.987213908908477,"stack":["Shopify"],"branches":{"source":"stack","trunk":{"name":"main"},"limbs":[{"name":"Shopify","commits":3,"at":0.625,"state":"merged","tool":true}],"hidden":0,"total":1},"counts":{"merged":1,"open":0,"stale":0},"hue":0.13513513513513517,"sat":0.6,"height":3.6833780815810204,"trunk":0.24846566906901724}},{"slug":"thyme-and-table","title":"Thyme & Table","kind":"Shopify store","accent":"#c8a45d","t":{"slug":"thyme-and-table","seed":305257351,"style":"kengai","styleName":"Cascade","styleJp":"kengai","commits":null,"repo":null,"days":1095,"spanLabel":"2023–26","age":0.987213908908477,"stack":["Shopify"],"branches":{"source":"stack","trunk":{"name":"main"},"limbs":[{"name":"Shopify","commits":3,"at":0.625,"state":"merged","tool":true}],"hidden":0,"total":1},"counts":{"merged":1,"open":0,"stale":0},"hue":0.1105919003115265,"sat":0.6,"height":3.6833780815810204,"trunk":0.24846566906901724}},{"slug":"core-home","title":"corehome.com","kind":"Corporate site + CMS","accent":"#d4b26a","t":{"slug":"core-home","seed":2437513498,"style":"chokkan","styleName":"Formal upright","styleJp":"chokkan","commits":null,"repo":null,"days":1095,"spanLabel":"2023–26","age":0.987213908908477,"stack":["Webflow CMS"],"branches":{"source":"stack","trunk":{"name":"main"},"limbs":[{"name":"Webflow CMS","commits":3,"at":0.625,"state":"merged","tool":true}],"hidden":0,"total":1},"counts":{"merged":1,"open":0,"stale":0},"hue":0.1132075471698113,"sat":0.6,"height":3.6833780815810204,"trunk":0.24846566906901724}},{"slug":"core-home-reports","title":"Core Home Project Reports","kind":"Internal dashboard","accent":"#00ff41","t":{"slug":"core-home-reports","seed":2515255384,"style":"moyogi","styleName":"Informal upright","styleJp":"moyōgi","commits":56,"repo":"SWFTstudios/ch_project_reports","days":363,"spanLabel":"Dec 2025 – Nov 2026","age":0.8317475260465536,"stack":["Cloudflare Worker + KV","Lenis"],"branches":{"source":"git","trunk":{"name":"main","commits":146,"last":"2026-11-03"},"limbs":[{"name":"claude/sleepy-volta-7l1j2s","commits":2,"at":0.952054794520548,"state":"merged","last":"2026-11-03","root":false},{"name":"claude/eoyr-brands-and-summary","commits":0,"at":0.9931506849315068,"state":"merged","last":"2026-10-30","root":false}],"hidden":0,"total":2,"fetched":"2026-11-09","private":false},"counts":{"merged":2,"open":0,"stale":0},"hue":0.3758169934640523,"sat":1,"height":3.4812717838605196,"trunk":0.2298097031255864}},{"slug":"blurred-lines","title":"Blurred Lines Entertainment","kind":"Brand site","accent":"#ff2d6f","t":{"slug":"blurred-lines","seed":3871661853,"style":"hokidachi","styleName":"Broom","styleJp":"hōkidachi","commits":6,"repo":"SWFTstudios/blurred-lines-entertainment","days":240,"spanLabel":"Feb – Sep 2026","age":0.773587798909979,"stack":["Webflow","Cloudflare Workers + R2"],"branches":{"source":"git","trunk":{"name":"main","commits":6,"last":"2026-09-22"},"limbs":[],"hidden":0,"total":0,"fetched":"2026-11-09","private":false},"counts":{"merged":0,"open":0,"stale":0},"hue":0.9476190476190477,"sat":1,"height":3.4056641385829725,"trunk":0.2228305358691975}},{"slug":"alpha-ministries-international","title":"Alpha Ministries International","kind":"Webflow site","accent":"#d9b25b","t":{"slug":"alpha-ministries-international","seed":87237222,"style":"chokkan","styleName":"Formal upright","styleJp":"chokkan","commits":null,"repo":null,"days":365,"spanLabel":"2025","age":0.8325203619257046,"stack":["Webflow CMS"],"branches":{"source":"stack","trunk":{"name":"main"},"limbs":[{"name":"Webflow CMS","commits":3,"at":0.625,"state":"merged","tool":true}],"hidden":0,"total":1},"counts":{"merged":1,"open":0,"stale":0},"hue":0.11507936507936507,"sat":0.6237623762376239,"height":3.482276470503416,"trunk":0.22990244343108454}}]</script>
+<script type="importmap">{"imports":{"three":"/assets/vendor/three/three.module.min.js","three/addons/":"/assets/vendor/three/addons/"}}</script>
+<script type="module" src="/assets/js/garden.js?v=4281aa6b"></script>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top-row">
+      <a href="/" class="footer-brand" aria-label="Elombe Kisala, home"><img src="/assets/brand/ek-logo-192.webp" alt="" width="104" height="96"><span>Elombe Kisala</span></a>
+      <div class="footer-pitch">
+        <p>Design and engineering for brands, from first sketch to launch.</p>
+        <a href="mailto:elombekisala@gmail.com" class="footer-email">elombekisala@gmail.com</a>
+      </div>
+    </div>
+    <div class="footer-grid">
+      <div>
+        <p class="mono label">sitemap</p>
+        <ul class="footer-links">
+          <li><a href="/work/">Work</a></li><li><a href="/garden/">Garden</a></li><li><a href="/services/">Services</a></li><li><a href="/about/">About &amp; résumé</a></li><li><a href="/blog/">Writing</a></li><li><a href="/contact/">Start a project</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="mono label">elsewhere</p>
+        <ul class="footer-links">
+          <li><a href="https://www.linkedin.com/in/nsonsa-kisala/" target="_blank" rel="noopener">LinkedIn <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a></li>
+          <li><a href="https://github.com/elombekisala" target="_blank" rel="noopener">GitHub <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a></li>
+          <li><a href="mailto:elombekisala@gmail.com">Email <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="mono label">based</p>
+        <ul class="footer-links plain">
+          <li><span class="pulse" aria-hidden="true"></span> Jersey City, NJ</li>
+          <li class="muted" data-clock data-clock-suffix=" ET">--:--</li>
+          <li class="muted">Working with teams anywhere</li>
+        </ul>
+      </div>
+      <div>
+        <p class="mono label">availability</p>
+        <ul class="footer-links plain">
+          <li>Open to freelance projects and full-time roles.</li>
+          <li class="muted">Replies within one business day.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-base mono">
+      <span>© 2026 Elombe Kisala</span>
+      <span>Designed &amp; built by hand</span>
+      <span><a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a> · <button class="to-top" data-top type="button">Back to top ↑</button></span>
+    </div>
+  </div>
+</footer>
+<script src="/assets/vendor/gsap.min.js" defer></script>
+<script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
+<script src="/assets/vendor/SplitText.min.js" defer></script>
+<script src="/assets/vendor/lenis.min.js" defer></script>
+<script src="/assets/js/site.js?v=547f16e8" defer></script>
+</body>
+</html>

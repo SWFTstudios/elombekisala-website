@@ -1,0 +1,1859 @@
+{
+  "built-by-me-ez": {
+    "repo": "SWFTstudios/built_by_me_ez",
+    "private": false,
+    "fetched": "2026-11-09",
+    "branches": [
+      {
+        "name": "main",
+        "default": true,
+        "commits": 12,
+        "last": "2026-10-04T18:30:10-04:00"
+      },
+      {
+        "name": "elombe/booking-cal-com-mvp",
+        "commits": 3,
+        "forkedAt": 1,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-03-21T09:51:31-04:00"
+      },
+      {
+        "name": "claude/package-payment-multi-booking-ydqiV",
+        "commits": 2,
+        "forkedAt": 3,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-06-02T22:02:34+00:00"
+      },
+      {
+        "name": "customer-onboarding-flow-update-6.5.26",
+        "commits": 6,
+        "forkedAt": 3,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-06-05T16:19:00-04:00"
+      },
+      {
+        "name": "feature/stitch-product-redesign",
+        "commits": 6,
+        "forkedAt": 6,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-06-05T18:29:06-04:00"
+      },
+      {
+        "name": "docs/case-study-documentation",
+        "commits": 1,
+        "forkedAt": 9,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-06-07T08:42:25-04:00"
+      },
+      {
+        "name": "cursor/teaneck-location-hours-9779",
+        "commits": 1,
+        "forkedAt": 10,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-04T18:37:46+00:00"
+      },
+      {
+        "name": "cursor/update-phone-number-9779",
+        "commits": 1,
+        "forkedAt": 11,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-04T22:27:51+00:00"
+      }
+    ]
+  },
+  "only-at-the-kiosk": {
+    "repo": "SWFTstudios/onlyatthekiosk-website",
+    "private": false,
+    "fetched": "2026-11-09",
+    "branches": [
+      {
+        "name": "main",
+        "default": true,
+        "commits": 213,
+        "last": "2026-10-28T13:35:06-04:00"
+      },
+      {
+        "name": "shopify-integration",
+        "commits": 0,
+        "forkedAt": 84,
+        "merged": true,
+        "orphan": false,
+        "last": "2025-11-22T14:02:02-05:00"
+      },
+      {
+        "name": "claude/kiosk-ecommerce-stripe-6ufv8h",
+        "commits": 4,
+        "forkedAt": 107,
+        "merged": false,
+        "orphan": false,
+        "last": "2026-06-30T10:58:46+00:00"
+      },
+      {
+        "name": "cursor/kiosk-copy-restructure-c864",
+        "commits": 1,
+        "forkedAt": 113,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-06-28T18:42:36+00:00"
+      },
+      {
+        "name": "cursor/underlay-nav-rebuild-c864",
+        "commits": 5,
+        "forkedAt": 113,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-06-28T19:33:25+00:00"
+      },
+      {
+        "name": "cursor/collection-3d-scroll-c864",
+        "commits": 5,
+        "forkedAt": 115,
+        "merged": false,
+        "orphan": false,
+        "last": "2026-07-14T19:58:56+00:00"
+      },
+      {
+        "name": "cursor/product-image-generation-6564",
+        "commits": 2,
+        "forkedAt": 115,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-06-29T20:35:22+00:00"
+      },
+      {
+        "name": "cursor/chatgpt-product-images-6564",
+        "commits": 0,
+        "forkedAt": 127,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-06-29T22:46:36+00:00"
+      },
+      {
+        "name": "cursor/fix-collection-images-6564",
+        "commits": 1,
+        "forkedAt": 127,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-06-29T23:33:51+00:00"
+      },
+      {
+        "name": "cursor/fix-navigation-positioning-4f28",
+        "commits": 1,
+        "forkedAt": 128,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-06-30T11:03:39+00:00"
+      },
+      {
+        "name": "cursor/shop-page-image-refresh-c48e",
+        "commits": 1,
+        "forkedAt": 129,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-06-30T20:53:13+00:00"
+      },
+      {
+        "name": "cursor/marquee-and-collection-plan-c48e",
+        "commits": 1,
+        "forkedAt": 130,
+        "merged": false,
+        "orphan": false,
+        "last": "2026-06-30T21:11:48+00:00"
+      },
+      {
+        "name": "cursor/marquee-collection-fix-c48e",
+        "commits": 2,
+        "forkedAt": 130,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-06-30T21:14:17+00:00"
+      },
+      {
+        "name": "cursor/kiosk-mobile-shop-ux-9d49",
+        "commits": 1,
+        "forkedAt": 131,
+        "merged": false,
+        "orphan": false,
+        "last": "2026-07-09T01:48:56+00:00"
+      },
+      {
+        "name": "cursor/mobile-ux-responsiveness-fix-6881",
+        "commits": 10,
+        "forkedAt": 131,
+        "merged": false,
+        "orphan": false,
+        "last": "2026-07-09T12:12:35+00:00"
+      },
+      {
+        "name": "cursor/product-pages-mobile-0133",
+        "commits": 1,
+        "forkedAt": 132,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-07-09T12:25:35+00:00"
+      },
+      {
+        "name": "apparel-lifestyle-lookbook",
+        "commits": 1,
+        "forkedAt": 136,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-13T14:27:33-04:00"
+      },
+      {
+        "name": "cursor/kiosk-merch-photo-refresh-e6fe",
+        "commits": 3,
+        "forkedAt": 136,
+        "merged": false,
+        "orphan": false,
+        "last": "2026-10-13T20:24:46+00:00"
+      },
+      {
+        "name": "claude/app-shell-settings",
+        "commits": 3,
+        "forkedAt": 138,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-14T15:23:57+00:00"
+      },
+      {
+        "name": "claude/terminal-store",
+        "commits": 4,
+        "forkedAt": 139,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-14T16:39:56+00:00"
+      },
+      {
+        "name": "claude/adoring-davinci-ryr3gj",
+        "commits": 2,
+        "forkedAt": 140,
+        "merged": false,
+        "orphan": false,
+        "last": "2026-10-14T13:54:06-04:00"
+      },
+      {
+        "name": "accounts-dashboard",
+        "commits": 1,
+        "forkedAt": 142,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-14T14:52:00-04:00"
+      },
+      {
+        "name": "claude/remove-flat-lifestyle-images",
+        "commits": 3,
+        "forkedAt": 143,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-14T19:57:38+00:00"
+      },
+      {
+        "name": "claude/account-onboarding",
+        "commits": 10,
+        "forkedAt": 157,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-15T14:51:18-04:00"
+      },
+      {
+        "name": "claude/flight-status",
+        "commits": 2,
+        "forkedAt": 164,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-15T16:21:03+00:00"
+      },
+      {
+        "name": "feature/luxury-shop",
+        "commits": 2,
+        "forkedAt": 165,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-15T14:27:02-04:00"
+      },
+      {
+        "name": "claude/garage-spec-sheets",
+        "commits": 1,
+        "forkedAt": 178,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-18T04:33:00+00:00"
+      },
+      {
+        "name": "claude/editorial-design",
+        "commits": 2,
+        "forkedAt": 180,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-20T16:17:26+00:00"
+      },
+      {
+        "name": "claude/mobile-nav-globe-hero",
+        "commits": 4,
+        "forkedAt": 183,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-20T20:25:23+00:00"
+      },
+      {
+        "name": "claude/board-globe-rails",
+        "commits": 1,
+        "forkedAt": 185,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-20T21:15:30+00:00"
+      },
+      {
+        "name": "claude/roaming-atlas-globe",
+        "commits": 1,
+        "forkedAt": 186,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-20T21:41:09+00:00"
+      },
+      {
+        "name": "claude/smooth-scroll",
+        "commits": 1,
+        "forkedAt": 187,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-20T22:13:23+00:00"
+      },
+      {
+        "name": "cursor/remove-homepage-vimeo-section",
+        "commits": 2,
+        "forkedAt": 188,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-20T18:41:50-04:00"
+      },
+      {
+        "name": "claude/globe-hoodie",
+        "commits": 1,
+        "forkedAt": 189,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-21T00:57:36+00:00"
+      },
+      {
+        "name": "claude/orbit-ringer-tee",
+        "commits": 1,
+        "forkedAt": 190,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-21T01:47:54+00:00"
+      },
+      {
+        "name": "claude/kiosk-retro-tee",
+        "commits": 0,
+        "forkedAt": 193,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-21T02:58:57+00:00"
+      },
+      {
+        "name": "claude/fix-globe-home-pin",
+        "commits": 1,
+        "forkedAt": 194,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-21T11:14:24+00:00"
+      },
+      {
+        "name": "claude/3d-radio-scroll-wheel-sydm86",
+        "commits": 1,
+        "forkedAt": 196,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-21T11:45:07+00:00"
+      },
+      {
+        "name": "claude/stripe-checkout-admin",
+        "commits": 2,
+        "forkedAt": 198,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-21T15:42:52+00:00"
+      },
+      {
+        "name": "cursor/transparent-globe-intent-menu",
+        "commits": 3,
+        "forkedAt": 202,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-21T15:29:13-04:00"
+      },
+      {
+        "name": "feature/rack-shop-view",
+        "commits": 1,
+        "forkedAt": 203,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-22T16:47:54-04:00"
+      },
+      {
+        "name": "cursor/accent-glow-window-radio-0705",
+        "commits": 1,
+        "forkedAt": 204,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-22T22:59:54+00:00"
+      },
+      {
+        "name": "cursor/home-floating-globe-0705",
+        "commits": 2,
+        "forkedAt": 205,
+        "merged": false,
+        "orphan": false,
+        "last": "2026-10-23T08:18:44-04:00"
+      },
+      {
+        "name": "cursor/globe-intro-browse-0705",
+        "commits": 1,
+        "forkedAt": 206,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-23T08:20:35-04:00"
+      },
+      {
+        "name": "cursor/lifestyle-club-rebuild",
+        "commits": 2,
+        "forkedAt": 207,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-28T12:09:54-04:00"
+      },
+      {
+        "name": "claude/wonderful-noether-8azfqg",
+        "commits": 0,
+        "forkedAt": 210,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-25T17:19:36+00:00"
+      },
+      {
+        "name": "cursor/stream-home-responsive",
+        "commits": 1,
+        "forkedAt": 212,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-28T13:33:54-04:00"
+      }
+    ]
+  },
+  "learn-lingala": {
+    "repo": "SWFTstudios/learn-lingala",
+    "private": false,
+    "fetched": "2026-11-09",
+    "branches": [
+      {
+        "name": "main",
+        "default": true,
+        "commits": 11,
+        "last": "2026-10-26T09:59:11-04:00"
+      },
+      {
+        "name": "claude/study-cards",
+        "commits": 1,
+        "forkedAt": 9,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-26T12:12:41+00:00"
+      },
+      {
+        "name": "claude/lingala-learning-platform-0ezbo7",
+        "commits": 1,
+        "forkedAt": 10,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-26T13:01:19+00:00"
+      }
+    ]
+  },
+  "finish-library": {
+    "repo": "SWFTstudios/core-home-finish-library",
+    "private": false,
+    "fetched": "2026-11-09",
+    "branches": [
+      {
+        "name": "main",
+        "default": true,
+        "commits": 16,
+        "last": "2026-06-03T10:13:45-04:00"
+      },
+      {
+        "name": "2d-version",
+        "commits": 2,
+        "forkedAt": 16,
+        "merged": false,
+        "orphan": false,
+        "last": "2026-06-24T12:39:08-04:00"
+      },
+      {
+        "name": "3d-version",
+        "commits": 0,
+        "forkedAt": 16,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-06-03T10:13:45-04:00"
+      },
+      {
+        "name": "cursor/cost-bands-verification-6683",
+        "commits": 5,
+        "forkedAt": 16,
+        "merged": false,
+        "orphan": false,
+        "last": "2026-07-22T14:45:56+00:00"
+      }
+    ]
+  },
+  "fizz": {
+    "repo": "SWFTstudios/fizz_website",
+    "private": false,
+    "fetched": "2026-11-09",
+    "branches": [
+      {
+        "name": "main",
+        "default": true,
+        "commits": 50,
+        "last": "2026-11-09T16:27:20-05:00"
+      },
+      {
+        "name": "chore/ci-and-worker-scaffold",
+        "commits": 1,
+        "forkedAt": 1,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-05-26T10:44:35-04:00"
+      },
+      {
+        "name": "feat/homepage-hero-lottie-scroll",
+        "commits": 1,
+        "forkedAt": 2,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-05-26T13:53:11-04:00"
+      },
+      {
+        "name": "feat/barba-explore-transitions",
+        "commits": 3,
+        "forkedAt": 3,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-05-26T15:07:53-04:00"
+      },
+      {
+        "name": "feat/home-explore-shop-polish",
+        "commits": 7,
+        "forkedAt": 3,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-05-27T18:10:56-04:00"
+      },
+      {
+        "name": "docs/readme-build-log",
+        "commits": 3,
+        "forkedAt": 4,
+        "merged": false,
+        "orphan": false,
+        "last": "2026-05-26T15:08:25-04:00"
+      },
+      {
+        "name": "cursor/shopify-kinetic-spark-theme",
+        "commits": 6,
+        "forkedAt": 6,
+        "merged": false,
+        "orphan": false,
+        "last": "2026-06-16T18:04:03-04:00"
+      },
+      {
+        "name": "claude/vibrant-lamport-3vshgk",
+        "commits": 1,
+        "forkedAt": 8,
+        "merged": false,
+        "orphan": false,
+        "last": "2026-10-01T20:42:50+00:00"
+      },
+      {
+        "name": "fizz-final",
+        "commits": 10,
+        "forkedAt": 8,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-12T14:04:31-04:00"
+      },
+      {
+        "name": "fizz-intro-dark",
+        "commits": 8,
+        "forkedAt": 8,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-12T13:31:57-04:00"
+      },
+      {
+        "name": "fizz-float-intro",
+        "commits": 6,
+        "forkedAt": 14,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-12T16:06:18-04:00"
+      },
+      {
+        "name": "seo-og-images",
+        "commits": 1,
+        "forkedAt": 15,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-12T17:53:48-04:00"
+      },
+      {
+        "name": "claude/zen-pasteur-8htxvi",
+        "commits": 1,
+        "forkedAt": 17,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-19T13:06:39+00:00"
+      },
+      {
+        "name": "feat/infinite-loop-slider",
+        "commits": 5,
+        "forkedAt": 20,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-26T14:48:11-04:00"
+      },
+      {
+        "name": "fix/carousel-card-height-ladder",
+        "commits": 2,
+        "forkedAt": 20,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-19T11:26:45-04:00"
+      },
+      {
+        "name": "claude/great-goodall-2bzpzf",
+        "commits": 0,
+        "forkedAt": 30,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-27T15:42:58+00:00"
+      },
+      {
+        "name": "archive/design-v1",
+        "commits": 0,
+        "forkedAt": 31,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-28T17:22:23-04:00"
+      },
+      {
+        "name": "claude/confident-ritchie-ykdhod",
+        "commits": 5,
+        "forkedAt": 31,
+        "merged": false,
+        "orphan": false,
+        "last": "2026-10-28T22:41:42+00:00"
+      },
+      {
+        "name": "cursor/homepage-clarity-a9c3",
+        "commits": 11,
+        "forkedAt": 34,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-29T17:31:49+00:00"
+      },
+      {
+        "name": "cursor/story-swipe-chapters-fd54",
+        "commits": 1,
+        "forkedAt": 34,
+        "merged": false,
+        "orphan": false,
+        "last": "2026-10-29T12:51:09+00:00"
+      },
+      {
+        "name": "cursor/hero-float-up-a9c3",
+        "commits": 1,
+        "forkedAt": 35,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-29T17:38:27+00:00"
+      },
+      {
+        "name": "cursor/hiw-page-restructure-a9c3",
+        "commits": 3,
+        "forkedAt": 35,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-29T18:28:50+00:00"
+      },
+      {
+        "name": "cursor/story-chapters-a9c3",
+        "commits": 1,
+        "forkedAt": 35,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-29T17:52:02+00:00"
+      },
+      {
+        "name": "cursor/menu-cards-center-a9c3",
+        "commits": 1,
+        "forkedAt": 38,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-29T20:58:14+00:00"
+      },
+      {
+        "name": "claude/serene-ride-f4yyax",
+        "commits": 0,
+        "forkedAt": 45,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-29T21:50:15+00:00"
+      },
+      {
+        "name": "claude/laughing-ptolemy-zqgkjn",
+        "commits": 0,
+        "forkedAt": 47,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-11-03T22:05:45+00:00"
+      },
+      {
+        "name": "claude/pensive-einstein-pzbxb5",
+        "commits": 1,
+        "forkedAt": 49,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-11-09T21:22:45+00:00"
+      }
+    ]
+  },
+  "swft-studios": {
+    "repo": "SWFTstudios/swftstudios",
+    "private": false,
+    "fetched": "2026-11-09",
+    "branches": [
+      {
+        "name": "main",
+        "default": true,
+        "commits": 201,
+        "last": "2026-11-05T16:27:20-05:00"
+      },
+      {
+        "name": "archive/blog-graph-views",
+        "commits": 0,
+        "forkedAt": 8,
+        "merged": true,
+        "orphan": false,
+        "last": "2025-12-18T17:27:16-05:00"
+      },
+      {
+        "name": "archive/github-thought-sessions",
+        "commits": 0,
+        "forkedAt": 70,
+        "merged": true,
+        "orphan": false,
+        "last": "2025-12-23T10:22:45-05:00"
+      },
+      {
+        "name": "archive/pre-redesign",
+        "commits": 0,
+        "forkedAt": 78,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-02-12T14:40:06-05:00"
+      },
+      {
+        "name": "design-refresh-remote",
+        "commits": 1,
+        "forkedAt": 86,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-04-29T09:00:32-04:00"
+      },
+      {
+        "name": "claude/pricing-page-setup-HMl0e",
+        "commits": 1,
+        "forkedAt": 96,
+        "merged": false,
+        "orphan": false,
+        "last": "2026-05-13T20:18:30+00:00"
+      },
+      {
+        "name": "claude/swft-studios-booking-flow-tdy0H",
+        "commits": 1,
+        "forkedAt": 99,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-06-01T19:28:04+00:00"
+      },
+      {
+        "name": "brand-revamp-june-2026",
+        "commits": 6,
+        "forkedAt": 101,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-06-03T11:18:42+00:00"
+      },
+      {
+        "name": "claude/funny-dirac-Wsena",
+        "commits": 5,
+        "forkedAt": 103,
+        "merged": false,
+        "orphan": false,
+        "last": "2026-06-08T10:21:16+00:00"
+      },
+      {
+        "name": "cursor/venture-studio-redesign",
+        "commits": 4,
+        "forkedAt": 103,
+        "merged": false,
+        "orphan": false,
+        "last": "2026-06-14T11:00:19-04:00"
+      },
+      {
+        "name": "feat/intelligence-hub-resources",
+        "commits": 1,
+        "forkedAt": 103,
+        "merged": false,
+        "orphan": false,
+        "last": "2026-06-08T07:35:32-04:00"
+      },
+      {
+        "name": "feat/restore-000-pre-2025",
+        "commits": 1,
+        "forkedAt": 106,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-06-16T13:18:45-04:00"
+      },
+      {
+        "name": "feat/add-portfolio-projects",
+        "commits": 4,
+        "forkedAt": 107,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-06-17T11:49:07-04:00"
+      },
+      {
+        "name": "feat/portfolio-marquee-filters-case-studies",
+        "commits": 6,
+        "forkedAt": 107,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-06-19T07:26:36-04:00"
+      },
+      {
+        "name": "feat/pricing-retainer-v3",
+        "commits": 3,
+        "forkedAt": 107,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-06-17T11:32:00-04:00"
+      },
+      {
+        "name": "feat/homepage-redesign",
+        "commits": 6,
+        "forkedAt": 110,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-06-22T18:15:26-04:00"
+      },
+      {
+        "name": "cursor/setup-dev-environment-ba32",
+        "commits": 2,
+        "forkedAt": 120,
+        "merged": false,
+        "orphan": false,
+        "last": "2026-07-14T20:05:46+00:00"
+      },
+      {
+        "name": "cursor/swft-conversion-funnel-4378",
+        "commits": 9,
+        "forkedAt": 120,
+        "merged": false,
+        "orphan": false,
+        "last": "2026-07-19T15:28:29+00:00"
+      },
+      {
+        "name": "feat/tier-detail-pages-pt-landing",
+        "commits": 4,
+        "forkedAt": 120,
+        "merged": false,
+        "orphan": false,
+        "last": "2026-06-28T14:27:26-04:00"
+      },
+      {
+        "name": "cursor/blog-share-buttons-31b2",
+        "commits": 1,
+        "forkedAt": 121,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-07-19T23:14:50+00:00"
+      },
+      {
+        "name": "cursor/unify-typography-colors-31b2",
+        "commits": 3,
+        "forkedAt": 121,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-07-19T23:12:14+00:00"
+      },
+      {
+        "name": "cursor/form-leads-airtable-email-34b1",
+        "commits": 1,
+        "forkedAt": 123,
+        "merged": false,
+        "orphan": false,
+        "last": "2026-07-20T13:10:02+00:00"
+      },
+      {
+        "name": "cursor/offer-ladder-pricing-1ad6",
+        "commits": 1,
+        "forkedAt": 124,
+        "merged": false,
+        "orphan": false,
+        "last": "2026-08-06T23:01:17+00:00"
+      },
+      {
+        "name": "fix/growth-audit-resend-emails",
+        "commits": 1,
+        "forkedAt": 125,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-08-07T12:38:24-04:00"
+      },
+      {
+        "name": "cursor/homepage-audience-pricing-tabs-b4ef",
+        "commits": 5,
+        "forkedAt": 126,
+        "merged": false,
+        "orphan": false,
+        "last": "2026-08-09T16:27:47+00:00"
+      },
+      {
+        "name": "cursor/audience-card-images-b4ef",
+        "commits": 0,
+        "forkedAt": 128,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-08-10T10:45:33+00:00"
+      },
+      {
+        "name": "cursor/pricing-onboarding-preselect-fb4a",
+        "commits": 1,
+        "forkedAt": 128,
+        "merged": false,
+        "orphan": false,
+        "last": "2026-08-10T12:14:23+00:00"
+      },
+      {
+        "name": "cursor/stripe-tier-booking-7838",
+        "commits": 1,
+        "forkedAt": 129,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-08-10T12:37:22+00:00"
+      },
+      {
+        "name": "cursor/seo-copy-local-pages-59fd",
+        "commits": 2,
+        "forkedAt": 130,
+        "merged": false,
+        "orphan": false,
+        "last": "2026-08-10T14:22:46+00:00"
+      },
+      {
+        "name": "feat/site-punch-list",
+        "commits": 5,
+        "forkedAt": 131,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-08-20T11:43:52-04:00"
+      },
+      {
+        "name": "feat/site-punch-list-p3p4",
+        "commits": 1,
+        "forkedAt": 132,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-08-20T12:11:24-04:00"
+      },
+      {
+        "name": "fix/punch-list-leftovers",
+        "commits": 1,
+        "forkedAt": 133,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-08-20T12:35:30-04:00"
+      },
+      {
+        "name": "feat/portal-secrets-bindings",
+        "commits": 4,
+        "forkedAt": 140,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-08-20T16:50:03-04:00"
+      },
+      {
+        "name": "feature/clear-pricing-offer-ladder",
+        "commits": 66,
+        "forkedAt": 143,
+        "merged": false,
+        "orphan": false,
+        "last": "2026-09-23T09:37:07-04:00"
+      },
+      {
+        "name": "fix/booking-forms-email-delivery",
+        "commits": 16,
+        "forkedAt": 144,
+        "merged": false,
+        "orphan": false,
+        "last": "2026-09-23T19:00:05-04:00"
+      },
+      {
+        "name": "claude/dazzling-cerf-8ssytx",
+        "commits": 6,
+        "forkedAt": 145,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-09-30T21:31:33+00:00"
+      },
+      {
+        "name": "claude/swft-form-delivery-debug-ln006g",
+        "commits": 1,
+        "forkedAt": 145,
+        "merged": false,
+        "orphan": false,
+        "last": "2026-09-25T12:07:40+00:00"
+      },
+      {
+        "name": "feat/hero-ocean-cube",
+        "commits": 9,
+        "forkedAt": 145,
+        "merged": false,
+        "orphan": false,
+        "last": "2026-09-30T22:21:15+00:00"
+      },
+      {
+        "name": "swft-araise-2027",
+        "commits": 3,
+        "forkedAt": 145,
+        "merged": false,
+        "orphan": false,
+        "last": "2026-09-30T17:40:17-04:00"
+      },
+      {
+        "name": "feat/home-about-2027",
+        "commits": 8,
+        "forkedAt": 146,
+        "merged": false,
+        "orphan": false,
+        "last": "2026-09-30T22:50:53+00:00"
+      },
+      {
+        "name": "feat/case-study-fullscreen-cover",
+        "commits": 1,
+        "forkedAt": 147,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-09-30T22:51:01+00:00"
+      },
+      {
+        "name": "feat/hero-rubik-cube-ocean",
+        "commits": 1,
+        "forkedAt": 149,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-09-30T23:10:09+00:00"
+      },
+      {
+        "name": "feat/swft2027-type-colorblind-accent",
+        "commits": 1,
+        "forkedAt": 150,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-09-30T23:36:00+00:00"
+      },
+      {
+        "name": "fix/cache-bust-assets",
+        "commits": 1,
+        "forkedAt": 151,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-09-30T23:55:50+00:00"
+      },
+      {
+        "name": "feat/araise-services",
+        "commits": 2,
+        "forkedAt": 152,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-01T13:39:36+00:00"
+      },
+      {
+        "name": "feat/frosted-cube-splash",
+        "commits": 4,
+        "forkedAt": 152,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-01T13:37:56+00:00"
+      },
+      {
+        "name": "feat/glass-menu",
+        "commits": 1,
+        "forkedAt": 152,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-01T00:10:34+00:00"
+      },
+      {
+        "name": "feat/pain-points-tabs",
+        "commits": 1,
+        "forkedAt": 155,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-01T13:58:52+00:00"
+      },
+      {
+        "name": "fix/audience-card-cutoff",
+        "commits": 1,
+        "forkedAt": 156,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-01T14:12:54+00:00"
+      },
+      {
+        "name": "feat/swft-method-copy",
+        "commits": 2,
+        "forkedAt": 157,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-01T14:49:32+00:00"
+      },
+      {
+        "name": "fix/form-delivery-hello",
+        "commits": 1,
+        "forkedAt": 158,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-01T15:00:17+00:00"
+      },
+      {
+        "name": "feat/hero-load-intro",
+        "commits": 1,
+        "forkedAt": 160,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-01T15:52:36+00:00"
+      },
+      {
+        "name": "fix/about-statement-size",
+        "commits": 1,
+        "forkedAt": 161,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-01T16:20:39+00:00"
+      },
+      {
+        "name": "claude/serene-turing-18mg3r",
+        "commits": 2,
+        "forkedAt": 162,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-01T20:23:30+00:00"
+      },
+      {
+        "name": "feat/video-gallery-slider",
+        "commits": 3,
+        "forkedAt": 162,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-05T14:07:36-04:00"
+      },
+      {
+        "name": "claude/inspiring-gauss-on9x4j",
+        "commits": 1,
+        "forkedAt": 170,
+        "merged": false,
+        "orphan": false,
+        "last": "2026-10-01T20:43:06+00:00"
+      },
+      {
+        "name": "feat/home-selected-work",
+        "commits": 1,
+        "forkedAt": 171,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-05T14:15:37-04:00"
+      },
+      {
+        "name": "feat/hero-flow-of-ideas",
+        "commits": 4,
+        "forkedAt": 172,
+        "merged": false,
+        "orphan": false,
+        "last": "2026-10-05T17:32:15-04:00"
+      },
+      {
+        "name": "claude/jolly-wozniak-v34966",
+        "commits": 0,
+        "forkedAt": 174,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-06T22:50:23+00:00"
+      },
+      {
+        "name": "claude/charming-darwin-swshhm",
+        "commits": 5,
+        "forkedAt": 177,
+        "merged": false,
+        "orphan": false,
+        "last": "2026-11-02T13:27:15-05:00"
+      },
+      {
+        "name": "claude/client-portal",
+        "commits": 5,
+        "forkedAt": 177,
+        "merged": false,
+        "orphan": false,
+        "last": "2026-10-27T19:45:41+00:00"
+      },
+      {
+        "name": "claude/services-categories-pricing-yvct3z",
+        "commits": 1,
+        "forkedAt": 177,
+        "merged": false,
+        "orphan": false,
+        "last": "2026-10-08T18:35:46+00:00"
+      },
+      {
+        "name": "feat/admin-dashboard",
+        "commits": 2,
+        "forkedAt": 178,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-11-02T18:21:29+00:00"
+      },
+      {
+        "name": "feat/outreach-worker",
+        "commits": 3,
+        "forkedAt": 178,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-11-02T18:19:28+00:00"
+      },
+      {
+        "name": "feat/outreach-drafting",
+        "commits": 1,
+        "forkedAt": 180,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-11-02T18:26:38+00:00"
+      },
+      {
+        "name": "feat/graffiti-accent",
+        "commits": 3,
+        "forkedAt": 181,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-11-02T20:23:12+00:00"
+      },
+      {
+        "name": "claude/build-grow-automate-services",
+        "commits": 1,
+        "forkedAt": 189,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-11-03T04:05:27+00:00"
+      },
+      {
+        "name": "feat/listomania-font",
+        "commits": 0,
+        "forkedAt": 191,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-11-03T11:26:36-05:00"
+      },
+      {
+        "name": "claude/determined-meitner-n2zbh4",
+        "commits": 2,
+        "forkedAt": 194,
+        "merged": false,
+        "orphan": false,
+        "last": "2026-11-03T20:24:18+00:00"
+      },
+      {
+        "name": "claude/focused-franklin-itzdgj",
+        "commits": 2,
+        "forkedAt": 194,
+        "merged": false,
+        "orphan": false,
+        "last": "2026-11-03T16:50:25-05:00"
+      },
+      {
+        "name": "claude/quirky-johnson-a6fwhm",
+        "commits": 4,
+        "forkedAt": 195,
+        "merged": false,
+        "orphan": false,
+        "last": "2026-11-04T12:40:45+00:00"
+      },
+      {
+        "name": "claude/laughing-edison-d5oy0j",
+        "commits": 1,
+        "forkedAt": 200,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-11-05T18:14:07+00:00"
+      }
+    ]
+  },
+  "people-of-spice": {
+    "repo": "core-home-web/people_of_spice",
+    "private": false,
+    "fetched": "2026-11-09",
+    "branches": [
+      {
+        "name": "main",
+        "default": true,
+        "commits": 45,
+        "last": "2026-10-19T16:23:09-04:00"
+      },
+      {
+        "name": "shop-recipe-links",
+        "commits": 0,
+        "forkedAt": 11,
+        "merged": true,
+        "orphan": false,
+        "last": "2025-10-21T13:41:20-04:00"
+      },
+      {
+        "name": "redesign/home-2026",
+        "commits": 13,
+        "forkedAt": 44,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-19T16:08:28-04:00"
+      },
+      {
+        "name": "redesign/world-of-spice-2026",
+        "commits": 5,
+        "forkedAt": 44,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-19T16:14:56-04:00"
+      }
+    ]
+  },
+  "roller-reels": {
+    "repo": "SWFTstudios/roller-reels",
+    "private": false,
+    "fetched": "2026-11-09",
+    "branches": [
+      {
+        "name": "main",
+        "default": true,
+        "commits": 42,
+        "last": "2026-10-12T18:06:13-04:00"
+      },
+      {
+        "name": "legal-pages",
+        "commits": 1,
+        "forkedAt": 15,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-03-17T18:31:06-04:00"
+      },
+      {
+        "name": "bookings",
+        "commits": 1,
+        "forkedAt": 16,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-03-17T18:41:51-04:00"
+      },
+      {
+        "name": "fix-cal-embed",
+        "commits": 1,
+        "forkedAt": 17,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-03-17T22:50:09-04:00"
+      },
+      {
+        "name": "calendar-responsive-ux",
+        "commits": 1,
+        "forkedAt": 18,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-03-18T21:49:27-04:00"
+      },
+      {
+        "name": "bookings-premium-estimator-v1",
+        "commits": 3,
+        "forkedAt": 19,
+        "merged": false,
+        "orphan": false,
+        "last": "2026-03-19T00:13:26-04:00"
+      },
+      {
+        "name": "bookings-email-validation-fix",
+        "commits": 3,
+        "forkedAt": 20,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-03-19T01:52:06-04:00"
+      },
+      {
+        "name": "bookings-estimator-card-ux-v2",
+        "commits": 2,
+        "forkedAt": 20,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-03-19T01:43:53-04:00"
+      },
+      {
+        "name": "bookings-submit-next-calendar-reliability-fix",
+        "commits": 1,
+        "forkedAt": 22,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-03-19T02:09:34-04:00"
+      },
+      {
+        "name": "bookings-calendar-redirect-handoff",
+        "commits": 5,
+        "forkedAt": 23,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-03-19T03:36:52-04:00"
+      },
+      {
+        "name": "seo-meta-titles-descriptions",
+        "commits": 1,
+        "forkedAt": 28,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-03-19T13:35:33-04:00"
+      },
+      {
+        "name": "geo-generative-engine-optimization",
+        "commits": 1,
+        "forkedAt": 29,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-03-19T14:34:07-04:00"
+      },
+      {
+        "name": "claude/rollerreels-stitch-nav-pr18",
+        "commits": 8,
+        "forkedAt": 32,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-05-27T12:45:30+00:00"
+      },
+      {
+        "name": "claude/rollerreels-booking-ux-OmK2D",
+        "commits": 4,
+        "forkedAt": 34,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-06-01T12:48:31+00:00"
+      },
+      {
+        "name": "cursor/updated-pricing-02b9",
+        "commits": 2,
+        "forkedAt": 36,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-07-01T17:45:29+00:00"
+      },
+      {
+        "name": "cursor/fix-vimeo-lightbox-02b9",
+        "commits": 1,
+        "forkedAt": 37,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-07-01T18:19:08+00:00"
+      },
+      {
+        "name": "cursor/gallery-no-scroll-02b9",
+        "commits": 1,
+        "forkedAt": 38,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-07-01T18:23:47+00:00"
+      },
+      {
+        "name": "cursor/jc-meetup-spot-02b9",
+        "commits": 3,
+        "forkedAt": 39,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-07-01T22:38:18+00:00"
+      },
+      {
+        "name": "claude/funny-gates-kcp4yn",
+        "commits": 1,
+        "forkedAt": 41,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-12T22:05:27+00:00"
+      }
+    ]
+  },
+  "winslow-pantry": {
+    "repo": "core-home-web/winslow-pantry",
+    "private": false,
+    "fetched": "2026-11-09",
+    "branches": [
+      {
+        "name": "main",
+        "default": true,
+        "commits": 10,
+        "last": "2026-10-22T20:30:07-04:00"
+      },
+      {
+        "name": "claude/exciting-pascal-b0v4up",
+        "commits": 2,
+        "forkedAt": 8,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-22T18:35:46+00:00"
+      }
+    ]
+  },
+  "alder-meadow": {
+    "repo": "core-home-web/alder_meadow",
+    "private": false,
+    "fetched": "2026-11-09",
+    "branches": [
+      {
+        "name": "claude/funny-hopper-9cymdi",
+        "default": true,
+        "commits": 3,
+        "last": "2026-10-21T21:29:37+00:00"
+      },
+      {
+        "name": "main",
+        "commits": 0,
+        "forkedAt": 3,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-21T21:29:37+00:00"
+      }
+    ]
+  },
+  "core-home-reports": {
+    "repo": "SWFTstudios/ch_project_reports",
+    "private": false,
+    "fetched": "2026-11-09",
+    "branches": [
+      {
+        "name": "main",
+        "default": true,
+        "commits": 146,
+        "last": "2026-11-03T21:30:26+00:00"
+      },
+      {
+        "name": "claude/sleepy-volta-7l1j2s",
+        "commits": 2,
+        "forkedAt": 139,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-11-03T21:23:29+00:00"
+      },
+      {
+        "name": "claude/eoyr-brands-and-summary",
+        "commits": 0,
+        "forkedAt": 145,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-30T11:10:44+00:00"
+      }
+    ]
+  },
+  "blurred-lines": {
+    "repo": "SWFTstudios/blurred-lines-entertainment",
+    "private": false,
+    "fetched": "2026-11-09",
+    "branches": [
+      {
+        "name": "main",
+        "default": true,
+        "commits": 6,
+        "last": "2026-09-22T15:14:42-04:00"
+      }
+    ]
+  },
+  "snooze-lane": {
+    "repo": "elombekisala/Snooze-Lane",
+    "private": true,
+    "fetched": "2026-11-09",
+    "branches": [
+      {
+        "name": "main",
+        "default": true,
+        "commits": 273,
+        "last": "2026-10-25T19:52:05-04:00"
+      },
+      {
+        "name": "private branch 1",
+        "commits": 3,
+        "forkedAt": 0,
+        "merged": false,
+        "orphan": true,
+        "last": "2026-03-30T15:24:32-04:00"
+      },
+      {
+        "name": "private branch 2",
+        "commits": 10,
+        "forkedAt": 0,
+        "merged": false,
+        "orphan": true,
+        "last": "2025-08-13T23:07:26-04:00"
+      },
+      {
+        "name": "private branch 3",
+        "commits": 7,
+        "forkedAt": 0,
+        "merged": false,
+        "orphan": true,
+        "last": "2025-08-13T22:19:27-04:00"
+      },
+      {
+        "name": "private branch 4",
+        "commits": 3,
+        "forkedAt": 72,
+        "merged": false,
+        "orphan": false,
+        "last": "2025-08-13T21:35:43-04:00"
+      },
+      {
+        "name": "private branch 5",
+        "commits": 0,
+        "forkedAt": 95,
+        "merged": true,
+        "orphan": false,
+        "last": "2025-08-14T09:54:10-04:00"
+      },
+      {
+        "name": "private branch 6",
+        "commits": 0,
+        "forkedAt": 173,
+        "merged": true,
+        "orphan": false,
+        "last": "2025-09-29T18:40:17-04:00"
+      },
+      {
+        "name": "private branch 7",
+        "commits": 0,
+        "forkedAt": 223,
+        "merged": true,
+        "orphan": false,
+        "last": "2025-10-05T22:13:27-04:00"
+      },
+      {
+        "name": "private branch 8",
+        "commits": 1,
+        "forkedAt": 248,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-03-30T18:20:53-04:00"
+      },
+      {
+        "name": "private branch 9",
+        "commits": 2,
+        "forkedAt": 248,
+        "merged": false,
+        "orphan": false,
+        "last": "2025-11-15T21:23:10-05:00"
+      },
+      {
+        "name": "private branch 10",
+        "commits": 2,
+        "forkedAt": 250,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-06-18T20:20:35-04:00"
+      },
+      {
+        "name": "private branch 11",
+        "commits": 2,
+        "forkedAt": 250,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-06-19T00:18:29+00:00"
+      },
+      {
+        "name": "private branch 12",
+        "commits": 8,
+        "forkedAt": 250,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-06-19T08:41:57-04:00"
+      },
+      {
+        "name": "private branch 13",
+        "commits": 2,
+        "forkedAt": 250,
+        "merged": false,
+        "orphan": false,
+        "last": "2026-08-18T18:33:45-04:00"
+      },
+      {
+        "name": "private branch 14",
+        "commits": 2,
+        "forkedAt": 252,
+        "merged": false,
+        "orphan": false,
+        "last": "2026-06-22T20:15:51+00:00"
+      },
+      {
+        "name": "private branch 15",
+        "commits": 13,
+        "forkedAt": 253,
+        "merged": false,
+        "orphan": false,
+        "last": "2026-07-02T11:59:37+00:00"
+      },
+      {
+        "name": "private branch 16",
+        "commits": 2,
+        "forkedAt": 254,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-08-27T08:25:49-04:00"
+      },
+      {
+        "name": "private branch 17",
+        "commits": 1,
+        "forkedAt": 254,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-08-27T08:09:53-04:00"
+      },
+      {
+        "name": "private branch 18",
+        "commits": 1,
+        "forkedAt": 256,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-08-27T16:41:42-04:00"
+      },
+      {
+        "name": "private branch 19",
+        "commits": 1,
+        "forkedAt": 257,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-08-28T17:54:09-04:00"
+      },
+      {
+        "name": "private branch 20",
+        "commits": 2,
+        "forkedAt": 260,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-09-10T14:50:35-04:00"
+      },
+      {
+        "name": "private branch 21",
+        "commits": 4,
+        "forkedAt": 261,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-09-23T13:26:06-04:00"
+      },
+      {
+        "name": "private branch 22",
+        "commits": 3,
+        "forkedAt": 261,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-09-23T12:08:55-04:00"
+      },
+      {
+        "name": "private branch 23",
+        "commits": 2,
+        "forkedAt": 264,
+        "merged": false,
+        "orphan": false,
+        "last": "2026-10-01T22:30:46+00:00"
+      },
+      {
+        "name": "private branch 24",
+        "commits": 2,
+        "forkedAt": 265,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-07T13:45:12-04:00"
+      },
+      {
+        "name": "private branch 25",
+        "commits": 2,
+        "forkedAt": 265,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-07T17:42:46+00:00"
+      },
+      {
+        "name": "private branch 26",
+        "commits": 1,
+        "forkedAt": 267,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-14T11:24:29+00:00"
+      },
+      {
+        "name": "private branch 27",
+        "commits": 6,
+        "forkedAt": 268,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-25T17:49:20+00:00"
+      },
+      {
+        "name": "private branch 28",
+        "commits": 5,
+        "forkedAt": 268,
+        "merged": false,
+        "orphan": false,
+        "last": "2026-10-25T15:18:00-04:00"
+      },
+      {
+        "name": "private branch 29",
+        "commits": 5,
+        "forkedAt": 268,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-25T18:08:31+00:00"
+      },
+      {
+        "name": "private branch 30",
+        "commits": 1,
+        "forkedAt": 270,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-25T22:29:45+00:00"
+      },
+      {
+        "name": "private branch 31",
+        "commits": 1,
+        "forkedAt": 272,
+        "merged": true,
+        "orphan": false,
+        "last": "2026-10-25T19:05:30-04:00"
+      }
+    ]
+  }
+}
