@@ -6,6 +6,9 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
 import { projects, more } from './data/projects.mjs';
+import { traits, STYLES } from '../../assets/js/bonsai-traits.mjs';
+import { readFileSync as readJSON } from 'node:fs';
+const branchData = JSON.parse(readJSON(new URL('./data/branches.json', import.meta.url), 'utf8'));
 import { site, nav, toolkit, capabilities, experience, education, testimonials, process as steps } from './data/site.mjs';
 import { groups, services } from './data/services.mjs';
 import { art, preview } from './data/art.mjs';
@@ -73,8 +76,8 @@ function head({ title, description, path, image = '/assets/og.jpg', jsonld = [],
   <meta property="og:url" content="${url}">
   <meta property="og:image" content="${site.url}${image}">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="theme-color" content="#0f0f0e" media="(prefers-color-scheme: dark)">
-  <meta name="theme-color" content="#ecebe6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#121310" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#ebe5d8" media="(prefers-color-scheme: light)">
   <meta name="color-scheme" content="dark light">
   <link rel="icon" href="/assets/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
@@ -158,7 +161,7 @@ function footer() {
       <div>
         <p class="mono label">sitemap</p>
         <ul class="footer-links">
-          <li><a href="/work/">Work</a></li><li><a href="/services/">Services</a></li><li><a href="/about/">About &amp; résumé</a></li><li><a href="/blog/">Writing</a></li><li><a href="/contact/">Start a project</a></li>
+          <li><a href="/work/">Work</a></li><li><a href="/garden/">Garden</a></li><li><a href="/services/">Services</a></li><li><a href="/about/">About &amp; résumé</a></li><li><a href="/blog/">Writing</a></li><li><a href="/contact/">Start a project</a></li>
         </ul>
       </div>
       <div>
@@ -397,6 +400,8 @@ function home() {
   </div>
 </section>
 
+${gardenTeaser()}
+
 ${editorSection()}
 
 ${servicesTeaser()}
@@ -515,7 +520,7 @@ function workIndex() {
   <div class="wrap">
     <p class="eyebrow" data-hero-in>Work · ${projects.length} case studies</p>
     <h1 class="display" data-split-hero>Selected <em class="em">work</em></h1>
-    <p class="lead muted page-lead" data-hero-in>Web apps, Shopify stores, brand sites, internal tools and a native iOS app. Every case study is written from the project’s code and commit history.</p>
+    <p class="lead muted page-lead" data-hero-in>Web apps, Shopify stores, brand sites, internal tools and a native iOS app. Every case study is written from the project’s code and commit history. <a class="text-link" href="/garden/">See them grown as bonsai →</a></p>
   </div>
 </section>
 <section class="section-sm">
@@ -539,6 +544,97 @@ function workIndex() {
   </div>
 </section>`;
   return page({ title: 'Work · Elombe Kisala', description: `Case studies from Elombe Kisala: ${projects.slice(0, 6).map(p => p.title).join(', ')} and more.`, path: '/work/', body, bodyClass: 'is-work' });
+}
+
+
+function gardenTeaser() {
+  const trees = ordered.map(p => traits(p, branchData));
+  const branches = trees.reduce((a, t) => a + (t.branches.source === 'git' ? t.branches.total + 1 : 0), 0);
+  return `
+<section class="garden-teaser">
+  <div class="wrap garden-teaser-grid">
+    <div class="garden-teaser-copy">
+      <p class="eyebrow" data-reveal>The garden</p>
+      <h2 class="h2" data-split>Every project, <em class="em">grown.</em></h2>
+      <p class="lead muted" data-reveal>A zen garden with one bonsai per project. Each limb is a real git branch from the project’s repository: ${branches} branches across ${trees.length} trees, read straight from git.</p>
+      <a href="/garden/" class="btn btn-lg" data-magnetic>${roll('Walk the garden')} ${arrowRight}</a>
+    </div>
+    <a class="garden-teaser-img" href="/garden/" aria-label="Walk the project garden" data-reveal>${img('/assets/garden/teaser.webp', 'A zen garden of raked sand and moss islands, each with a bonsai that stands for a project', { sizes: '(max-width: 980px) 100vw, 60vw' })}</a>
+  </div>
+</section>`;
+}
+
+// ---------- garden: a zen garden, one bonsai per project, one limb per git branch ----------
+function garden() {
+  const trees = ordered.map(p => ({ slug: p.slug, title: p.title, kind: p.kind, accent: p.accent, t: traits(p, branchData) }));
+  const totalBranches = trees.reduce((a, x) => a + (x.t.branches.source === 'git' ? x.t.branches.total + 1 : 0), 0);
+  const repos = trees.filter(x => x.t.branches.source === 'git').length;
+  const stylesUsed = Object.entries(STYLES).filter(([k]) => trees.some(x => x.t.style === k));
+  const body = `
+<section class="garden-hero" aria-label="Project garden">
+  <div class="garden-stage" data-garden tabindex="-1">
+    <canvas class="garden-canvas" data-garden-canvas tabindex="0" role="img" aria-label="A 3D zen garden with one bonsai per project. Each limb is a git branch. Drag to look around, click a tree to walk up to it, arrow keys move between trees."></canvas>
+    <div class="garden-intro">
+      <p class="eyebrow">Garden · ${trees.length} trees · ${totalBranches} branches</p>
+      <h1 class="garden-h1">Every project, <em class="em">grown.</em></h1>
+      <p class="garden-lead">Each bonsai is a project. Its trunk is the default branch and every limb is a real git branch, attached where it forked. Click a tree to walk up to it.</p>
+    </div>
+    <div class="garden-hud" data-hud aria-live="polite">
+      <button type="button" class="garden-back mono" data-overview>← whole garden</button>
+      <p class="mono garden-n"><span data-hud-n></span> · <span data-hud-style></span></p>
+      <h2 class="garden-title" data-hud-title></h2>
+      <p class="garden-kind" data-hud-summary></p>
+      <dl class="garden-stats" data-hud-stats></dl>
+      <ul class="branch-list" data-hud-branches aria-label="Branches"></ul>
+      <p class="mono garden-note" data-hud-note></p>
+      <a class="btn btn-sm garden-link" data-hud-link href="/work/">${roll('Case study')} ${arrowRight}</a>
+    </div>
+    <div class="garden-tip" data-tip hidden></div>
+    <div class="garden-nav">
+      <button type="button" class="garden-btn" data-prev aria-label="Previous tree">←</button>
+      <button type="button" class="garden-btn" data-next aria-label="Next tree">→</button>
+    </div>
+    <p class="mono garden-hint" aria-hidden="true">drag to look around · click a tree · hover a limb</p>
+    <p class="garden-fallback">The 3D garden needs WebGL. Every tree is listed below with the branches it grows from.</p>
+  </div>
+</section>
+<section class="section-sm garden-grove-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">The grove</p>
+      <h2 class="h2" data-split>Pick a <em class="em">tree.</em></h2>
+    </div>
+    <div class="grove">
+      ${trees.map((x, i) => { const b = x.t.branches; return `<button type="button" class="tree-card" data-tree="${x.slug}" aria-pressed="false" style="--cs:${x.accent}">
+        <span class="tree-thumb"><img alt="" width="360" height="360" decoding="async"><span class="tree-dot" aria-hidden="true"></span></span>
+        <span class="mono tree-n">${String(i + 1).padStart(2, '0')} · ${esc(x.t.styleName.toLowerCase())}</span>
+        <span class="tree-title">${esc(x.title)}</span>
+        <span class="mono tree-meta">${b.source === 'git' ? `${b.total + 1} branch${b.total ? 'es' : ''} · ${x.t.counts.open} open` : `${x.t.stack.length} tool${x.t.stack.length === 1 ? '' : 's'} · no public repo`}</span>
+      </button>`; }).join('\n      ')}
+    </div>
+  </div>
+</section>
+<section class="section-sm garden-key">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">How to read a tree</p>
+      <h2 class="h2" data-split>Real branches, <em class="em">nothing invented.</em></h2>
+      <p class="lead muted section-lead" data-reveal>${repos} of the ${trees.length} projects have a public repository. Their trees are read straight from git: ${totalBranches} branches in all. The project name seeds the rest, so a tree looks the same on every visit.</p>
+    </div>
+    <dl class="key-list">
+      <div><dt>Trunk</dt><dd>The default branch. Short spurs along its top carry its own foliage, more of them the more commits it holds.</dd></div>
+      <div><dt>Limbs</dt><dd>One per branch, leaving the trunk at the height where the branch forked off. Longer and thicker for branches with more commits of their own.</dd></div>
+      <div><dt><span class="key-dot is-merged"></span>Mature foliage</dt><dd>Merged branches: the work is part of the project now.</dd></div>
+      <div><dt><span class="key-dot is-open"></span>Fresh growth</dt><dd>Open branches with recent commits, tinted toward the project’s color.</dd></div>
+      <div><dt><span class="key-dot is-stale"></span>Deadwood (jin)</dt><dd>Open branches that went quiet for more than 45 days. Bonsai artists keep deadwood on purpose, too.</dd></div>
+      <div><dt>Shape</dt><dd>${stylesUsed.map(([, v]) => `${v.name} (<em>${v.jp}</em>) for ${v.rule}`).join('; ')}. Projects without a public repo grow one limb per tool in their stack.</dd></div>
+    </dl>
+  </div>
+</section>
+<script type="application/json" id="garden-data">${JSON.stringify(trees).replace(/</g, '\\u003c')}</script>
+<script type="importmap">{"imports":{"three":"/assets/vendor/three/three.module.min.js","three/addons/":"/assets/vendor/three/addons/"}}</script>
+<script type="module" src="/assets/js/garden.js?v=${ver('assets/js/garden.js')}"></script>`;
+  return page({ title: 'Garden · Elombe Kisala', description: `A zen garden of ${trees.length} projects: each bonsai is a project and each limb a real git branch, grown in 3D in your browser.`, path: '/garden/', body, bodyClass: 'is-garden', showCta: false });
 }
 
 // ---------- case study ----------
@@ -923,7 +1019,7 @@ function notFound() {
 }
 
 function sitemap() {
-  const urls = ['/', '/work/', ...projects.map(p => `/work/${p.slug}/`), '/about/', '/services/', ...services.map(x => `/services/${x.slug}/`), '/contact/', '/blog/', ...posts.map(p => p.url), '/privacy/', '/terms/'];
+  const urls = ['/', '/work/', ...projects.map(p => `/work/${p.slug}/`), '/garden/', '/about/', '/services/', ...services.map(x => `/services/${x.slug}/`), '/contact/', '/blog/', ...posts.map(p => p.url), '/privacy/', '/terms/'];
   const today = new Date().toISOString().slice(0, 10);
   write('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(u => `  <url><loc>${site.url}${u}</loc><lastmod>${today}</lastmod></url>`).join('\n')}\n</urlset>\n`);
   write('llms.txt', `# ${site.name}, Designer & Developer
@@ -934,6 +1030,7 @@ function sitemap() {
 ${ordered.map(p => `- [${p.title}](${site.url}/work/${p.slug}/): ${p.summary}`).join('\n')}
 
 ## Pages
+- [Project garden: each project a bonsai, each limb a git branch](${site.url}/garden/)
 - [About & résumé](${site.url}/about/)
 - [Services](${site.url}/services/)
 ${services.map(x => `  - [${x.title}](${site.url}/services/${x.slug}/): ${x.short}`).join('\n')}
@@ -950,6 +1047,7 @@ ${services.map(x => `  - [${x.title}](${site.url}/services/${x.slug}/): ${x.shor
 // ---------- run ----------
 write('index.html', home());
 write('work/index.html', workIndex());
+write('garden/index.html', garden());
 projects.forEach((p, i) => write(`work/${p.slug}/index.html`, caseStudy(p, i)));
 write('about/index.html', about());
 write('contact/index.html', contact());

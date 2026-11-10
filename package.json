@@ -6,7 +6,10 @@
   "type": "module",
   "scripts": {
     "build": "node src/build/build.mjs",
-    "dev": "node src/build/build.mjs && python3 -m http.server 8080"
+    "dev": "node src/build/build.mjs && python3 -m http.server 8080",
+    "branches": "node src/build/fetch-branches.mjs"
   },
-  "engines": { "node": ">=18" }
+  "engines": {
+    "node": ">=18"
+  }
 }
