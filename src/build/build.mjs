@@ -745,7 +745,7 @@ function about() {
       <p class="eyebrow" data-hero-in>About · Résumé</p>
       <h1 class="display" data-split-hero>Hi, I’m <em class="em">Elombe.</em></h1>
       <div class="prose-lg about-intro" data-hero-in>
-        <p>I’m a designer and developer in Jersey City with a bachelor’s in Mobile Development from Full Sail University. I started building websites in 2019 for family and friends, and I haven’t stopped since.</p>
+        <p>I’m a designer and developer in Jersey City who studied Mobile Development at Full Sail University. I started building websites in 2019 for family and friends, and I haven’t stopped since.</p>
         <p>Today I lead web development for <a class="ulink" href="/work/core-home/">Core Home</a>, where I run Shopify storefronts, launch brand sites and build internal tools for a portfolio of consumer brands. I also founded <a class="ulink" href="/work/swft-studios/">SWFT Studios</a>, and ship products of my own, like the iOS app <a class="ulink" href="/work/snooze-lane/">Snooze Lane</a> and <a class="ulink" href="/work/learn-lingala/">Learn Lingala</a>.</p>
         <p>What sets my work apart is range: I can direct the look, write the code, wire up payments and automation, and shoot the video. One person, one vision, no hand-offs.</p>
       </div>

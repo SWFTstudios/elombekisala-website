@@ -61,7 +61,7 @@ export const experience = [
 ];
 
 export const education = [
-  { school: 'Full Sail University', degree: 'Bachelor’s degree, Mobile Development', when: '2017 – 2020', note: 'Grade: A' }
+  { school: 'Full Sail University', degree: 'Studied Mobile Development', when: '2017 – 2020', note: 'Grade: A' }
 ];
 
 export const testimonials = [
